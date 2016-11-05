@@ -1,0 +1,60 @@
+<set>
+  <tiles>
+<tile name="park/basin-floorX" symmetry="X" weight="1.0"/>
+<tile name="park/basin-innieL" symmetry="L" weight="1.0"/>
+<tile name="park/basin-outieL" symmetry="L" weight="1.0"/>
+<tile name="park/basin-T" symmetry="T" weight="1.0"/>
+<tile name="park/floorX" symmetry="X" weight="1.0"/>
+<tile name="park/halfpipeT" symmetry="T" weight="1.0"/>
+<tile name="park/platformX" symmetry="X" weight="1.0"/>
+<tile name="park/basin-stairT" symmetry="T" weight="1.0"/>
+<tile name="park/floor-stairT" symmetry="T" weight="1.0"/>
+<tile name="park/floor-rampT" symmetry="T" weight="1.0"/>
+	</tiles>
+<neighbors>  <neighbor left="park/basin-floorX 0" right="park/basin-floorX 0"/>
+  <neighbor left="park/basin-outieL 0" right="park/basin-outieL 1"/>
+  <neighbor left="park/basin-outieL 1" right="park/basin-floorX 0"/>
+  <neighbor left="park/basin-floorX 1" right="park/basin-T 3"/>
+  <neighbor left="park/halfpipeT 1" right="park/halfpipeT 3"/>
+  <neighbor left="park/halfpipeT 2" right="park/halfpipeT 2"/>
+  <neighbor left="park/halfpipeT 3" right="park/platformX 0"/>
+  <neighbor left="park/halfpipeT 0" right="park/halfpipeT 0"/>
+  <neighbor left="park/platformX 1" right="park/platformX 1"/>
+  <neighbor left="park/basin-T 3" right="park/basin-T 1"/>
+  <neighbor left="park/basin-innieL 0" right="park/basin-innieL 1"/>
+  <neighbor left="park/basin-innieL 1" right="park/floorX 1"/>
+  <neighbor left="park/basin-T 1" right="park/basin-T 3"/>
+  <neighbor left="park/basin-T 0" right="park/basin-T 0"/>
+  <neighbor left="park/basin-T 1" right="park/basin-floorX 1"/>
+  <neighbor left="park/floorX 1" right="park/basin-innieL 0"/>
+  <neighbor left="park/basin-innieL 0" right="park/basin-T 2"/>
+  <neighbor left="park/platformX 1" right="park/floor-rampT 1"/>
+  <neighbor left="park/basin-T 1" right="park/basin-T 3"/>
+  <neighbor left="park/basin-T 0" right="park/basin-outieL 1"/>
+  <neighbor left="park/basin-innieL 3" right="park/basin-outieL 1"/>
+  <neighbor left="park/basin-outieL 1" right="park/basin-T 3"/>
+  <neighbor left="park/floor-rampT 0" right="park/floor-rampT 0"/>
+  <neighbor left="park/floor-rampT 1" right="park/floorX 1"/>
+  <neighbor left="park/halfpipeT 1" right="park/basin-floorX 0"/>
+  <neighbor left="park/halfpipeT 2" right="park/basin-floorX 1"/>
+  <neighbor left="park/platformX 0" right="park/basin-stairT 0"/>
+  <neighbor left="park/basin-stairT 0" right="park/basin-stairT 0"/>
+  <neighbor left="park/basin-floorX 1" right="park/basin-stairT 3"/>
+  <neighbor left="park/basin-stairT 1" right="park/basin-T 3"/>
+  <neighbor left="park/basin-floorX 0" right="park/basin-stairT 2"/>
+  <neighbor left="park/basin-stairT 2" right="park/floorX 0"/>
+  <neighbor left="park/basin-stairT 3" right="park/floorX 1"/>
+  <neighbor left="park/basin-stairT 3" right="park/floor-rampT 3"/>
+  <neighbor left="park/basin-T 2" right="park/basin-T 2"/>
+  <neighbor left="park/basin-T 3" right="park/floorX 1"/>
+  <neighbor left="park/basin-T 2" right="park/basin-stairT 2"/>
+  <neighbor left="park/basin-stairT 2" right="park/basin-stairT 2"/>
+  <neighbor left="park/basin-stairT 3" right="park/floor-stairT 3"/>
+  <neighbor left="park/floorX 0" right="park/floor-rampT 2"/>
+  <neighbor left="park/floorX 0" right="park/floorX 0"/>
+  <neighbor left="park/floorX 0" right="park/floor-stairT 2"/>
+  <neighbor left="park/floor-stairT 2" right="park/floor-stairT 2"/>
+  <neighbor left="park/floor-stairT 2" right="park/platformX 0"/>
+  <neighbor left="park/floor-stairT 3" right="park/platformX 1"/>
+	</neighbors>
+</set>

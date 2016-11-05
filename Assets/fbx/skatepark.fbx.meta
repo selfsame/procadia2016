@@ -18,6 +18,7 @@ ModelImporter:
     100020: halfpipeT
     100022: platformX
     100024: //RootNode
+    100026: floor-rampT
     400000: basin-floorX
     400002: basin-innieL
     400004: basin-outieL
@@ -31,6 +32,7 @@ ModelImporter:
     400020: halfpipeT
     400022: platformX
     400024: //RootNode
+    400026: floor-rampT
     2300000: basin-floorX
     2300002: basin-innieL
     2300004: basin-outieL
@@ -43,6 +45,7 @@ ModelImporter:
     2300018: floorX
     2300020: halfpipeT
     2300022: platformX
+    2300024: floor-rampT
     3300000: basin-floorX
     3300002: basin-innieL
     3300004: basin-outieL
@@ -55,6 +58,7 @@ ModelImporter:
     3300018: floorX
     3300020: halfpipeT
     3300022: platformX
+    3300024: floor-rampT
     4300000: halfpipeT
     4300002: basin-rampL
     4300004: platformX
@@ -67,6 +71,7 @@ ModelImporter:
     4300018: basin-floorX
     4300020: Cube.001
     4300022: floorX
+    4300024: floor-rampT
   materials:
     importMaterials: 1
     materialName: 0
