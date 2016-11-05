@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 5490b801f3d30427bb6f852ee2da80df
+timeCreated: 1478359477
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: basin-floorX
+    100002: basin-innieL
+    100004: basin-outieL
+    100006: basin-rampL
+    100008: basin-rampT
+    100010: basin-stairT
+    100012: basin-T
+    100014: Cube.001
+    100016: floor-stairT
+    100018: floorX
+    100020: halfpipeT
+    100022: platformX
+    100024: //RootNode
+    400000: basin-floorX
+    400002: basin-innieL
+    400004: basin-outieL
+    400006: basin-rampL
+    400008: basin-rampT
+    400010: basin-stairT
+    400012: basin-T
+    400014: Cube.001
+    400016: floor-stairT
+    400018: floorX
+    400020: halfpipeT
+    400022: platformX
+    400024: //RootNode
+    2300000: basin-floorX
+    2300002: basin-innieL
+    2300004: basin-outieL
+    2300006: basin-rampL
+    2300008: basin-rampT
+    2300010: basin-stairT
+    2300012: basin-T
+    2300014: Cube.001
+    2300016: floor-stairT
+    2300018: floorX
+    2300020: halfpipeT
+    2300022: platformX
+    3300000: basin-floorX
+    3300002: basin-innieL
+    3300004: basin-outieL
+    3300006: basin-rampL
+    3300008: basin-rampT
+    3300010: basin-stairT
+    3300012: basin-T
+    3300014: Cube.001
+    3300016: floor-stairT
+    3300018: floorX
+    3300020: halfpipeT
+    3300022: platformX
+    4300000: halfpipeT
+    4300002: basin-rampL
+    4300004: platformX
+    4300006: floor-stairT
+    4300008: basin-stairT
+    4300010: basin-rampT
+    4300012: basin-outieL
+    4300014: basin-innieL
+    4300016: basin-T
+    4300018: basin-floorX
+    4300020: Cube.001
+    4300022: floorX
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
