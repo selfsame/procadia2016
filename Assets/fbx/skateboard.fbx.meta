@@ -12,6 +12,9 @@ ModelImporter:
     100008: wheel
     100010: suspension
     100012: board
+    100014: Camera
+    100016: Cube
+    100018: Lamp
     400000: axis
     400002: Cube.002
     400004: //RootNode
@@ -19,6 +22,9 @@ ModelImporter:
     400008: wheel
     400010: suspension
     400012: board
+    400014: Camera
+    400016: Cube
+    400018: Lamp
     2300000: axis
     2300002: Cube.002
     2300004: //RootNode
@@ -26,6 +32,7 @@ ModelImporter:
     2300008: wheel
     2300010: suspension
     2300012: board
+    2300014: Cube
     3300000: axis
     3300002: Cube.002
     3300004: //RootNode
@@ -33,12 +40,14 @@ ModelImporter:
     3300008: wheel
     3300010: suspension
     3300012: board
+    3300014: Cube
     4300000: board
     4300002: truck
     4300004: Cube.002
     4300006: axis
     4300008: wheel
     4300010: suspension
+    4300012: Cube
   materials:
     importMaterials: 1
     materialName: 0

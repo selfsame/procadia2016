@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000012318212254}
   - 33: {fileID: 33000011814329050}
   - 23: {fileID: 23000010709284916}
+  - 64: {fileID: 64000010558440334}
   m_Layer: 0
   m_Name: basin-rampT
   m_TagString: Untagged
@@ -76,4 +77,16 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010753107674}
+  m_Mesh: {fileID: 4300010, guid: 5490b801f3d30427bb6f852ee2da80df, type: 3}
+--- !u!64 &64000010558440334
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010753107674}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300010, guid: 5490b801f3d30427bb6f852ee2da80df, type: 3}
