@@ -14,8 +14,8 @@
   (let [o (clone! :maps/autopark)
         wfc (.GetComponent o "SimpleTiledWFC")]
     (timeline [
-      (wait 0.1)
-      #(do (local-scale! o (v3 4)) false)])
+               (wait 0.1)
+               #(do (local-scale! o (v3 4)) false)])
     (set! (.width wfc) (int w))
     (set! (.depth wfc) (int h)) o))
 
@@ -33,29 +33,21 @@
   (let [loc (or loc (v3 0 10 0))
         board (clone! :board2 loc)
         cam (clone! :skatecam (v3+ loc (v3 0 5 10)))]
-        (hook+ cam :update #'game.core/update-cam)
-        (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
+       (hook+ cam :update #'game.core/update-cam)
+       (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
     board))
 
 (defn handle-input [o]
   (let [body (->rigidbody o)]
-  (if (key? "w") (force! body 0 0  6000))
-  (if (key? "s") (force! body 0 0 -6000))
-  (if (key? "a") (torque! body 0 -4000 0))
-  (if (key? "d") (torque! body 0  4000 0))
-  (Input/GetAxis "Vertical")))
+   (if (key? "w") (force! body 0 0  6000))
+   (if (key? "s") (force! body 0 0 -6000))
+   (if (key? "a") (torque! body 0 -4000 0))
+   (if (key? "d") (torque! body 0  4000 0))
+   (Input/GetAxis "Vertical")))
 
 (defn make-level []
   (clear-cloned!)
   (make-park 14 14)
   (reset! player (make-player (v3 10 5 10)))
-  (hook+ @player :update #'game.core/handle-input)
-  )
-
-
-
-'(timeline* :loop
-  (wait 1.0)
-  #(do (make-level) false))
-
-'(make-level)
+  (hook+ @player :update #'game.core/handle-input))
+  

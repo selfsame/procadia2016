@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 4000010376089286}
-  - 114: {fileID: 114000010476176138}
+  - 114: {fileID: 114000012336538860}
   m_Layer: 0
   m_Name: autopark
   m_TagString: Untagged
@@ -40,7 +40,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &114000010476176138
+--- !u!114 &114000012336538860
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000013494129046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a437e39e45b3549029466aff0e043b16, type: 3}
+  m_Script: {fileID: 11500000, guid: 035b24a68aac3cf478a9519a7480599d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xmlpath: skaters.xml
