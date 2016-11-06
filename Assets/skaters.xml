@@ -5,9 +5,9 @@
 <tile name="park/basin-outieL" symmetry="L" weight="1.0"/>
 <tile name="park/basin-T" symmetry="T" weight="1.0"/>
 <tile name="park/floorX" symmetry="X" weight="1.0"/>
-<tile name="park/halfpipeT" symmetry="T" weight="1.0"/>
+<tile name="park/halfpipeT" symmetry="T" weight="2.0"/>
 <tile name="park/platformX" symmetry="X" weight="1.0"/>
-<tile name="park/basin-stairT" symmetry="T" weight="1.0"/>
+<tile name="park/basin-stairT" symmetry="T" weight="0.2"/>
 <tile name="park/floor-stairT" symmetry="T" weight="1.0"/>
 <tile name="park/floor-rampT" symmetry="T" weight="1.0"/>
 	</tiles>
