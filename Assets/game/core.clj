@@ -67,11 +67,11 @@
         wheels (wheelmap o)
         motorforce (* mass 1)]
   (cond 
-    (key? "w") 
+    (and (key? "w") (wheel-contact? o)) 
     (do (force! body 0 0 (* mass  10))
         (motor motorforce (:rear wheels))
         (motor motorforce (:front wheels)))
-    (key? "s") 
+    (and (key? "s") (wheel-contact? o)) 
     (do (force! body 0 0 (* mass  -10))
         (motor (- motorforce) (:rear wheels))
         (motor (- motorforce) (:front wheels)))
@@ -89,17 +89,23 @@
     :else
     (do (steer 0 (:rear wheels))
         (steer 0 (:front wheels))))
-  ;(if (key? "d") (torque! body 0 (* mass  12) 0))
-  (if (and (key? "space") (upsidedown? o)) 
+  (if (key? "e") (torque! body 0 0 (* mass -4)))
+  (if (key? "q") (torque! body 0 0 (* mass  4)))
+  (if (and (key? "tab") (upsidedown? o)) 
     (torque! body 0 0 (* mass  60)))
-  (if (wheel-contact? o) (force! body 0 (* mass -6) 0))
+  (when (and (key-down? "space") (wheel-contact? o)) 
+    (torque! body (* mass  -2) 0 0)
+    (force! body 0 (* mass 45) 0))
+  (if (wheel-contact? o) (force! body 0 (* mass -4) 0))
   (Input/GetAxis "Vertical")))
 
 (defn make-level []
   (clear-cloned!)
   (make-park 16 16)
   (reset! player (make-player (v3 10 10 10)))
-  (hook+ @player :update #'game.core/handle-input))
+  (hook+ @player :update #'game.core/handle-input)
+  (clone! :EventSystem)
+  (clone! :Canvas))
 
 
 
@@ -120,6 +126,6 @@
   (wait 3.0)
   #(do (make-level) nil)
   (wait 0.1)
-  #(do (message "snack time") nil))
+  #(do (message "brb   6") nil))
 
 '(make-level)

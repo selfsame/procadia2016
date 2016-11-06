@@ -7,3 +7,7 @@
 '(( ) analog steering)
 '(( ) get sideways friction right
   (( ) when board quickly twists 180 reverse front direction))
+'(( ) at the top of half pipes force the board to stay on the
+  vertical plane)
+'(( ) jump command)
+'(( ) keys to rotate the board)
