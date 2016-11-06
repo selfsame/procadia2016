@@ -58,5 +58,5 @@ MonoBehaviour:
   seed: 0
   periodic: 0
   iterations: 0
-  incremental: 1
+  incremental: 0
   output: {fileID: 0}
