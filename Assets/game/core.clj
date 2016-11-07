@@ -10,6 +10,7 @@
 
 (def player (atom nil))
 (def steerage (atom 0.0))
+(def wheelmap (atom nil))
 
 (defn text! [o s] (set! (.text (cmpt o UnityEngine.UI.Text)) s))
 
@@ -45,11 +46,7 @@
 
 (defn ->wheel [o] (cmpt o UnityEngine.WheelCollider))
 
-(defn wheelmap [o]
-  {:front [(->wheel (child-named o "front-right"))
-           (->wheel (child-named o "front-left"))]
-   :rear  [(->wheel (child-named o "rear-right"))
-           (->wheel (child-named o "rear-left"))]})
+
 
 (defn steer [n col]
   (dorun (map #(set! (.steerAngle %) (float n)) col)))
@@ -60,8 +57,13 @@
   (let [loc (or loc (v3 0 10 0))
         board (clone! :player/board loc)
         cam (clone! :player/skatecam (v3+ loc (v3 0 5 7)))]
-        (hook+ cam :update #'game.core/update-cam)
-        (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
+    (reset! wheelmap 
+      {:front [(->wheel (child-named board "front-right"))
+               (->wheel (child-named board "front-left"))]
+       :rear  [(->wheel (child-named board "rear-right"))
+               (->wheel (child-named board "rear-left"))]})
+    (hook+ cam :update #'game.core/update-cam)
+    (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
     board))
 
 (defn fall-check [o]
@@ -75,8 +77,8 @@
 (defn handle-input [o]
   (let [body (->rigidbody o)
         mass (.mass (->rigidbody o))
-        dspeed (∆ 10)
-        wheels (wheelmap o)
+        dspeed (∆ 30)
+        wheels @wheelmap
         motorforce (* mass dspeed)
         local-velocity (.InverseTransformPoint (.transform o) 
                                         (v3+ (>v3 o)(.velocity body)))
@@ -94,13 +96,13 @@
   (cond 
     (and (key? "w") (wheel-contact? o)) 
     (if (< forward-speed max-speed)
-        (do (force! body 0 0 (* mass dspeed 10))
+        (do (force! body 0 0 (* mass dspeed 20))
             (motor motorforce (:rear wheels))
             (motor motorforce (:front wheels))))
 
     (and (key? "s") (wheel-contact? o)) 
     (if (> forward-speed (- max-speed))
-        (do (force! body 0 0 (* mass dspeed -10))
+        (do (force! body 0 0 (* mass dspeed -20))
             (motor (- motorforce) (:rear wheels))
             (motor (- motorforce) (:front wheels))))
     
@@ -110,34 +112,35 @@
   (cond 
     (key? "a") 
     (if (wheel-contact? o)
-        (do (swap! steerage #(max (- max-turn) (- % (∆ 9))))
+        (do (swap! steerage #(max (- max-turn) (- % (∆ 35))))
             (steer (- @steerage) (:rear wheels))
             (steer @steerage (:front wheels)))
-        (torque! body 0 (* mass dspeed -2) 0))
+        (torque! body 0 (* mass dspeed -24) 0))
     (key? "d") 
     (if (wheel-contact? o)
-        (do (swap! steerage #(min max-turn (+ % (∆ 9))))
+        (do (swap! steerage #(min max-turn (+ % (∆ 35))))
             (steer (- @steerage) (:rear wheels))
             (steer @steerage (:front wheels)))
-        (torque! body 0 (* mass dspeed 2) 0))
+        (torque! body 0 (* mass dspeed 24) 0))
     :else
-    (do (swap! steerage #(* % 0.992))
+    (do (swap! steerage #(* % 0.95))
         (steer (- @steerage) (:rear wheels))
         (steer @steerage (:front wheels))))
-  (if (key? "e") (torque! body 0 0 (* mass -4)))
-  (if (key? "q") (torque! body 0 0 (* mass  4)))
+  (if (key? "e") (torque! body 0 0 (* mass -6)))
+  (if (key? "q") (torque! body 0 0 (* mass  6)))
   (if (and (key? "tab") (upsidedown? o)) 
     (torque! body 0 0 (* mass  60)))
   (when (and (key-down? "space") (wheel-contact? o)) 
-    (torque! body (* mass  -2) 0 0)
-    (force! body 0 (* mass 45) 0))
-  (if (wheel-contact? o) (force! body 0 (* mass -3) 0))
+    (torque! body (* mass  -20) 0 0)
+    (force! body 0 (* mass 285) 0))
+  (if (wheel-contact? o) (force! body 0 (* mass -9) 0))
   (Input/GetAxis "Vertical")))
 
 (defn make-level []
   (clear-cloned!)
   (make-park 20 20)
   (reset! player (make-player (v3 10 10 10)))
+  (hook- (the board) :update #'game.core/handle-input)
   (hook+ @player :update #'game.core/handle-input)
   (clone! :EventSystem)
   (clone! :Canvas))
@@ -164,3 +167,4 @@
   #(do (message "brb   5min") nil))
 
 '(make-level)
+

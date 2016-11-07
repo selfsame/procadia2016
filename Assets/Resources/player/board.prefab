@@ -208,7 +208,6 @@ GameObject:
   - 23: {fileID: 23000010233014650}
   - 64: {fileID: 64000010767043112}
   - 54: {fileID: 54000012726269156}
-  - 114: {fileID: 114000011749523134}
   m_Layer: 0
   m_Name: board
   m_TagString: Untagged
@@ -1095,31 +1094,6 @@ TrailRenderer:
       rgba: 16777215
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114000011749523134
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012235555450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32c8aedeab7cb421da9a055c86933987, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  qualifiedVarNames:
-  - game.core/handle-input
-  - game.core/handle-input
-  - game.core/handle-input
-  - game.core/handle-input
-  - game.core/handle-input
-  - game.core/handle-input
-  - game.core/handle-input
-  - game.core/handle-input
-  - game.core/handle-input
-  - game.core/handle-input
-  - game.core/handle-input
-  - game.core/handle-input
-  - game.core/handle-input
 --- !u!146 &146000010685656300
 WheelCollider:
   m_ObjectHideFlags: 1
