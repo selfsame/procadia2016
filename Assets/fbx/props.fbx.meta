@@ -13,6 +13,9 @@ ModelImporter:
     100010: Cylinder.002
     100012: Cylinder.003
     100014: //RootNode
+    100016: BezierCurve.002
+    100018: Camera
+    100020: Lamp
     400000: BezierCurve
     400002: BezierCurve.000
     400004: BezierCurve.001
@@ -21,6 +24,9 @@ ModelImporter:
     400010: Cylinder.002
     400012: Cylinder.003
     400014: //RootNode
+    400016: BezierCurve.002
+    400018: Camera
+    400020: Lamp
     2300000: BezierCurve
     2300002: BezierCurve.000
     2300004: BezierCurve.001
@@ -28,6 +34,7 @@ ModelImporter:
     2300008: Cylinder.001
     2300010: Cylinder.002
     2300012: Cylinder.003
+    2300014: BezierCurve.002
     3300000: BezierCurve
     3300002: BezierCurve.000
     3300004: BezierCurve.001
@@ -35,6 +42,7 @@ ModelImporter:
     3300008: Cylinder.001
     3300010: Cylinder.002
     3300012: Cylinder.003
+    3300014: BezierCurve.002
     4300000: Cylinder.003
     4300002: BezierCurve
     4300004: Cylinder.002
@@ -42,6 +50,7 @@ ModelImporter:
     4300008: BezierCurve.000
     4300010: Cylinder
     4300012: BezierCurve.001
+    4300014: BezierCurve.002
   materials:
     importMaterials: 1
     materialName: 0
