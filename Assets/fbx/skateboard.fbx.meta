@@ -15,6 +15,8 @@ ModelImporter:
     100014: Camera
     100016: Cube
     100018: Lamp
+    100020: Circle
+    100022: clojure
     400000: axis
     400002: Cube.002
     400004: //RootNode
@@ -25,6 +27,8 @@ ModelImporter:
     400014: Camera
     400016: Cube
     400018: Lamp
+    400020: Circle
+    400022: clojure
     2300000: axis
     2300002: Cube.002
     2300004: //RootNode
@@ -33,6 +37,8 @@ ModelImporter:
     2300010: suspension
     2300012: board
     2300014: Cube
+    2300016: Circle
+    2300018: clojure
     3300000: axis
     3300002: Cube.002
     3300004: //RootNode
@@ -41,6 +47,8 @@ ModelImporter:
     3300010: suspension
     3300012: board
     3300014: Cube
+    3300016: Circle
+    3300018: clojure
     4300000: board
     4300002: truck
     4300004: Cube.002
@@ -48,6 +56,8 @@ ModelImporter:
     4300008: wheel
     4300010: suspension
     4300012: Cube
+    4300014: Circle
+    4300016: clojure
   materials:
     importMaterials: 1
     materialName: 0

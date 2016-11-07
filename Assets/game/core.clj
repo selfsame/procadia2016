@@ -22,8 +22,8 @@
     (set! (.depth wfc) (int h)) o))
 
 (defn update-cam [o]
-  (let [target (v3+ (.TransformPoint (.transform @player) (v3 0 0 -10))
-                    (v3 0 10 0))]
+  (let [target (v3+ (.TransformPoint (.transform @player) (v3 0 0 -6))
+                    (v3 0 5 0))]
     (position! o (lerp o target 0.1))
     (lerp-look! o @player 0.2)))
 
@@ -56,7 +56,7 @@
 (defn make-player [loc]
   (let [loc (or loc (v3 0 10 0))
         board (clone! :player/board loc)
-        cam (clone! :player/skatecam (v3+ loc (v3 0 5 10)))]
+        cam (clone! :player/skatecam (v3+ loc (v3 0 5 7)))]
         (hook+ cam :update #'game.core/update-cam)
         (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
     board))
@@ -64,15 +64,16 @@
 (defn handle-input [o]
   (let [body (->rigidbody o)
         mass (.mass (->rigidbody o))
+        dspeed (∆ 10)
         wheels (wheelmap o)
-        motorforce (* mass 1)]
+        motorforce (* mass dspeed)]
   (cond 
     (and (key? "w") (wheel-contact? o)) 
-    (do (force! body 0 0 (* mass  10))
+    (do (force! body 0 0 (* mass dspeed 10))
         (motor motorforce (:rear wheels))
         (motor motorforce (:front wheels)))
     (and (key? "s") (wheel-contact? o)) 
-    (do (force! body 0 0 (* mass  -10))
+    (do (force! body 0 0 (* mass dspeed -10))
         (motor (- motorforce) (:rear wheels))
         (motor (- motorforce) (:front wheels)))
     
@@ -81,11 +82,15 @@
         (motor 0 (:front wheels))))
   (cond 
     (key? "a") 
-    (do (steer 20 (:rear wheels))
-        (steer -20 (:front wheels)))
+    (if (wheel-contact? o)
+        (do (steer 20 (:rear wheels))
+            (steer -20 (:front wheels)))
+        (torque! body 0 (* mass dspeed -2) 0))
     (key? "d") 
-    (do (steer -20 (:rear wheels))
-        (steer 20 (:front wheels)))
+    (if (wheel-contact? o)
+        (do (steer -20 (:rear wheels))
+            (steer  20 (:front wheels)))
+        (torque! body 0 (* mass dspeed 2) 0))
     :else
     (do (steer 0 (:rear wheels))
         (steer 0 (:front wheels))))
@@ -101,7 +106,7 @@
 
 (defn make-level []
   (clear-cloned!)
-  (make-park 16 16)
+  (make-park 20 20)
   (reset! player (make-player (v3 10 10 10)))
   (hook+ @player :update #'game.core/handle-input)
   (clone! :EventSystem)
