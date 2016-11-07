@@ -80,6 +80,12 @@ ModelImporter:
     100144: Toes.L_end
     100146: Toes.R
     100148: Toes.R_end
+    100150: Pants
+    100152: Shirt
+    100154: ShoeLeft
+    100156: ShoeRight
+    100158: Shorts
+    100160: TruckerHat
     400000: AnkleIK.L
     400002: AnkleIK.L_end
     400004: AnkleIK.R
@@ -155,9 +161,28 @@ ModelImporter:
     400144: Toes.L_end
     400146: Toes.R
     400148: Toes.R_end
+    400150: Pants
+    400152: Shirt
+    400154: ShoeLeft
+    400156: ShoeRight
+    400158: Shorts
+    400160: TruckerHat
     4300000: Cube
+    4300002: Shorts
+    4300004: TruckerHat
+    4300006: Shirt
+    4300008: Pants
+    4300010: ShoeLeft
+    4300012: ShoeRight
+    7400000: Armature|Idle
     9500000: //RootNode
     13700000: Cube
+    13700002: Pants
+    13700004: Shirt
+    13700006: ShoeLeft
+    13700008: ShoeRight
+    13700010: Shorts
+    13700012: TruckerHat
   materials:
     importMaterials: 1
     materialName: 0
