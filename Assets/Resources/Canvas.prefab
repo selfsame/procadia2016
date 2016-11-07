@@ -22,7 +22,7 @@ GameObject:
   - 222: {fileID: 222000012053971756}
   - 114: {fileID: 114000011897934710}
   m_Layer: 5
-  m_Name: Text
+  m_Name: debug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,11 +99,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'New Text
+  m_Text: ':steerage  0
 
-    blah
-
-    asdlfkj'
+    :velocity(-0.1, -0.7, 0.1)'
 --- !u!114 &114000012734004854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,5 +178,5 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0, y: 1}

@@ -9,6 +9,9 @@
   (import [SimpleTiledWFC]))
 
 (def player (atom nil))
+(def steerage (atom 0.0))
+
+(defn text! [o s] (set! (.text (cmpt o UnityEngine.UI.Text)) s))
 
 (defn make-park [w h]
   (let [o (clone! :maps/autopark)
@@ -22,10 +25,10 @@
     (set! (.depth wfc) (int h)) o))
 
 (defn update-cam [o]
-  (let [target (v3+ (.TransformPoint (.transform @player) (v3 0 0 -6))
-                    (v3 0 5 0))]
-    (position! o (lerp o target 0.1))
-    (lerp-look! o @player 0.2)))
+  (let [target (v3+ (.TransformPoint (.transform @player) (v3 0 0 -10))
+                    (v3 0 8 0))]
+    (position! o (lerp o target (∆ 4)))
+    (lerp-look! o @player (∆ 6))))
 
 (defn gizmo-cam [o]
   (gizmo-color (color 1 0 0))
@@ -61,21 +64,45 @@
         (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
     board))
 
+(defn fall-check [o]
+  (let [p (>v3 o)]
+    (if (< (.y p) -50)
+      (position! o (v3 (.x p) 20 (.z p))))))
+
+(defn turn-limit [n]
+  (- 30 (* 8.3 (Mathf/Log (Mathf/Abs (float n))))))
+
 (defn handle-input [o]
   (let [body (->rigidbody o)
         mass (.mass (->rigidbody o))
         dspeed (∆ 10)
         wheels (wheelmap o)
-        motorforce (* mass dspeed)]
+        motorforce (* mass dspeed)
+        local-velocity (.InverseTransformPoint (.transform o) 
+                                        (v3+ (>v3 o)(.velocity body)))
+        forward-speed (.z local-velocity)
+        max-speed 10.0
+        max-turn (max 14 (min 42 (turn-limit forward-speed)))]
+
+  (fall-check o)
+
+  (text! (the debug) 
+    (str :steerage "  " @steerage "\n"
+      :forward-speed " " forward-speed "\n"
+      :max-turn max-turn))
+
   (cond 
     (and (key? "w") (wheel-contact? o)) 
-    (do (force! body 0 0 (* mass dspeed 10))
-        (motor motorforce (:rear wheels))
-        (motor motorforce (:front wheels)))
+    (if (< forward-speed max-speed)
+        (do (force! body 0 0 (* mass dspeed 10))
+            (motor motorforce (:rear wheels))
+            (motor motorforce (:front wheels))))
+
     (and (key? "s") (wheel-contact? o)) 
-    (do (force! body 0 0 (* mass dspeed -10))
-        (motor (- motorforce) (:rear wheels))
-        (motor (- motorforce) (:front wheels)))
+    (if (> forward-speed (- max-speed))
+        (do (force! body 0 0 (* mass dspeed -10))
+            (motor (- motorforce) (:rear wheels))
+            (motor (- motorforce) (:front wheels))))
     
     :else
     (do (motor 0 (:rear wheels))
@@ -83,17 +110,20 @@
   (cond 
     (key? "a") 
     (if (wheel-contact? o)
-        (do (steer 20 (:rear wheels))
-            (steer -20 (:front wheels)))
+        (do (swap! steerage #(max (- max-turn) (- % (∆ 9))))
+            (steer (- @steerage) (:rear wheels))
+            (steer @steerage (:front wheels)))
         (torque! body 0 (* mass dspeed -2) 0))
     (key? "d") 
     (if (wheel-contact? o)
-        (do (steer -20 (:rear wheels))
-            (steer  20 (:front wheels)))
+        (do (swap! steerage #(min max-turn (+ % (∆ 9))))
+            (steer (- @steerage) (:rear wheels))
+            (steer @steerage (:front wheels)))
         (torque! body 0 (* mass dspeed 2) 0))
     :else
-    (do (steer 0 (:rear wheels))
-        (steer 0 (:front wheels))))
+    (do (swap! steerage #(* % 0.992))
+        (steer (- @steerage) (:rear wheels))
+        (steer @steerage (:front wheels))))
   (if (key? "e") (torque! body 0 0 (* mass -4)))
   (if (key? "q") (torque! body 0 0 (* mass  4)))
   (if (and (key? "tab") (upsidedown? o)) 
@@ -101,7 +131,7 @@
   (when (and (key-down? "space") (wheel-contact? o)) 
     (torque! body (* mass  -2) 0 0)
     (force! body 0 (* mass 45) 0))
-  (if (wheel-contact? o) (force! body 0 (* mass -4) 0))
+  (if (wheel-contact? o) (force! body 0 (* mass -3) 0))
   (Input/GetAxis "Vertical")))
 
 (defn make-level []
@@ -131,6 +161,6 @@
   (wait 3.0)
   #(do (make-level) nil)
   (wait 0.1)
-  #(do (message "brb   6") nil))
+  #(do (message "brb   5min") nil))
 
 '(make-level)

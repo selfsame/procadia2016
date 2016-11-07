@@ -1,11 +1,11 @@
 <set>
   <tiles>
 <tile name="park/basin-floorX" symmetry="X" weight="1.0"/>
-<tile name="park/basin-innieL" symmetry="L" weight="1.0"/>
+<tile name="park/basin-innieL" symmetry="L" weight="2.0"/>
 <tile name="park/basin-outieL" symmetry="L" weight="1.0"/>
 <tile name="park/basin-T" symmetry="T" weight="1.0"/>
 <tile name="park/floorX" symmetry="X" weight="1.0"/>
-<tile name="park/halfpipeT" symmetry="T" weight="2.0"/>
+<tile name="park/halfpipeT" symmetry="T" weight="1.8"/>
 <tile name="park/platformX" symmetry="X" weight="1.0"/>
 <tile name="park/basin-stairT" symmetry="T" weight="0.2"/>
 <tile name="park/floor-stairT" symmetry="T" weight="1.0"/>
