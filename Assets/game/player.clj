@@ -73,6 +73,10 @@
        seed (hash trimmed-val)
        skater (a/object-named "skater")]
       (a/log (str "ok " trimmed-val " " val " " seed " " skater))
+  (if (false? (a/state skater :started-naming?))
+   (do
+    (a/set-state! skater :started-naming? true)
+    (.SetTrigger (a/cmpt skater UnityEngine.Animator) "get-up")))
   (reset! data/seed seed) 
   (UnityEngine.Random/InitState seed)
   (change-clothing trimmed-val)))
@@ -93,4 +97,4 @@
   (timeline*
    (tween {:position (l/v3+ (l/v3 0 2.4 0) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
 
-(setup-name-select)
+'(setup-name-select)
