@@ -37,33 +37,35 @@
        shoe-left (a/cmpt (hard/child-named skater "ShoeRight") UnityEngine.Renderer)] 
   (doseq [clothing [trucker-hat shirt pants shorts shoe-right shoe-left]]
    (set! (.enabled clothing) false))
-  (let [body-roll (UnityEngine.Random/value)]
-   (cond
-    (<= body-roll 0.33) (vertex-color! body (:pale skin-colors))
-    (<= body-roll 0.66) (vertex-color! body (:tan skin-colors))
-    :else (vertex-color! body (:dark skin-colors))))  
-  (let [hat-roll (UnityEngine.Random/value)]
-   (if (<= hat-roll 0.5)
-    (set! (.enabled trucker-hat) true)))
-  (let [shirt-roll (UnityEngine.Random/value)]
-   (if (<= shirt-roll 0.8)
+  (if (not= "" val)
     (do
-     (set! (.enabled shirt) true)
-     (vertex-color! (.gameObject shirt) (rand-color)))))
-  (let [pants-roll (UnityEngine.Random/value)]
-   (cond
-    (< pants-roll 0.25) (do
-                         (set! (.enabled pants) true)
-                         (vertex-color! (.gameObject pants) (rand-color)))
-    (< pants-roll 0.85) (do
-                         (set! (.enabled shorts) true)
-                         (vertex-color! (.gameObject shorts) (rand-color)))))
-  (let [shoe-roll (UnityEngine.Random/value)]
-   (cond
-    (< shoe-roll 0.05) (set! (.enabled shoe-right) true)
-    (< shoe-roll 0.1) (set! (.enabled shoe-left) true)
-    (< shoe-roll 0.9) (doseq [shoe [shoe-left shoe-right]]
-                       (set! (.enabled shoe) true))))))
+     (let [body-roll (UnityEngine.Random/value)]
+      (cond
+       (<= body-roll 0.33) (vertex-color! body (:pale skin-colors))
+       (<= body-roll 0.66) (vertex-color! body (:tan skin-colors))
+       :else (vertex-color! body (:dark skin-colors))))  
+     (let [hat-roll (UnityEngine.Random/value)]
+      (if (<= hat-roll 0.5)
+       (set! (.enabled trucker-hat) true)))
+     (let [shirt-roll (UnityEngine.Random/value)]
+      (if (<= shirt-roll 0.8)
+       (do
+        (set! (.enabled shirt) true)
+        (vertex-color! (.gameObject shirt) (rand-color)))))
+     (let [pants-roll (UnityEngine.Random/value)]
+      (cond
+       (< pants-roll 0.25) (do
+                            (set! (.enabled pants) true)
+                            (vertex-color! (.gameObject pants) (rand-color)))
+       (< pants-roll 0.85) (do
+                            (set! (.enabled shorts) true)
+                            (vertex-color! (.gameObject shorts) (rand-color)))))
+     (let [shoe-roll (UnityEngine.Random/value)]
+      (cond
+       (< shoe-roll 0.05) (set! (.enabled shoe-right) true)
+       (< shoe-roll 0.1) (set! (.enabled shoe-left) true)
+       (< shoe-roll 0.9) (doseq [shoe [shoe-left shoe-right]]
+                          (set! (.enabled shoe) true))))))))
 
 (defn on-name-change [val]
  (let [trimmed-val (.Trim val)
