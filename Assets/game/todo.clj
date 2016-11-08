@@ -15,3 +15,15 @@
 ::camera
 '(( ) chase velocity, not Z+)
 '(( ) maintain minimum distance (lerped))
+
+::tricks
+'((/) board touching ground state)
+'((x) board in air state)
+'(( ) when board in air, track accumulated rotations
+  (( ) 1/4 1/2 3/4 :360)
+  (( ) delta-euler fn - handle 360 turnover))
+
+
+'(.. (cmpt Selection/activeObject InputField)
+    onValueChanged
+    (AddListener (fn [] (log "x"))))

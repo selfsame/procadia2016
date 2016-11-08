@@ -8,22 +8,25 @@
     hard.input)
   (import [SimpleTiledWFC]))
 
+(def park-scale 4.3)
+(def park-size 15)
 (def player (atom nil))
 (def steerage (atom 0.0))
 (def wheelmap (atom nil))
+(def IN-AIR (atom false))
+(def TOUCHING (atom false))
+
 
 (defn text! [o s] (set! (.text (cmpt o UnityEngine.UI.Text)) s))
 
-(defn make-park [w h]
-  (let [o (clone! :maps/autopark)
-        wfc (.AddComponent o (type (SimpleTiledWFC.)))]
-    (set! (.xmlpath wfc) "skaters.xml")
-    (set! (.gridsize wfc) (int 2))
-    (timeline [
-      (wait 0.1)
-      #(do (local-scale! o (v3 4)) false)])
-    (set! (.width wfc) (int w))
-    (set! (.depth wfc) (int h)) o))
+(defn message [s]
+  (destroy (the message))
+  (let [cam (the skatecam)
+        o (clone! :message (.TransformPoint (.transform cam) (v3 0 0 10)))
+        txt (cmpt (child-named o "text") UnityEngine.TextMesh)]
+    (parent! o cam)
+    (set! (.text txt) s)
+    (timeline [#(lerp-look! o cam (float 0.2))])))
 
 (defn update-cam [o]
   (let [target (v3+ (.TransformPoint (.transform @player) (v3 0 0 -10))
@@ -42,7 +45,9 @@
        #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)))) ))
 
 (defn wheel-contact? [o]
-  (and (first (range-hits (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)) 1.0))))
+  (if (and (first 
+    (range-hits (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)) 0.6)))
+    true false))
 
 (defn ->wheel [o] (cmpt o UnityEngine.WheelCollider))
 
@@ -74,8 +79,34 @@
 (defn turn-limit [n]
   (- 30 (* 8.3 (Mathf/Log (Mathf/Abs (float n))))))
 
+(defn delta-quat [a b]
+  (q* (Quaternion/Inverse a) b))
+
+(defn ecl [n] (if (> n 180) (- n 360) (if (< n -180) (+ n 360) n)))
+
+(defn delta-euler [a b]
+  (let [d (v3- b a)
+        x (.x d) y (.y d) z (.z d)]
+    (v3 (ecl x)(ecl y)(ecl z))))
+
+(defn tally-tricks [o]
+  (let [total (v3* (state o :total-euler) 1/90)
+        x (int (.x total))
+        y (int (.y total))
+        z (int (.z total))]
+    (if (or (not (zero? x))
+             (not (zero? y))
+             (not (zero? z)))
+    (timeline [
+      #(do (message (str [x y z])) nil) 
+       (wait 1.0) 
+      #(do (destroy (the message)) nil)]))))
+
 (defn handle-input [o]
   (let [body (->rigidbody o)
+        grounded (wheel-contact? o)
+        was-in-air @IN-AIR
+        rotation (.eulerAngles (.transform o))
         mass (.mass (->rigidbody o))
         dspeed (∆ 30)
         wheels @wheelmap
@@ -87,11 +118,33 @@
         max-turn (max 14 (min 42 (turn-limit forward-speed)))]
 
   (fall-check o)
+  (reset! IN-AIR (and (not grounded) (not @TOUCHING)))
+  (if (and (not was-in-air) @IN-AIR) 
+    (do (message "")
+      (set-state! o :total-euler (v3))))
+  (if (and was-in-air 
+          (not @IN-AIR) 
+          #_(or (not @TOUCHING)
+              grounded) ) 
+    (do (tally-tricks o)))
 
   (text! (the debug) 
-    (str :steerage "  " @steerage "\n"
-      :forward-speed " " forward-speed "\n"
-      :max-turn max-turn))
+    (str :steerage "   " @steerage "\n"
+      :forward-speed "  " forward-speed "\n"
+      :max-turn "  " max-turn "\n"
+      :in-air "  " @IN-AIR "\n"
+      :touching "  " @TOUCHING "\n"
+      :angular-vel "  " (.angularVelocity body) "\n"
+      ;:delta-euler "  " (delta-euler (state o :rotation) rotation) "\n"
+      ;:total-euler "  " (state o :total-euler) "\n"
+      ))
+
+  
+
+  (update-state! o :total-euler 
+        #(v3+ % (delta-euler (state o :rotation) rotation)))
+
+  (set-state! o :rotation (.eulerAngles (.transform o)))
 
   (cond 
     (and (key? "w") (wheel-contact? o)) 
@@ -111,13 +164,13 @@
         (motor 0 (:front wheels))))
   (cond 
     (key? "a") 
-    (if (wheel-contact? o)
+    (if grounded
         (do (swap! steerage #(max (- max-turn) (- % (∆ 35))))
             (steer (- @steerage) (:rear wheels))
             (steer @steerage (:front wheels)))
         (torque! body 0 (* mass dspeed -24) 0))
     (key? "d") 
-    (if (wheel-contact? o)
+    (if grounded
         (do (swap! steerage #(min max-turn (+ % (∆ 35))))
             (steer (- @steerage) (:rear wheels))
             (steer @steerage (:front wheels)))
@@ -130,18 +183,41 @@
   (if (key? "q") (torque! body 0 0 (* mass  6)))
   (if (and (key? "tab") (upsidedown? o)) 
     (torque! body 0 0 (* mass  60)))
-  (when (and (key-down? "space") (wheel-contact? o)) 
+  (when (and (key-down? "space") grounded) 
     (torque! body (* mass  -20) 0 0)
-    (force! body 0 (* mass 285) 0))
-  (if (wheel-contact? o) (force! body 0 (* mass -9) 0))
+    (force! body 0 (* mass 360) 0))
+  (if grounded (force! body 0 (* mass dspeed -13) 0))
+  ::gravity
+  (global-force! body 0 (* mass -4) 0)
   (Input/GetAxis "Vertical")))
+
+(defn make-park [w h]
+  (let [o (clone! :maps/autopark)
+        wfc (.AddComponent o (type (SimpleTiledWFC.)))]
+    (set! (.xmlpath wfc) "skaters.xml")
+    (set! (.gridsize wfc) (int 2))
+    (timeline [
+      (wait 0.1)
+      #(do (local-scale! o (v3 park-scale)) false)])
+    (set! (.width wfc) (int w))
+    (set! (.depth wfc) (int h)) o))
+
 
 (defn make-level []
   (clear-cloned!)
-  (make-park 20 20)
-  (reset! player (make-player (v3 10 10 10)))
-  (hook- (the board) :update #'game.core/handle-input)
+  (make-park park-size park-size)
+  (reset! player (make-player 
+    (v3 (* park-size park-scale)
+      (* 6 park-scale) 
+      (* park-size park-scale))))
+  (set-state! @player :total-euler (v3))
+  (set-state! @player :rotation (v3))
+  (hook-clear @player :update)
+  (hook-clear @player :on-collision-enter)
+  (hook-clear @player :on-collision-exit)
   (hook+ @player :update #'game.core/handle-input)
+  (hook+ @player :on-collision-enter #(do %1 %2 (reset! TOUCHING true)))
+  (hook+ @player :on-collision-exit #(do %1 %2 (reset! TOUCHING false)))
   (clone! :EventSystem)
   (clone! :Canvas))
 
@@ -150,21 +226,14 @@
 
 
 
-(defn message [s]
-  (destroy (the message))
-  (let [cam (the skatecam)
-        o (clone! :message (.TransformPoint (.transform cam) (v3 0 0 10)))
-        txt (cmpt (child-named o "text") UnityEngine.TextMesh)]
-    (parent! o cam)
-    (set! (.text txt) s)
-    (timeline [#(lerp-look! o cam (float 0.2))])))
+
 
 
 '(timeline* :loop
   (wait 3.0)
   #(do (make-level) nil)
   (wait 0.1)
-  #(do (message "brb   5min") nil))
+  #(do (message "brb   7min") nil))
 
 '(make-level)
 
