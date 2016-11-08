@@ -205,6 +205,8 @@
 
 (defn make-level []
   (clear-cloned!)
+  (clone! :EventSystem)
+  (clone! :Canvas)
   (make-park park-size park-size)
   (reset! player (make-player 
     (v3 (* park-size park-scale)
@@ -217,9 +219,7 @@
   (hook-clear @player :on-collision-exit)
   (hook+ @player :update #'game.core/handle-input)
   (hook+ @player :on-collision-enter #(do %1 %2 (reset! TOUCHING true)))
-  (hook+ @player :on-collision-exit #(do %1 %2 (reset! TOUCHING false)))
-  (clone! :EventSystem)
-  (clone! :Canvas))
+  (hook+ @player :on-collision-exit #(do %1 %2 (reset! TOUCHING false))))
 
 
 
@@ -235,5 +235,5 @@
   (wait 0.1)
   #(do (message "brb   7min") nil))
 
-'(make-level)
+(make-level)
 
