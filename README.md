@@ -1,6 +1,12 @@
 # procadia2016
 arcadia-unity community #procjam repo
 
+## setup
+clone this repo, then in Assets clone 
+* `https:github.com/arcadia-unity/Arcadia - b develop`
+* `https:github.com/selfsame/hard`
+* `https:github.com/selfsame/tween`
+* `https:github.com/selfsame/unity-wave-function-collapse`
 
 # project style
 
