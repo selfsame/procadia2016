@@ -1,10 +1,13 @@
 (ns game.player
  (require [arcadia.core :as a]
           [arcadia.linear :as l]
+          [game.core :as game]
           [game.ui :as ui]
           [game.data :as data]
           [hard.core :as hard]
           [tween.core :refer :all]))
+
+(defonce rand-state (atom nil))
 
 (defn rgb->float [n]
  (float (/ n 255)))
@@ -26,8 +29,8 @@
 
 (defn rand-color []
  (UnityEngine.Color. (UnityEngine.Random/value) (UnityEngine.Random/value) (UnityEngine.Random/value) 1))
-  
-(defn change-clothing [val]
+
+(defn change-clothing [val redo-prev-roll?]
  (let [skater (a/object-named "skater")
        body (hard/child-named skater "BodyMesh")
        trucker-hat (a/cmpt (hard/child-named skater "TruckerHat") UnityEngine.Renderer)
@@ -40,6 +43,9 @@
    (set! (.enabled clothing) false))
   (if (not= "" val)
     (do
+     (if redo-prev-roll?
+      (set! UnityEngine.Random/state @rand-state)
+      (reset! rand-state UnityEngine.Random/state))
      (let [body-roll (UnityEngine.Random/value)]
       (cond
        (<= body-roll 0.33) (vertex-color! body (:pale skin-colors))
@@ -47,7 +53,7 @@
        :else (vertex-color! body (:dark skin-colors))))  
      (let [hat-roll (UnityEngine.Random/value)]
       (if (<= hat-roll 0.5)
-       (set! (.enabled trucker-hat) true)))
+        (set! (.enabled trucker-hat) true)))
      (let [shirt-roll (UnityEngine.Random/value)]
       (if (<= shirt-roll 0.8)
        (do
@@ -72,23 +78,30 @@
  (let [trimmed-val (.Trim val)
        seed (hash trimmed-val)
        skater (a/object-named "skater")]
-      (a/log (str "ok " trimmed-val " " val " " seed " " skater))
-  (if (false? (a/state skater :started-naming?))
-   (do
-    (a/set-state! skater :started-naming? true)
-    (.SetTrigger (a/cmpt skater UnityEngine.Animator) "get-up")))
   (reset! data/seed seed) 
   (UnityEngine.Random/InitState seed)
-  (change-clothing trimmed-val)))
+  (change-clothing trimmed-val false)))
 
 (defn setup-name-select []
  (let [skater (a/object-named "skater")
        skater-anim (a/cmpt skater UnityEngine.Animator)
        name-canvas (hard/clone! :ui/skater-name-canvas (l/v3 0 100 0))
        input (a/object-named "NameInput")]
-  (.SetTrigger skater-anim "sit-idle")
-  (a/set-state! skater :started-naming? false)
   (set! (.worldCamera (a/cmpt name-canvas UnityEngine.Canvas)) UnityEngine.Camera/main)
+  (a/hook+ name-canvas :update
+   (fn [go]
+    (if (UnityEngine.Input/GetKeyDown UnityEngine.KeyCode/Return)
+     (do
+      (add-watch data/player-spawned? nil
+       (fn [_ _ _ new-state]
+        (if new-state
+         (timeline* (wait 0.5)
+          (do (let [new-player (a/object-named "skater-ragdoll")]
+               (set! (.name new-player) "skater")
+               (change-clothing "anything" true))) false))))
+      (game/make-level)
+      (a/destroy go)
+      (a/destroy skater)))))
   (a/hook+ name-canvas :update :billboard
    (fn [go]
     (let [rect (a/cmpt go UnityEngine.RectTransform)]
@@ -97,4 +110,5 @@
   (timeline*
    (tween {:position (l/v3+ (l/v3 0 2.4 0) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
 
-'(setup-name-select)
+'(timeline* (wait 5.0)
+  #(do (setup-name-select) false))

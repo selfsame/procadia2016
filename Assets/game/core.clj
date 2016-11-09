@@ -6,6 +6,7 @@
     hard.core
     hard.physics
     hard.input)
+  (require [game.data :as data])
   (import [SimpleTiledWFC]))
 
 (def park-scale 4.3)
@@ -42,11 +43,11 @@
 
 (defn upsidedown? [o]
   (and (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 1 0)))
-       #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)))) ))
+       #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0))))))
 
 (defn wheel-contact? [o]
   (if (and (first 
-    (range-hits (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)) 0.6)))
+            (range-hits (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)) 0.6)))
     true false))
 
 (defn ->wheel [o] (cmpt o UnityEngine.WheelCollider))
@@ -95,12 +96,12 @@
         y (int (.y total))
         z (int (.z total))]
     (if (or (not (zero? x))
-             (not (zero? y))
-             (not (zero? z)))
-    (timeline [
-      #(do (message (str [x y z])) nil) 
-       (wait 1.0) 
-      #(do (destroy (the message)) nil)]))))
+            (not (zero? y))
+            (not (zero? z)))
+     (timeline [
+                #(do (message (str [x y z])) nil) 
+                (wait 1.0) 
+                #(do (destroy (the message)) nil)]))))
 
 (defn handle-input [o]
   (let [body (->rigidbody o)
@@ -117,85 +118,85 @@
         max-speed 10.0
         max-turn (max 14 (min 42 (turn-limit forward-speed)))]
 
-  (fall-check o)
-  (reset! IN-AIR (and (not grounded) (not @TOUCHING)))
-  (if (and (not was-in-air) @IN-AIR) 
-    (do (message "")
-      (set-state! o :total-euler (v3))))
-  (if (and was-in-air 
-          (not @IN-AIR) 
-          #_(or (not @TOUCHING)
-              grounded) ) 
-    (do (tally-tricks o)))
+   (fall-check o)
+   (reset! IN-AIR (and (not grounded) (not @TOUCHING)))
+   (if (and (not was-in-air) @IN-AIR) 
+     (do (message "")
+       (set-state! o :total-euler (v3))))
+   (if (and was-in-air 
+           (not @IN-AIR) 
+           #_(or (not @TOUCHING)
+               grounded)) 
+     (do (tally-tricks o)))
 
-  (text! (the debug) 
-    (str :steerage "   " @steerage "\n"
-      :forward-speed "  " forward-speed "\n"
-      :max-turn "  " max-turn "\n"
-      :in-air "  " @IN-AIR "\n"
-      :touching "  " @TOUCHING "\n"
-      :angular-vel "  " (.angularVelocity body) "\n"
+   (text! (the debug) 
+     (str :steerage "   " @steerage "\n"
+       :forward-speed "  " forward-speed "\n"
+       :max-turn "  " max-turn "\n"
+       :in-air "  " @IN-AIR "\n"
+       :touching "  " @TOUCHING "\n"
+       :angular-vel "  " (.angularVelocity body) "\n"))
       ;:delta-euler "  " (delta-euler (state o :rotation) rotation) "\n"
       ;:total-euler "  " (state o :total-euler) "\n"
-      ))
+      
 
   
 
-  (update-state! o :total-euler 
-        #(v3+ % (delta-euler (state o :rotation) rotation)))
+   (update-state! o :total-euler 
+         #(v3+ % (delta-euler (state o :rotation) rotation)))
 
-  (set-state! o :rotation (.eulerAngles (.transform o)))
+   (set-state! o :rotation (.eulerAngles (.transform o)))
 
-  (cond 
-    (and (key? "w") (wheel-contact? o)) 
-    (if (< forward-speed max-speed)
-        (do (force! body 0 0 (* mass dspeed 20))
-            (motor motorforce (:rear wheels))
-            (motor motorforce (:front wheels))))
+   (cond 
+     (and (key? "w") (wheel-contact? o)) 
+     (if (< forward-speed max-speed)
+         (do (force! body 0 0 (* mass dspeed 20))
+             (motor motorforce (:rear wheels))
+             (motor motorforce (:front wheels))))
 
-    (and (key? "s") (wheel-contact? o)) 
-    (if (> forward-speed (- max-speed))
-        (do (force! body 0 0 (* mass dspeed -20))
-            (motor (- motorforce) (:rear wheels))
-            (motor (- motorforce) (:front wheels))))
+     (and (key? "s") (wheel-contact? o)) 
+     (if (> forward-speed (- max-speed))
+         (do (force! body 0 0 (* mass dspeed -20))
+             (motor (- motorforce) (:rear wheels))
+             (motor (- motorforce) (:front wheels))))
     
-    :else
-    (do (motor 0 (:rear wheels))
-        (motor 0 (:front wheels))))
-  (cond 
-    (key? "a") 
-    (if grounded
-        (do (swap! steerage #(max (- max-turn) (- % (∆ 35))))
-            (steer (- @steerage) (:rear wheels))
-            (steer @steerage (:front wheels)))
-        (torque! body 0 (* mass dspeed -24) 0))
-    (key? "d") 
-    (if grounded
-        (do (swap! steerage #(min max-turn (+ % (∆ 35))))
-            (steer (- @steerage) (:rear wheels))
-            (steer @steerage (:front wheels)))
-        (torque! body 0 (* mass dspeed 24) 0))
-    :else
-    (do (swap! steerage #(* % 0.95))
-        (steer (- @steerage) (:rear wheels))
-        (steer @steerage (:front wheels))))
-  (if (key? "e") (torque! body 0 0 (* mass -6)))
-  (if (key? "q") (torque! body 0 0 (* mass  6)))
-  (if (and (key? "tab") (upsidedown? o)) 
-    (torque! body 0 0 (* mass  60)))
-  (when (and (key-down? "space") grounded) 
-    (torque! body (* mass  -20) 0 0)
-    (force! body 0 (* mass 500) 0))
-  (if grounded (force! body 0 (* mass dspeed -25) 0))
-  (global-force! (->rigidbody (the Spine)) 0 350 0)
+     :else
+     (do (motor 0 (:rear wheels))
+         (motor 0 (:front wheels))))
+   (cond 
+     (key? "a") 
+     (if grounded
+         (do (swap! steerage #(max (- max-turn) (- % (∆ 35))))
+             (steer (- @steerage) (:rear wheels))
+             (steer @steerage (:front wheels)))
+         (torque! body 0 (* mass dspeed -24) 0))
+     (key? "d") 
+     (if grounded
+         (do (swap! steerage #(min max-turn (+ % (∆ 35))))
+             (steer (- @steerage) (:rear wheels))
+             (steer @steerage (:front wheels)))
+         (torque! body 0 (* mass dspeed 24) 0))
+     :else
+     (do (swap! steerage #(* % 0.95))
+         (steer (- @steerage) (:rear wheels))
+         (steer @steerage (:front wheels))))
+   (if (key? "e") (torque! body 0 0 (* mass -6)))
+   (if (key? "q") (torque! body 0 0 (* mass  6)))
+   (if (and (key? "tab") (upsidedown? o)) 
+     (torque! body 0 0 (* mass  60)))
+   (when (and (key-down? "space") grounded) 
+     (torque! body (* mass  -20) 0 0)
+     (force! body 0 (* mass 500) 0))
+   (if grounded (force! body 0 (* mass dspeed -25) 0))
+   (global-force! (->rigidbody (the Spine)) 0 350 0)
   ;(global-force! (->rigidbody (the "ArmUpper.L")) 0 60 0)
   ;(global-force! (->rigidbody (the "ArmLower.L")) 0 60 0)
   
   ;(global-force! (->rigidbody (the "ArmLower.R")) 0 60 0)
   
-  ::gravity
-  (global-force! body 0 (* mass -8) 0)
-  (Input/GetAxis "Vertical")))
+   ::gravity
+   (global-force! body 0 (* mass -8) 0)
+   (Input/GetAxis "Vertical")))
 
 (defn make-park [w h]
   (let [o (clone! :maps/autopark)
@@ -203,21 +204,21 @@
     (set! (.xmlpath wfc) "skaters.xml")
     (set! (.gridsize wfc) (int 2))
     (timeline [
-      (wait 0.1)
-      #(do (local-scale! o (v3 park-scale)) false)])
+               (wait 0.1)
+               #(do (local-scale! o (v3 park-scale)) false)])
     (set! (.width wfc) (int w))
     (set! (.depth wfc) (int h)) o))
 
 
 (defn make-level []
   (clear-cloned!)
-  (clone! :EventSystem)
   (clone! :Canvas)
   (make-park park-size park-size)
   (reset! player (make-player 
-    (v3 (* park-size park-scale)
-      (* 6 park-scale) 
-      (* park-size park-scale))))
+                  (v3 (* park-size park-scale)
+                    (* 6 park-scale) 
+                    (* park-size park-scale))))
+  (reset! data/player-spawned? true)
   (set-state! @player :total-euler (v3))
   (set-state! @player :rotation (v3))
   (hook-clear @player :update)
@@ -241,5 +242,5 @@
   (wait 0.1)
   #(do (message "brb   7min") nil))
 
-(make-level)
+'(make-level)
 

@@ -1,6 +1,7 @@
 (ns game.data)
 
 (defonce seed (atom 0))
+(defonce player-spawned? (atom false))
 
 (def first-names
  ["alfred"
