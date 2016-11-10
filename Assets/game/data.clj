@@ -53,3 +53,21 @@
   "wumpus"
   "zero"])
   
+(def last-names
+ ["anderson"
+  "betts"
+  "castro"
+  "derringer"
+  "ferguson"
+  "gendt"
+  "hill"
+  "julio"
+  "karlsen"
+  "lima"
+  "morris"
+  "norton"
+  "peters"
+  "rourke"
+  "stevens"
+  "tanaka"
+  "winters"])

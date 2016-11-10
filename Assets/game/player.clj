@@ -82,12 +82,19 @@
   (UnityEngine.Random/InitState seed)
   (change-clothing trimmed-val false)))
 
+(defn generate-name [go ptr]
+ (let [rand-name (str (rand-nth data/first-names) " \"" (rand-nth data/nicknames) "\" " (rand-nth data/last-names))
+       input (a/cmpt (a/object-named "NameInput") UnityEngine.UI.InputField)]
+  (set! (.text input) rand-name)))
+
 (defn setup-name-select []
  (let [skater (a/object-named "skater")
        skater-anim (a/cmpt skater UnityEngine.Animator)
        name-canvas (hard/clone! :ui/skater-name-canvas (l/v3 0 100 0))
+       generate-button (hard/child-named name-canvas "GenerateButton")
        input (a/object-named "NameInput")]
   (set! (.worldCamera (a/cmpt name-canvas UnityEngine.Canvas)) UnityEngine.Camera/main)
+  (a/hook+ generate-button :on-pointer-click #'generate-name)
   (a/hook+ name-canvas :update
    (fn [go]
     (if (UnityEngine.Input/GetKeyDown UnityEngine.KeyCode/Return)
@@ -110,5 +117,4 @@
   (timeline*
    (tween {:position (l/v3+ (l/v3 0 2.4 0) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
 
-'(timeline* (wait 5.0)
-  #(do (setup-name-select) false))
+'(setup-name-select)
