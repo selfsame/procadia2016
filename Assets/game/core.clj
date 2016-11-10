@@ -185,14 +185,16 @@
     (torque! body 0 0 (* mass  60)))
   (when (and (key-down? "space") grounded) 
     (torque! body (* mass  -20) 0 0)
-    (force! body 0 (* mass 360) 0))
-  (if grounded (force! body 0 (* mass dspeed -13) 0))
-  (global-force! (->rigidbody (the Spine)) 0 100 0)
-  (global-force! (->rigidbody (the "ArmLower.L")) 0 10 0)
-  (global-force! (->rigidbody (the "ArmLower.R")) 0 10 0)
+    (force! body 0 (* mass 500) 0))
+  (if grounded (force! body 0 (* mass dspeed -25) 0))
+  (global-force! (->rigidbody (the Spine)) 0 350 0)
+  ;(global-force! (->rigidbody (the "ArmUpper.L")) 0 60 0)
+  ;(global-force! (->rigidbody (the "ArmLower.L")) 0 60 0)
+  
+  ;(global-force! (->rigidbody (the "ArmLower.R")) 0 60 0)
   
   ::gravity
-  (global-force! body 0 (* mass -4) 0)
+  (global-force! body 0 (* mass -8) 0)
   (Input/GetAxis "Vertical")))
 
 (defn make-park [w h]
