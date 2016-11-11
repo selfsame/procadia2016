@@ -43,6 +43,20 @@
   :leg-upper-r  (the LegUpper.R)
   :leg-lower-r  (the LegLower.R)})
 
+#_(defn update-cam [o]
+  (let [body (->rigidbody @player)
+        local-velocity (.InverseTransformPoint (.transform @player) 
+          (v3+ (>v3 @player) (.velocity body)))
+        vel-offset (v3* local-velocity -1)
+        z-offset (v3 0 0 15)
+        offset (if true;(> (.magnitude vel-offset) 1.0) 
+                (v3* (.normalized vel-offset) -15) 
+                z-offset)
+        target (v3+ (.TransformPoint (.transform @player) offset)
+                    (v3 0 8 0))]
+    (position! o (lerp o target (∆ 4)))
+    (lerp-look! o @player (∆ 6))))
+
 (defn update-cam [o]
   (let [target (v3+ (.TransformPoint (.transform @player) (v3 0 0 -10))
                     (v3 0 8 0))]
@@ -227,6 +241,7 @@
 
 (defn make-level []
   (clear-cloned!)
+  (destroy! (the Camera))
   (clone! :Canvas)
   (make-park park-size park-size)
   (reset! player (make-player 
@@ -252,5 +267,6 @@
   (wait 0.1)
   #(do (message "brb   7min") nil))
 
+'(reset! game.data/seed (hash "selfsame"))
 '(make-level)
 
