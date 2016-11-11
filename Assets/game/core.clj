@@ -11,6 +11,8 @@
 
 (def park-scale 4.3)
 (def park-size 15)
+(def city-scale 4.3)
+(def city-size 30)
 (def player (atom nil))
 (def steerage (atom 0.0))
 (def wheelmap (atom nil))
@@ -31,31 +33,31 @@
     (timeline [#(lerp-look! o cam (float 0.2))])))
 
 (defn ragbody-map [] {
-  :hips         (the Hips)
-  :spine        (the Spine)
-  :head         (the Bone.001)
-  :arm-upper-l  (the ArmUpper.L)
-  :arm-lower-l  (the ArmLower.L)
-  :leg-upper-l  (the LegUpper.L)
-  :leg-lower-l  (the LegLower.L)
-  :arm-upper-r  (the ArmUpper.R)
-  :arm-lower-r  (the ArmLower.R)
-  :leg-upper-r  (the LegUpper.R)
-  :leg-lower-r  (the LegLower.R)})
+                      :hips         (the Hips)
+                      :spine        (the Spine)
+                      :head         (the Bone.001)
+                      :arm-upper-l  (the ArmUpper.L)
+                      :arm-lower-l  (the ArmLower.L)
+                      :leg-upper-l  (the LegUpper.L)
+                      :leg-lower-l  (the LegLower.L)
+                      :arm-upper-r  (the ArmUpper.R)
+                      :arm-lower-r  (the ArmLower.R)
+                      :leg-upper-r  (the LegUpper.R)
+                      :leg-lower-r  (the LegLower.R)})
 
 #_(defn update-cam [o]
-  (let [body (->rigidbody @player)
-        local-velocity (.InverseTransformPoint (.transform @player) 
-          (v3+ (>v3 @player) (.velocity body)))
-        vel-offset (v3* local-velocity -1)
-        z-offset (v3 0 0 15)
-        offset (if true;(> (.magnitude vel-offset) 1.0) 
-                (v3* (.normalized vel-offset) -15) 
-                z-offset)
-        target (v3+ (.TransformPoint (.transform @player) offset)
-                    (v3 0 8 0))]
-    (position! o (lerp o target (∆ 4)))
-    (lerp-look! o @player (∆ 6))))
+   (let [body (->rigidbody @player)
+         local-velocity (.InverseTransformPoint (.transform @player) 
+                         (v3+ (>v3 @player) (.velocity body)))
+         vel-offset (v3* local-velocity -1)
+         z-offset (v3 0 0 15)
+         offset (if true;(> (.magnitude vel-offset) 1.0) 
+                 (v3* (.normalized vel-offset) -15) 
+                 z-offset)
+         target (v3+ (.TransformPoint (.transform @player) offset)
+                     (v3 0 8 0))]
+     (position! o (lerp o target (∆ 4)))
+     (lerp-look! o @player (∆ 6))))
 
 (defn update-cam [o]
   (let [target (v3+ (.TransformPoint (.transform @player) (v3 0 0 -10))
@@ -227,39 +229,47 @@
    (global-force! body 0 (* mass -8) 0)
    (Input/GetAxis "Vertical")))
 
-(defn make-park [w h]
-  (let [o (clone! :maps/autopark)
+(defn make-wfc [w h trainer-path xml-path grid-size local-scale]
+  (let [o (clone! trainer-path)
         wfc (.AddComponent o (type (SimpleTiledWFC.)))]
-    (set! (.xmlpath wfc) "skaters.xml")
-    (set! (.gridsize wfc) (int 2))
-    (timeline [
-               (wait 0.1)
-               #(do (local-scale! o (v3 park-scale)) false)])
-    (set! (.width wfc) (int w))
-    (set! (.depth wfc) (int h)) o))
+   (set! (.. o transform position) (v3 (* -1 grid-size w) 0 (* -1 grid-size h)))
+   (set! (.xmlpath wfc) xml-path)
+   (set! (.gridsize wfc) (int grid-size))
+   (timeline [
+              (wait 0.1)
+              #(do (local-scale! o (v3 local-scale)) false)])
+   (set! (.width wfc) (int w))
+   (set! (.depth wfc) (int h)) o))
 
+(defn prune-city-center [city]
+ (let [tiles (children (child-named city "city.xml"))
+       city-pos (.. city transform position)]
+  (doseq [tile tiles]
+   ;(log (str "pos: " (.. tile transform position) ", dist: " (UnityEngine.Vector3/Distance (.. tile transform position) city-pos)))
+   (if (<= (UnityEngine.Vector3/Distance (.. tile transform position) city-pos) 20)
+    (destroy tile)))))
 
 (defn make-level []
   (clear-cloned!)
   (destroy! (the Camera))
   (clone! :Canvas)
-  (make-park park-size park-size)
+  (make-wfc park-size park-size :maps/autopark "skaters.xml" 2 park-scale)
+  (let [city (make-wfc city-size city-size :maps/autocity "city.xml" 10 city-scale)]
+   (timeline [(wait 1.0)
+              #(do (prune-city-center city) false)]))          
   (reset! player (make-player 
                   (v3 (* park-size park-scale)
                     (* 6 park-scale) 
                     (* park-size park-scale))))
-  (reset! data/player-spawned? true)
-  (set-state! @player :total-euler (v3))
-  (set-state! @player :rotation (v3))
-  (hook-clear @player :update)
-  (hook-clear @player :on-collision-enter)
-  (hook-clear @player :on-collision-exit)
-  (hook+ @player :update #'game.core/handle-input)
-  (hook+ @player :on-collision-enter #(do %1 %2 (reset! TOUCHING true)))
-  (hook+ @player :on-collision-exit #(do %1 %2 (reset! TOUCHING false))))
-
-
-
+ (reset! data/player-spawned? true)
+ (set-state! @player :total-euler (v3))
+ (set-state! @player :rotation (v3))
+ (hook-clear @player :update)
+ (hook-clear @player :on-collision-enter)
+ (hook-clear @player :on-collision-exit)
+ (hook+ @player :update #'game.core/handle-input)
+ (hook+ @player :on-collision-enter #(do %1 %2 (reset! TOUCHING true)))
+ (hook+ @player :on-collision-exit #(do %1 %2 (reset! TOUCHING false))))
 
 '(timeline* :loop
   (wait 3.0)
