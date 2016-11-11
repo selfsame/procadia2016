@@ -5,8 +5,8 @@
 <tile name="city/Road" symmetry="X" weight="1.0"/>
 <tile name="city/ParkCorner" symmetry="X" weight="1.0"/>
 <tile name="city/ParkEdge" symmetry="X" weight="1.0"/>
-<tile name="city/BuildingMiddle" symmetry="X" weight="1.0"/>
 <tile name="city/ParkMiddle" symmetry="X" weight="1.0"/>
+<tile name="city/BuildingMiddle" symmetry="X" weight="1.0"/>
 	</tiles>
 <neighbors>  <neighbor left="city/ParkEdge 3" right="city/Road 0"/>
   <neighbor left="city/ParkEdge 0" right="city/ParkCorner 0"/>
@@ -21,6 +21,19 @@
   <neighbor left="city/Road 0" right="city/ParkEdge 1"/>
   <neighbor left="city/ParkEdge 1" right="city/BuildingBottom 0"/>
   <neighbor left="city/ParkEdge 2" right="city/ParkCorner 3"/>
+  <neighbor left="city/BuildingBottom 0" right="city/ParkMiddle 0"/>
+  <neighbor left="city/BuildingBottom 1" right="city/ParkEdge 3"/>
+  <neighbor left="city/ParkMiddle 0" right="city/ParkMiddle 0"/>
+  <neighbor left="city/ParkMiddle 1" right="city/BuildingBottom 1"/>
+  <neighbor left="city/ParkMiddle 0" right="city/Road 0"/>
+  <neighbor left="city/ParkMiddle 1" right="city/BuildingMiddle 1"/>
+  <neighbor left="city/BuildingMiddle 1" right="city/BuildingMiddle 1"/>
+  <neighbor left="city/BuildingMiddle 0" right="city/BuildingBottom 1"/>
+  <neighbor left="city/BuildingMiddle 1" right="city/BuildingBottom 1"/>
+  <neighbor left="city/BuildingBottom 1" right="city/BuildingMiddle 0"/>
+  <neighbor left="city/BuildingBottom 2" right="city/BuildingMiddle 1"/>
+  <neighbor left="city/BuildingMiddle 0" right="city/BuildingMiddle 0"/>
+  <neighbor left="city/BuildingMiddle 1" right="city/ParkMiddle 1"/>
   <neighbor left="city/ParkCorner 3" right="city/Road 0"/>
   <neighbor left="city/ParkCorner 0" right="city/Road 2"/>
   <neighbor left="city/Road 0" right="city/ParkCorner 1"/>
@@ -34,6 +47,14 @@
   <neighbor left="city/Road 0" right="city/ParkCorner 2"/>
   <neighbor left="city/ParkCorner 2" right="city/ParkEdge 2"/>
   <neighbor left="city/ParkCorner 3" right="city/Road 2"/>
+  <neighbor left="city/ParkEdge 2" right="city/BuildingBottom 0"/>
+  <neighbor left="city/ParkEdge 3" right="city/RoadIntersection 1"/>
+  <neighbor left="city/BuildingBottom 1" right="city/Road 2"/>
+  <neighbor left="city/BuildingMiddle 1" right="city/Road 2"/>
+  <neighbor left="city/Road 0" right="city/BuildingBottom 0"/>
+  <neighbor left="city/BuildingMiddle 0" right="city/ParkMiddle 0"/>
+  <neighbor left="city/ParkMiddle 0" right="city/BuildingBottom 0"/>
+  <neighbor left="city/ParkMiddle 1" right="city/Road 2"/>
   <neighbor left="city/Road 1" right="city/RoadIntersection 0"/>
   <neighbor left="city/Road 2" right="city/BuildingBottom 1"/>
   <neighbor left="city/RoadIntersection 0" right="city/ParkEdge 1"/>
@@ -45,18 +66,65 @@
   <neighbor left="city/ParkEdge 3" right="city/RoadIntersection 0"/>
   <neighbor left="city/ParkEdge 0" right="city/ParkEdge 0"/>
   <neighbor left="city/RoadIntersection 0" right="city/Road 1"/>
+  <neighbor left="city/Road 1" right="city/Road 1"/>
+  <neighbor left="city/Road 2" right="city/ParkMiddle 1"/>
+  <neighbor left="city/Road 2" right="city/BuildingMiddle 1"/>
+  <neighbor left="city/Road 2" right="city/BuildingBottom 2"/>
   <neighbor left="city/BuildingBottom 0" right="city/Road 0"/>
   <neighbor left="city/BuildingBottom 1" right="city/BuildingMiddle 1"/>
   <neighbor left="city/ParkMiddle 1" right="city/ParkEdge 3"/>
-  <neighbor left="city/Road 0" right="city/BuildingBottom 0"/>
   <neighbor left="city/BuildingBottom 1" right="city/BuildingBottom 1"/>
-  <neighbor left="city/BuildingMiddle 1" right="city/BuildingBottom 1"/>
+  <neighbor left="city/Road 0" right="city/ParkMiddle 0"/>
+  <neighbor left="city/Road 1" right="city/Road 3"/>
+  <neighbor left="city/BuildingMiddle 1" right="city/ParkEdge 2"/>
+  <neighbor left="city/Road 0" right="city/BuildingBottom 1"/>
+  <neighbor left="city/BuildingBottom 1" right="city/BuildingBottom 0"/>
+  <neighbor left="city/BuildingBottom 2" right="city/ParkEdge 2"/>
   <neighbor left="city/ParkEdge 2" right="city/ParkCorner 3"/>
   <neighbor left="city/ParkEdge 3" right="city/Road 2"/>
+  <neighbor left="city/BuildingBottom 0" right="city/Road 2"/>
+  <neighbor left="city/Road 2" right="city/BuildingBottom 0"/>
+  <neighbor left="city/Road 3" right="city/Road 1"/>
+  <neighbor left="city/ParkMiddle 0" right="city/RoadIntersection 0"/>
+  <neighbor left="city/ParkMiddle 1" right="city/BuildingBottom 2"/>
+  <neighbor left="city/Road 1" right="city/ParkEdge 1"/>
+  <neighbor left="city/ParkEdge 2" right="city/BuildingBottom 1"/>
+  <neighbor left="city/ParkEdge 1" right="city/BuildingMiddle 0"/>
+  <neighbor left="city/BuildingMiddle 1" right="city/ParkEdge 3"/>
   <neighbor left="city/BuildingBottom 0" right="city/RoadIntersection 0"/>
-  <neighbor left="city/Road 1" right="city/Road 1"/>
-  <neighbor left="city/Road 2" right="city/BuildingMiddle 1"/>
   <neighbor left="city/RoadIntersection 0" right="city/BuildingMiddle 0"/>
-  <neighbor left="city/BuildingMiddle 0" right="city/BuildingMiddle 0"/>
+  <neighbor left="city/BuildingBottom 1" right="city/Road 0"/>
+  <neighbor left="city/BuildingMiddle 1" right="city/BuildingBottom 2"/>
+  <neighbor left="city/ParkCorner 3" right="city/BuildingBottom 1"/>
+  <neighbor left="city/ParkEdge 2" right="city/ParkEdge 2"/>
+  <neighbor left="city/ParkEdge 3" right="city/BuildingMiddle 1"/>
+  <neighbor left="city/BuildingBottom 2" right="city/Road 2"/>
+  <neighbor left="city/Road 2" right="city/BuildingMiddle 2"/>
+  <neighbor left="city/Road 2" right="city/ParkCorner 2"/>
+  <neighbor left="city/Road 0" right="city/BuildingMiddle 1"/>
+  <neighbor left="city/BuildingMiddle 1" right="city/BuildingBottom 1"/>
+  <neighbor left="city/BuildingMiddle 2" right="city/BuildingMiddle 2"/>
+  <neighbor left="city/BuildingBottom 2" right="city/ParkEdge 3"/>
+  <neighbor left="city/Road 1" right="city/ParkEdge 1"/>
+  <neighbor left="city/BuildingBottom 2" right="city/ParkMiddle 1"/>
+  <neighbor left="city/ParkCorner 1" right="city/BuildingBottom 0"/>
+  <neighbor left="city/ParkCorner 2" right="city/ParkCorner 3"/>
+  <neighbor left="city/BuildingBottom 0" right="city/BuildingMiddle 1"/>
+  <neighbor left="city/BuildingMiddle 1" right="city/ParkEdge 2"/>
+  <neighbor left="city/BuildingMiddle 2" right="city/BuildingMiddle 1"/>
+  <neighbor left="city/ParkEdge 3" right="city/Road 1"/>
+  <neighbor left="city/BuildingBottom 0" right="city/ParkEdge 0"/>
+  <neighbor left="city/ParkEdge 0" right="city/ParkMiddle 0"/>
+  <neighbor left="city/ParkEdge 1" right="city/BuildingMiddle 1"/>
+  <neighbor left="city/ParkMiddle 0" right="city/ParkEdge 0"/>
+  <neighbor left="city/ParkEdge 0" right="city/BuildingMiddle 0"/>
+  <neighbor left="city/ParkCorner 2" right="city/BuildingMiddle 0"/>
+  <neighbor left="city/BuildingMiddle 1" right="city/RoadIntersection 1"/>
+  <neighbor left="city/ParkMiddle 0" right="city/BuildingMiddle 0"/>
+  <neighbor left="city/Road 1" right="city/BuildingBottom 0"/>
+  <neighbor left="city/BuildingBottom 1" right="city/BuildingBottom 2"/>
+  <neighbor left="city/BuildingMiddle 1" right="city/BuildingBottom 3"/>
+  <neighbor left="city/BuildingBottom 1" right="city/ParkMiddle 1"/>
+  <neighbor left="city/BuildingBottom 2" right="city/BuildingBottom 1"/>
 	</neighbors>
 </set>
