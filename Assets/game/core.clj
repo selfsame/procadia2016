@@ -14,6 +14,7 @@
 (def player (atom nil))
 (def steerage (atom 0.0))
 (def wheelmap (atom nil))
+(def ragmap (atom nil))
 (def IN-AIR (atom false))
 (def TOUCHING (atom false))
 
@@ -28,6 +29,19 @@
     (parent! o cam)
     (set! (.text txt) s)
     (timeline [#(lerp-look! o cam (float 0.2))])))
+
+(defn ragbody-map [] {
+  :hips         (the Hips)
+  :spine        (the Spine)
+  :head         (the Bone.001)
+  :arm-upper-l  (the ArmUpper.L)
+  :arm-lower-l  (the ArmLower.L)
+  :leg-upper-l  (the LegUpper.L)
+  :leg-lower-l  (the LegLower.L)
+  :arm-upper-r  (the ArmUpper.R)
+  :arm-lower-r  (the ArmLower.R)
+  :leg-upper-r  (the LegUpper.R)
+  :leg-lower-r  (the LegLower.R)})
 
 (defn update-cam [o]
   (let [target (v3+ (.TransformPoint (.transform @player) (v3 0 0 -10))
@@ -68,6 +82,7 @@
                (->wheel (child-named board "front-left"))]
        :rear  [(->wheel (child-named board "rear-right"))
                (->wheel (child-named board "rear-left"))]})
+    (reset! ragmap (ragbody-map))
     (hook+ cam :update #'game.core/update-cam)
     (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
     board))
@@ -227,11 +242,6 @@
   (hook+ @player :update #'game.core/handle-input)
   (hook+ @player :on-collision-enter #(do %1 %2 (reset! TOUCHING true)))
   (hook+ @player :on-collision-exit #(do %1 %2 (reset! TOUCHING false))))
-
-
-
-
-
 
 
 

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - clone
   - pooled
+  - ragbody
   layers:
   - Default
   - TransparentFX
