@@ -10,7 +10,9 @@
     hard.input)
   (require [game.data :as data]
     human.core)
-  (import [SimpleTiledWFC]))
+  (import [SimpleTiledWFC]
+          [Training]
+          GameUtils))
 
 (def park-scale 4.3)
 (def park-size 15)
@@ -123,9 +125,9 @@
     (hook+ cam :update #'game.core/update-cam)
     (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
     (timeline [(wait 0.01) 
-      #(do (make-head) 
-        (reset! ragmap (ragbody-map))
-        nil)])
+               #(do (make-head) 
+                 (reset! ragmap (ragbody-map))
+                 nil)])
     board))
 
 (defn fall-check [o]
@@ -256,33 +258,34 @@
    (global-force! body 0 (* mass -8) 0)
    (Input/GetAxis "Vertical")))
 
-(defn make-wfc [w h trainer-path xml-path grid-size local-scale]
-  (let [o (clone! trainer-path)
+(defn make-park [w h]
+  (let [o (clone! :maps/autopark)
         wfc (.AddComponent o (type (SimpleTiledWFC.)))]
-   (set! (.. o transform position) (v3 (* -1 grid-size w) 0 (* -1 grid-size h)))
-   (set! (.xmlpath wfc) xml-path)
-   (set! (.gridsize wfc) (int grid-size))
+   (set! (.xmlpath wfc) "skaters.xml")
+   (set! (.gridsize wfc) (int 2))
    (timeline [
               (wait 0.1)
-              #(do (local-scale! o (v3 local-scale)) false)])
+              #(do (local-scale! o (v3 park-scale)) false)])
    (set! (.width wfc) (int w))
    (set! (.depth wfc) (int h)) o))
 
+(defn make-city [w h]
+ (let [o (clone! :maps/autocity)
+       trainer (.AddComponent o (type (Training.)))]
+  (set! (.gridSize trainer) (int 10))
+  (set! (.width trainer) (int w))
+  (set! (.depth trainer) (int h))))
+
 (defn prune-city-center [city]
- (let [tiles (children (child-named city "city.xml"))
-       city-pos (.. city transform position)]
-  (doseq [tile tiles]
-   ;(log (str "pos: " (.. tile transform position) ", dist: " (UnityEngine.Vector3/Distance (.. tile transform position) city-pos)))
-   (if (<= (UnityEngine.Vector3/Distance (.. tile transform position) city-pos) 20)
-    (destroy tile)))))
+ (GameUtils/PruneMiddle city 5 5))
 
 (defn make-level []
   (clear-cloned!)
   (destroy! (the Camera))
   (clone! :Canvas)
-  (make-wfc park-size park-size :maps/autopark "skaters.xml" 2 park-scale)
-  (let [city (make-wfc city-size city-size :maps/autocity "city.xml" 10 city-scale)]
-   (timeline [(wait 1.0)
+  (make-park park-size park-size)
+  (let [city (make-city city-size city-size :maps/autocity "city.xml" 10 city-scale true)]
+   (timeline [(wait 0.1)
               #(do (prune-city-center city) false)]))          
   (reset! player (make-player 
                   (v3 (* park-size park-scale)
@@ -310,5 +313,5 @@
   #(do (message "brb   7min") nil))
 
 '(reset! game.data/seed (hash "selfsame"))
-'(make-level)
+(make-level)
 
