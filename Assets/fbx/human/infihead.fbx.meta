@@ -1,0 +1,2702 @@
+fileFormatVersion: 2
+guid: 583e2e29a990d1f4eb64aa214bfb623b
+timeCreated: 1447379433
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BASE
+    100002: bottom-teeth
+    100004: eye
+    100006: eye.001
+    100008: eyebrow.L
+    100010: eyebrow.R
+    100012: eyelids.L
+    100014: eyelids.R
+    100016: //RootNode
+    100018: infihead-armature
+    100020: infihead-mesh
+    100022: jaw
+    100024: mouth.L
+    100026: mouth.R
+    100028: neck
+    100030: top-teeth
+    100032: top-teeth.001
+    100034: Point.001
+    400000: BASE
+    400002: bottom-teeth
+    400004: eye
+    400006: eye.001
+    400008: eyebrow.L
+    400010: eyebrow.R
+    400012: eyelids.L
+    400014: eyelids.R
+    400016: //RootNode
+    400018: infihead-armature
+    400020: infihead-mesh
+    400022: jaw
+    400024: mouth.L
+    400026: mouth.R
+    400028: neck
+    400030: top-teeth
+    400032: top-teeth.001
+    400034: Point.001
+    2300000: eye
+    2300002: eye.001
+    2300004: top-teeth
+    2300006: top-teeth.001
+    2300008: bottom-teeth
+    2300010: infihead-mesh
+    3300000: eye
+    3300002: eye.001
+    3300004: top-teeth
+    3300006: top-teeth.001
+    3300008: bottom-teeth
+    3300010: infihead-mesh
+    4300000: top-teeth
+    4300002: eye.001
+    4300004: eye
+    4300006: infihead-mesh
+    4300008: bottom-teeth
+    4300010: top-teeth.001
+    7400000: infihead-armature|anger1
+    7400002: infihead-armature|fear1
+    7400004: infihead-armature|fear2
+    7400006: infihead-armature|fear2.001
+    7400008: infihead-armature|fear2.002
+    7400010: infihead-armature|fear2.003
+    7400012: infihead-armature|joy1
+    7400014: infihead-armature|joy2
+    7400016: infihead-armature|joy3
+    7400018: infihead-armature|joy3.001
+    7400020: infihead-armature|joy3.002
+    7400022: infihead-armature|joy3.003
+    7400024: infihead-armature|joy3.004
+    7400026: infihead-armature|rest
+    7400028: infihead-armature|sick1
+    7400030: infihead-armature|sick2
+    7400032: infihead-armature|sick3
+    7400034: infihead-mesh|fear2.001
+    7400036: infihead-mesh|fear2.002
+    7400038: infihead-mesh|fear2.003
+    7400040: infihead-mesh|joy3.001
+    7400042: infihead-mesh|joy3.002
+    7400044: infihead-mesh|joy3.003
+    7400046: infihead-mesh|joy3.004
+    7400048: infihead-armature|anger1 //// infihead-armature
+    7400050: infihead-armature|fear1 //// infihead-armature
+    7400052: infihead-armature|fear2 //// infihead-armature
+    7400054: infihead-armature|joy1 //// infihead-armature
+    7400056: infihead-armature|joy2 //// infihead-armature
+    7400058: infihead-armature|joy3 //// infihead-armature
+    7400060: infihead-armature|rest //// infihead-armature
+    7400062: infihead-armature|sick1 //// infihead-armature
+    7400064: infihead-armature|sick2 //// infihead-armature
+    7400066: infihead-armature|sick3 //// infihead-armature
+    7400068: infihead-armature|anger1 //// infihead-mesh
+    7400070: infihead-armature|fear1 //// infihead-mesh
+    7400072: infihead-armature|fear2 //// infihead-mesh
+    7400074: infihead-armature|joy1 //// infihead-mesh
+    7400076: infihead-armature|joy2 //// infihead-mesh
+    7400078: infihead-armature|joy3 //// infihead-mesh
+    7400080: infihead-armature|rest //// infihead-mesh
+    7400082: infihead-armature|sick1 //// infihead-mesh
+    7400084: infihead-armature|sick2 //// infihead-mesh
+    7400086: infihead-armature|sick3 //// infihead-mesh
+    7400088: infihead-armature|anger1 //// infihead-armature
+    7400090: infihead-armature|fear1 //// infihead-armature
+    7400092: infihead-armature|fear2 //// infihead-armature
+    7400094: infihead-armature|joy1 //// infihead-armature
+    7400096: infihead-armature|joy2 //// infihead-armature
+    7400098: infihead-armature|joy3 //// infihead-armature
+    7400100: infihead-armature|rest //// infihead-armature
+    7400102: infihead-armature|sick1 //// infihead-armature
+    7400104: infihead-armature|sick2 //// infihead-armature
+    7400106: infihead-armature|sick3 //// infihead-armature
+    7400108: infihead-armature|anger1 //// infihead-mesh
+    7400110: infihead-armature|fear1 //// infihead-mesh
+    7400112: infihead-armature|fear2 //// infihead-mesh
+    7400114: infihead-armature|joy1 //// infihead-mesh
+    7400116: infihead-armature|joy2 //// infihead-mesh
+    7400118: infihead-armature|joy3 //// infihead-mesh
+    7400120: infihead-armature|rest //// infihead-mesh
+    7400122: infihead-armature|sick1 //// infihead-mesh
+    7400124: infihead-armature|sick2 //// infihead-mesh
+    7400126: infihead-armature|sick3 //// infihead-mesh
+    7400128: infihead-armature|anger1 //// infihead-armature
+    7400130: infihead-armature|fear1 //// infihead-armature
+    7400132: infihead-armature|fear2 //// infihead-armature
+    7400134: infihead-armature|joy1 //// infihead-armature
+    7400136: infihead-armature|joy2 //// infihead-armature
+    7400138: infihead-armature|joy3 //// infihead-armature
+    7400140: infihead-armature|rest //// infihead-armature
+    7400142: infihead-armature|sick1 //// infihead-armature
+    7400144: infihead-armature|sick2 //// infihead-armature
+    7400146: infihead-armature|sick3 //// infihead-armature
+    7400148: infihead-armature|anger1 //// infihead-mesh
+    7400150: infihead-armature|fear1 //// infihead-mesh
+    7400152: infihead-armature|fear2 //// infihead-mesh
+    7400154: infihead-armature|joy1 //// infihead-mesh
+    7400156: infihead-armature|joy2 //// infihead-mesh
+    7400158: infihead-armature|joy3 //// infihead-mesh
+    7400160: infihead-armature|rest //// infihead-mesh
+    7400162: infihead-armature|sick1 //// infihead-mesh
+    7400164: infihead-armature|sick2 //// infihead-mesh
+    7400166: infihead-armature|sick3 //// infihead-mesh
+    7400168: infihead-armature|anger1 //// infihead-armature
+    7400170: infihead-armature|fear1 //// infihead-armature
+    7400172: infihead-armature|fear2 //// infihead-armature
+    7400174: infihead-armature|joy1 //// infihead-armature
+    7400176: infihead-armature|joy2 //// infihead-armature
+    7400178: infihead-armature|joy3 //// infihead-armature
+    7400180: infihead-armature|rest //// infihead-armature
+    7400182: infihead-armature|sick1 //// infihead-armature
+    7400184: infihead-armature|sick2 //// infihead-armature
+    7400186: infihead-armature|sick3 //// infihead-armature
+    7400188: infihead-armature|anger1 //// infihead-mesh
+    7400190: infihead-armature|fear1 //// infihead-mesh
+    7400192: infihead-armature|fear2 //// infihead-mesh
+    7400194: infihead-armature|joy1 //// infihead-mesh
+    7400196: infihead-armature|joy2 //// infihead-mesh
+    7400198: infihead-armature|joy3 //// infihead-mesh
+    7400200: infihead-armature|rest //// infihead-mesh
+    7400202: infihead-armature|sick1 //// infihead-mesh
+    7400204: infihead-armature|sick2 //// infihead-mesh
+    7400206: infihead-armature|sick3 //// infihead-mesh
+    7400208: infihead-armature|anger1 //// infihead-armature
+    7400210: infihead-armature|fear1 //// infihead-armature
+    7400212: infihead-armature|fear2 //// infihead-armature
+    7400214: infihead-armature|joy1 //// infihead-armature
+    7400216: infihead-armature|joy2 //// infihead-armature
+    7400218: infihead-armature|joy3 //// infihead-armature
+    7400220: infihead-armature|rest //// infihead-armature
+    7400222: infihead-armature|sick1 //// infihead-armature
+    7400224: infihead-armature|sick2 //// infihead-armature
+    7400226: infihead-armature|sick3 //// infihead-armature
+    7400228: infihead-armature|anger1 //// infihead-mesh
+    7400230: infihead-armature|fear1 //// infihead-mesh
+    7400232: infihead-armature|fear2 //// infihead-mesh
+    7400234: infihead-armature|joy1 //// infihead-mesh
+    7400236: infihead-armature|joy2 //// infihead-mesh
+    7400238: infihead-armature|joy3 //// infihead-mesh
+    7400240: infihead-armature|rest //// infihead-mesh
+    7400242: infihead-armature|sick1 //// infihead-mesh
+    7400244: infihead-armature|sick2 //// infihead-mesh
+    7400246: infihead-armature|sick3 //// infihead-mesh
+    7400248: infihead-armature|anger1 //// infihead-armature
+    7400250: infihead-armature|fear1 //// infihead-armature
+    7400252: infihead-armature|fear2 //// infihead-armature
+    7400254: infihead-armature|joy1 //// infihead-armature
+    7400256: infihead-armature|joy2 //// infihead-armature
+    7400258: infihead-armature|joy3 //// infihead-armature
+    7400260: infihead-armature|rest //// infihead-armature
+    7400262: infihead-armature|sick1 //// infihead-armature
+    7400264: infihead-armature|sick2 //// infihead-armature
+    7400266: infihead-armature|sick3 //// infihead-armature
+    7400268: infihead-armature|anger1 //// infihead-mesh
+    7400270: infihead-armature|fear1 //// infihead-mesh
+    7400272: infihead-armature|fear2 //// infihead-mesh
+    7400274: infihead-armature|joy1 //// infihead-mesh
+    7400276: infihead-armature|joy2 //// infihead-mesh
+    7400278: infihead-armature|joy3 //// infihead-mesh
+    7400280: infihead-armature|rest //// infihead-mesh
+    7400282: infihead-armature|sick1 //// infihead-mesh
+    7400284: infihead-armature|sick2 //// infihead-mesh
+    7400286: infihead-armature|sick3 //// infihead-mesh
+    7400288: infihead-armature|anger1 //// infihead-armature
+    7400290: infihead-armature|fear1 //// infihead-armature
+    7400292: infihead-armature|fear2 //// infihead-armature
+    7400294: infihead-armature|joy1 //// infihead-armature
+    7400296: infihead-armature|joy2 //// infihead-armature
+    7400298: infihead-armature|joy3 //// infihead-armature
+    7400300: infihead-armature|rest //// infihead-armature
+    7400302: infihead-armature|sick1 //// infihead-armature
+    7400304: infihead-armature|sick2 //// infihead-armature
+    7400306: infihead-armature|sick3 //// infihead-armature
+    7400308: infihead-armature|anger1 //// infihead-mesh
+    7400310: infihead-armature|fear1 //// infihead-mesh
+    7400312: infihead-armature|fear2 //// infihead-mesh
+    7400314: infihead-armature|joy1 //// infihead-mesh
+    7400316: infihead-armature|joy2 //// infihead-mesh
+    7400318: infihead-armature|joy3 //// infihead-mesh
+    7400320: infihead-armature|rest //// infihead-mesh
+    7400322: infihead-armature|sick1 //// infihead-mesh
+    7400324: infihead-armature|sick2 //// infihead-mesh
+    7400326: infihead-armature|sick3 //// infihead-mesh
+    7400328: infihead-armature|anger1 //// infihead-armature
+    7400330: infihead-armature|fear1 //// infihead-armature
+    7400332: infihead-armature|fear2 //// infihead-armature
+    7400334: infihead-armature|joy1 //// infihead-armature
+    7400336: infihead-armature|joy2 //// infihead-armature
+    7400338: infihead-armature|joy3 //// infihead-armature
+    7400340: infihead-armature|rest //// infihead-armature
+    7400342: infihead-armature|sick1 //// infihead-armature
+    7400344: infihead-armature|sick2 //// infihead-armature
+    7400346: infihead-armature|sick3 //// infihead-armature
+    7400348: infihead-armature|anger1 //// infihead-mesh
+    7400350: infihead-armature|fear1 //// infihead-mesh
+    7400352: infihead-armature|fear2 //// infihead-mesh
+    7400354: infihead-armature|joy1 //// infihead-mesh
+    7400356: infihead-armature|joy2 //// infihead-mesh
+    7400358: infihead-armature|joy3 //// infihead-mesh
+    7400360: infihead-armature|rest //// infihead-mesh
+    7400362: infihead-armature|sick1 //// infihead-mesh
+    7400364: infihead-armature|sick2 //// infihead-mesh
+    7400366: infihead-armature|sick3 //// infihead-mesh
+    7400368: infihead-armature|anger1 //// infihead-armature
+    7400370: infihead-armature|fear1 //// infihead-armature
+    7400372: infihead-armature|fear2 //// infihead-armature
+    7400374: infihead-armature|joy1 //// infihead-armature
+    7400376: infihead-armature|joy2 //// infihead-armature
+    7400378: infihead-armature|joy3 //// infihead-armature
+    7400380: infihead-armature|rest //// infihead-armature
+    7400382: infihead-armature|sick1 //// infihead-armature
+    7400384: infihead-armature|sick2 //// infihead-armature
+    7400386: infihead-armature|sick3 //// infihead-armature
+    7400388: infihead-armature|anger1 //// infihead-mesh
+    7400390: infihead-armature|fear1 //// infihead-mesh
+    7400392: infihead-armature|fear2 //// infihead-mesh
+    7400394: infihead-armature|joy1 //// infihead-mesh
+    7400396: infihead-armature|joy2 //// infihead-mesh
+    7400398: infihead-armature|joy3 //// infihead-mesh
+    7400400: infihead-armature|rest //// infihead-mesh
+    7400402: infihead-armature|sick1 //// infihead-mesh
+    7400404: infihead-armature|sick2 //// infihead-mesh
+    7400406: infihead-armature|sick3 //// infihead-mesh
+    7400408: infihead-armature|anger1 //// infihead-armature
+    7400410: infihead-armature|fear1 //// infihead-armature
+    7400412: infihead-armature|fear2 //// infihead-armature
+    7400414: infihead-armature|joy1 //// infihead-armature
+    7400416: infihead-armature|joy2 //// infihead-armature
+    7400418: infihead-armature|joy3 //// infihead-armature
+    7400420: infihead-armature|rest //// infihead-armature
+    7400422: infihead-armature|sick1 //// infihead-armature
+    7400424: infihead-armature|sick2 //// infihead-armature
+    7400426: infihead-armature|sick3 //// infihead-armature
+    7400428: infihead-armature|anger1 //// infihead-mesh
+    7400430: infihead-armature|fear1 //// infihead-mesh
+    7400432: infihead-armature|fear2 //// infihead-mesh
+    7400434: infihead-armature|joy1 //// infihead-mesh
+    7400436: infihead-armature|joy2 //// infihead-mesh
+    7400438: infihead-armature|joy3 //// infihead-mesh
+    7400440: infihead-armature|rest //// infihead-mesh
+    7400442: infihead-armature|sick1 //// infihead-mesh
+    7400444: infihead-armature|sick2 //// infihead-mesh
+    7400446: infihead-armature|sick3 //// infihead-mesh
+    7400448: infihead-armature|anger1 //// infihead-armature
+    7400450: infihead-armature|fear1 //// infihead-armature
+    7400452: infihead-armature|fear2 //// infihead-armature
+    7400454: infihead-armature|joy1 //// infihead-armature
+    7400456: infihead-armature|joy2 //// infihead-armature
+    7400458: infihead-armature|joy3 //// infihead-armature
+    7400460: infihead-armature|rest //// infihead-armature
+    7400462: infihead-armature|sick1 //// infihead-armature
+    7400464: infihead-armature|sick2 //// infihead-armature
+    7400466: infihead-armature|sick3 //// infihead-armature
+    7400468: infihead-armature|anger1 //// infihead-mesh
+    7400470: infihead-armature|fear1 //// infihead-mesh
+    7400472: infihead-armature|fear2 //// infihead-mesh
+    7400474: infihead-armature|joy1 //// infihead-mesh
+    7400476: infihead-armature|joy2 //// infihead-mesh
+    7400478: infihead-armature|joy3 //// infihead-mesh
+    7400480: infihead-armature|rest //// infihead-mesh
+    7400482: infihead-armature|sick1 //// infihead-mesh
+    7400484: infihead-armature|sick2 //// infihead-mesh
+    7400486: infihead-armature|sick3 //// infihead-mesh
+    7400488: infihead-armature|anger1 //// infihead-armature
+    7400490: infihead-armature|fear1 //// infihead-armature
+    7400492: infihead-armature|fear2 //// infihead-armature
+    7400494: infihead-armature|joy1 //// infihead-armature
+    7400496: infihead-armature|joy2 //// infihead-armature
+    7400498: infihead-armature|joy3 //// infihead-armature
+    7400500: infihead-armature|rest //// infihead-armature
+    7400502: infihead-armature|sick1 //// infihead-armature
+    7400504: infihead-armature|sick2 //// infihead-armature
+    7400506: infihead-armature|sick3 //// infihead-armature
+    7400508: infihead-armature|anger1 //// infihead-mesh
+    7400510: infihead-armature|fear1 //// infihead-mesh
+    7400512: infihead-armature|fear2 //// infihead-mesh
+    7400514: infihead-armature|joy1 //// infihead-mesh
+    7400516: infihead-armature|joy2 //// infihead-mesh
+    7400518: infihead-armature|joy3 //// infihead-mesh
+    7400520: infihead-armature|rest //// infihead-mesh
+    7400522: infihead-armature|sick1 //// infihead-mesh
+    7400524: infihead-armature|sick2 //// infihead-mesh
+    7400526: infihead-armature|sick3 //// infihead-mesh
+    7400528: infihead-armature|anger1 //// infihead-armature
+    7400530: infihead-armature|fear1 //// infihead-armature
+    7400532: infihead-armature|fear2 //// infihead-armature
+    7400534: infihead-armature|joy1 //// infihead-armature
+    7400536: infihead-armature|joy2 //// infihead-armature
+    7400538: infihead-armature|joy3 //// infihead-armature
+    7400540: infihead-armature|rest //// infihead-armature
+    7400542: infihead-armature|sick1 //// infihead-armature
+    7400544: infihead-armature|sick2 //// infihead-armature
+    7400546: infihead-armature|sick3 //// infihead-armature
+    7400548: infihead-armature|anger1 //// infihead-mesh
+    7400550: infihead-armature|fear1 //// infihead-mesh
+    7400552: infihead-armature|fear2 //// infihead-mesh
+    7400554: infihead-armature|joy1 //// infihead-mesh
+    7400556: infihead-armature|joy2 //// infihead-mesh
+    7400558: infihead-armature|joy3 //// infihead-mesh
+    7400560: infihead-armature|rest //// infihead-mesh
+    7400562: infihead-armature|sick1 //// infihead-mesh
+    7400564: infihead-armature|sick2 //// infihead-mesh
+    7400566: infihead-armature|sick3 //// infihead-mesh
+    7400568: infihead-armature|anger1 //// infihead-armature
+    7400570: infihead-armature|fear1 //// infihead-armature
+    7400572: infihead-armature|fear2 //// infihead-armature
+    7400574: infihead-armature|joy1 //// infihead-armature
+    7400576: infihead-armature|joy2 //// infihead-armature
+    7400578: infihead-armature|joy3 //// infihead-armature
+    7400580: infihead-armature|rest //// infihead-armature
+    7400582: infihead-armature|sick1 //// infihead-armature
+    7400584: infihead-armature|sick2 //// infihead-armature
+    7400586: infihead-armature|sick3 //// infihead-armature
+    7400588: infihead-armature|anger1 //// infihead-mesh
+    7400590: infihead-armature|fear1 //// infihead-mesh
+    7400592: infihead-armature|fear2 //// infihead-mesh
+    7400594: infihead-armature|joy1 //// infihead-mesh
+    7400596: infihead-armature|joy2 //// infihead-mesh
+    7400598: infihead-armature|joy3 //// infihead-mesh
+    7400600: infihead-armature|rest //// infihead-mesh
+    7400602: infihead-armature|sick1 //// infihead-mesh
+    7400604: infihead-armature|sick2 //// infihead-mesh
+    7400606: infihead-armature|sick3 //// infihead-mesh
+    7400608: infihead-armature|anger1 //// infihead-armature
+    7400610: infihead-armature|fear1 //// infihead-armature
+    7400612: infihead-armature|fear2 //// infihead-armature
+    7400614: infihead-armature|joy1 //// infihead-armature
+    7400616: infihead-armature|joy2 //// infihead-armature
+    7400618: infihead-armature|joy3 //// infihead-armature
+    7400620: infihead-armature|rest //// infihead-armature
+    7400622: infihead-armature|sick1 //// infihead-armature
+    7400624: infihead-armature|sick2 //// infihead-armature
+    7400626: infihead-armature|sick3 //// infihead-armature
+    7400628: infihead-armature|anger1 //// infihead-mesh
+    7400630: infihead-armature|fear1 //// infihead-mesh
+    7400632: infihead-armature|fear2 //// infihead-mesh
+    7400634: infihead-armature|joy1 //// infihead-mesh
+    7400636: infihead-armature|joy2 //// infihead-mesh
+    7400638: infihead-armature|joy3 //// infihead-mesh
+    7400640: infihead-armature|rest //// infihead-mesh
+    7400642: infihead-armature|sick1 //// infihead-mesh
+    7400644: infihead-armature|sick2 //// infihead-mesh
+    7400646: infihead-armature|sick3 //// infihead-mesh
+    7400648: infihead-armature|anger1 //// infihead-armature
+    7400650: infihead-armature|fear1 //// infihead-armature
+    7400652: infihead-armature|fear2 //// infihead-armature
+    7400654: infihead-armature|joy1 //// infihead-armature
+    7400656: infihead-armature|joy2 //// infihead-armature
+    7400658: infihead-armature|joy3 //// infihead-armature
+    7400660: infihead-armature|rest //// infihead-armature
+    7400662: infihead-armature|sick1 //// infihead-armature
+    7400664: infihead-armature|sick2 //// infihead-armature
+    7400666: infihead-armature|sick3 //// infihead-armature
+    7400668: infihead-armature|anger1 //// infihead-mesh
+    7400670: infihead-armature|fear1 //// infihead-mesh
+    7400672: infihead-armature|fear2 //// infihead-mesh
+    7400674: infihead-armature|joy1 //// infihead-mesh
+    7400676: infihead-armature|joy2 //// infihead-mesh
+    7400678: infihead-armature|joy3 //// infihead-mesh
+    7400680: infihead-armature|rest //// infihead-mesh
+    7400682: infihead-armature|sick1 //// infihead-mesh
+    7400684: infihead-armature|sick2 //// infihead-mesh
+    7400686: infihead-armature|sick3 //// infihead-mesh
+    7400688: infihead-armature|anger1 //// infihead-armature
+    7400690: infihead-armature|fear1 //// infihead-armature
+    7400692: infihead-armature|fear2 //// infihead-armature
+    7400694: infihead-armature|joy1 //// infihead-armature
+    7400696: infihead-armature|joy2 //// infihead-armature
+    7400698: infihead-armature|joy3 //// infihead-armature
+    7400700: infihead-armature|rest //// infihead-armature
+    7400702: infihead-armature|sick1 //// infihead-armature
+    7400704: infihead-armature|sick2 //// infihead-armature
+    7400706: infihead-armature|sick3 //// infihead-armature
+    7400708: infihead-armature|anger1 //// infihead-mesh
+    7400710: infihead-armature|fear1 //// infihead-mesh
+    7400712: infihead-armature|fear2 //// infihead-mesh
+    7400714: infihead-armature|joy1 //// infihead-mesh
+    7400716: infihead-armature|joy2 //// infihead-mesh
+    7400718: infihead-armature|joy3 //// infihead-mesh
+    7400720: infihead-armature|rest //// infihead-mesh
+    7400722: infihead-armature|sick1 //// infihead-mesh
+    7400724: infihead-armature|sick2 //// infihead-mesh
+    7400726: infihead-armature|sick3 //// infihead-mesh
+    7400728: infihead-armature|anger1 //// infihead-mesh
+    7400730: infihead-armature|fear1 //// infihead-mesh
+    7400732: infihead-armature|fear2 //// infihead-mesh
+    7400734: infihead-armature|joy1 //// infihead-mesh
+    7400736: infihead-armature|joy2 //// infihead-mesh
+    7400738: infihead-armature|joy3 //// infihead-mesh
+    7400740: infihead-armature|rest //// infihead-mesh
+    7400742: infihead-armature|sick1 //// infihead-mesh
+    7400744: infihead-armature|sick2 //// infihead-mesh
+    7400746: infihead-armature|sick3 //// infihead-mesh
+    7400748: infihead-armature|anger1 //// infihead-mesh
+    7400750: infihead-armature|fear1 //// infihead-mesh
+    7400752: infihead-armature|fear2 //// infihead-mesh
+    7400754: infihead-armature|joy1 //// infihead-mesh
+    7400756: infihead-armature|joy2 //// infihead-mesh
+    7400758: infihead-armature|joy3 //// infihead-mesh
+    7400760: infihead-armature|rest //// infihead-mesh
+    7400762: infihead-armature|sick1 //// infihead-mesh
+    7400764: infihead-armature|sick2 //// infihead-mesh
+    7400766: infihead-armature|sick3 //// infihead-mesh
+    7400768: infihead-armature|anger1 //// infihead-mesh
+    7400770: infihead-armature|fear1 //// infihead-mesh
+    7400772: infihead-armature|fear2 //// infihead-mesh
+    7400774: infihead-armature|joy1 //// infihead-mesh
+    7400776: infihead-armature|joy2 //// infihead-mesh
+    7400778: infihead-armature|joy3 //// infihead-mesh
+    7400780: infihead-armature|rest //// infihead-mesh
+    7400782: infihead-armature|sick1 //// infihead-mesh
+    7400784: infihead-armature|sick2 //// infihead-mesh
+    7400786: infihead-armature|sick3 //// infihead-mesh
+    7400788: infihead-armature|anger1 //// infihead-mesh
+    7400790: infihead-armature|fear1 //// infihead-mesh
+    7400792: infihead-armature|fear2 //// infihead-mesh
+    7400794: infihead-armature|joy1 //// infihead-mesh
+    7400796: infihead-armature|joy2 //// infihead-mesh
+    7400798: infihead-armature|joy3 //// infihead-mesh
+    7400800: infihead-armature|rest //// infihead-mesh
+    7400802: infihead-armature|sick1 //// infihead-mesh
+    7400804: infihead-armature|sick2 //// infihead-mesh
+    7400806: infihead-armature|sick3 //// infihead-mesh
+    7400808: infihead-armature|anger1 //// infihead-mesh
+    7400810: infihead-armature|fear1 //// infihead-mesh
+    7400812: infihead-armature|fear2 //// infihead-mesh
+    7400814: infihead-armature|joy1 //// infihead-mesh
+    7400816: infihead-armature|joy2 //// infihead-mesh
+    7400818: infihead-armature|joy3 //// infihead-mesh
+    7400820: infihead-armature|rest //// infihead-mesh
+    7400822: infihead-armature|sick1 //// infihead-mesh
+    7400824: infihead-armature|sick2 //// infihead-mesh
+    7400826: infihead-armature|sick3 //// infihead-mesh
+    7400828: infihead-armature|anger1 //// infihead-mesh
+    7400830: infihead-armature|fear1 //// infihead-mesh
+    7400832: infihead-armature|fear2 //// infihead-mesh
+    7400834: infihead-armature|joy1 //// infihead-mesh
+    7400836: infihead-armature|joy2 //// infihead-mesh
+    7400838: infihead-armature|joy3 //// infihead-mesh
+    7400840: infihead-armature|rest //// infihead-mesh
+    7400842: infihead-armature|sick1 //// infihead-mesh
+    7400844: infihead-armature|sick2 //// infihead-mesh
+    7400846: infihead-armature|sick3 //// infihead-mesh
+    7400848: infihead-armature|anger1 //// infihead-mesh
+    7400850: infihead-armature|fear1 //// infihead-mesh
+    7400852: infihead-armature|fear2 //// infihead-mesh
+    7400854: infihead-armature|joy1 //// infihead-mesh
+    7400856: infihead-armature|joy2 //// infihead-mesh
+    7400858: infihead-armature|joy3 //// infihead-mesh
+    7400860: infihead-armature|rest //// infihead-mesh
+    7400862: infihead-armature|sick1 //// infihead-mesh
+    7400864: infihead-armature|sick2 //// infihead-mesh
+    7400866: infihead-armature|sick3 //// infihead-mesh
+    7400868: infihead-armature|anger1 //// eyelids.L
+    7400870: infihead-armature|fear1 //// eyelids.L
+    7400872: infihead-armature|fear2 //// eyelids.L
+    7400874: infihead-armature|joy1 //// eyelids.L
+    7400876: infihead-armature|joy2 //// eyelids.L
+    7400878: infihead-armature|joy3 //// eyelids.L
+    7400880: infihead-armature|rest //// eyelids.L
+    7400882: infihead-armature|sick1 //// eyelids.L
+    7400884: infihead-armature|sick2 //// eyelids.L
+    7400886: infihead-armature|sick3 //// eyelids.L
+    7400888: infihead-armature|anger1 //// BASE
+    7400890: infihead-armature|fear1 //// BASE
+    7400892: infihead-armature|fear2 //// BASE
+    7400894: infihead-armature|joy1 //// BASE
+    7400896: infihead-armature|joy2 //// BASE
+    7400898: infihead-armature|joy3 //// BASE
+    7400900: infihead-armature|rest //// BASE
+    7400902: infihead-armature|sick1 //// BASE
+    7400904: infihead-armature|sick2 //// BASE
+    7400906: infihead-armature|sick3 //// BASE
+    7400908: infihead-armature|anger1 //// jaw
+    7400910: infihead-armature|fear1 //// jaw
+    7400912: infihead-armature|fear2 //// jaw
+    7400914: infihead-armature|joy1 //// jaw
+    7400916: infihead-armature|joy2 //// jaw
+    7400918: infihead-armature|joy3 //// jaw
+    7400920: infihead-armature|rest //// jaw
+    7400922: infihead-armature|sick1 //// jaw
+    7400924: infihead-armature|sick2 //// jaw
+    7400926: infihead-armature|sick3 //// jaw
+    7400928: infihead-armature|anger1 //// mouth.L
+    7400930: infihead-armature|fear1 //// mouth.L
+    7400932: infihead-armature|fear2 //// mouth.L
+    7400934: infihead-armature|joy1 //// mouth.L
+    7400936: infihead-armature|joy2 //// mouth.L
+    7400938: infihead-armature|joy3 //// mouth.L
+    7400940: infihead-armature|rest //// mouth.L
+    7400942: infihead-armature|sick1 //// mouth.L
+    7400944: infihead-armature|sick2 //// mouth.L
+    7400946: infihead-armature|sick3 //// mouth.L
+    7400948: infihead-armature|anger1 //// eyebrow.L
+    7400950: infihead-armature|fear1 //// eyebrow.L
+    7400952: infihead-armature|fear2 //// eyebrow.L
+    7400954: infihead-armature|joy1 //// eyebrow.L
+    7400956: infihead-armature|joy2 //// eyebrow.L
+    7400958: infihead-armature|joy3 //// eyebrow.L
+    7400960: infihead-armature|rest //// eyebrow.L
+    7400962: infihead-armature|sick1 //// eyebrow.L
+    7400964: infihead-armature|sick2 //// eyebrow.L
+    7400966: infihead-armature|sick3 //// eyebrow.L
+    7400968: infihead-armature|anger1 //// eyelids.R
+    7400970: infihead-armature|fear1 //// eyelids.R
+    7400972: infihead-armature|fear2 //// eyelids.R
+    7400974: infihead-armature|joy1 //// eyelids.R
+    7400976: infihead-armature|joy2 //// eyelids.R
+    7400978: infihead-armature|joy3 //// eyelids.R
+    7400980: infihead-armature|rest //// eyelids.R
+    7400982: infihead-armature|sick1 //// eyelids.R
+    7400984: infihead-armature|sick2 //// eyelids.R
+    7400986: infihead-armature|sick3 //// eyelids.R
+    7400988: infihead-armature|anger1 //// mouth.R
+    7400990: infihead-armature|fear1 //// mouth.R
+    7400992: infihead-armature|fear2 //// mouth.R
+    7400994: infihead-armature|joy1 //// mouth.R
+    7400996: infihead-armature|joy2 //// mouth.R
+    7400998: infihead-armature|joy3 //// mouth.R
+    7401000: infihead-armature|rest //// mouth.R
+    7401002: infihead-armature|sick1 //// mouth.R
+    7401004: infihead-armature|sick2 //// mouth.R
+    7401006: infihead-armature|sick3 //// mouth.R
+    7401008: infihead-armature|anger1 //// eyebrow.R
+    7401010: infihead-armature|fear1 //// eyebrow.R
+    7401012: infihead-armature|fear2 //// eyebrow.R
+    7401014: infihead-armature|joy1 //// eyebrow.R
+    7401016: infihead-armature|joy2 //// eyebrow.R
+    7401018: infihead-armature|joy3 //// eyebrow.R
+    7401020: infihead-armature|rest //// eyebrow.R
+    7401022: infihead-armature|sick1 //// eyebrow.R
+    7401024: infihead-armature|sick2 //// eyebrow.R
+    7401026: infihead-armature|sick3 //// eyebrow.R
+    7401028: infihead-armature|anger1 //// neck
+    7401030: infihead-armature|fear1 //// neck
+    7401032: infihead-armature|fear2 //// neck
+    7401034: infihead-armature|joy1 //// neck
+    7401036: infihead-armature|joy2 //// neck
+    7401038: infihead-armature|joy3 //// neck
+    7401040: infihead-armature|rest //// neck
+    7401042: infihead-armature|sick1 //// neck
+    7401044: infihead-armature|sick2 //// neck
+    7401046: infihead-armature|sick3 //// neck
+    7401048: infihead-armature|anger1 //// eyelids.L
+    7401050: infihead-armature|fear1 //// eyelids.L
+    7401052: infihead-armature|fear2 //// eyelids.L
+    7401054: infihead-armature|joy1 //// eyelids.L
+    7401056: infihead-armature|joy2 //// eyelids.L
+    7401058: infihead-armature|joy3 //// eyelids.L
+    7401060: infihead-armature|rest //// eyelids.L
+    7401062: infihead-armature|sick1 //// eyelids.L
+    7401064: infihead-armature|sick2 //// eyelids.L
+    7401066: infihead-armature|sick3 //// eyelids.L
+    7401068: infihead-armature|anger1 //// BASE
+    7401070: infihead-armature|fear1 //// BASE
+    7401072: infihead-armature|fear2 //// BASE
+    7401074: infihead-armature|joy1 //// BASE
+    7401076: infihead-armature|joy2 //// BASE
+    7401078: infihead-armature|joy3 //// BASE
+    7401080: infihead-armature|rest //// BASE
+    7401082: infihead-armature|sick1 //// BASE
+    7401084: infihead-armature|sick2 //// BASE
+    7401086: infihead-armature|sick3 //// BASE
+    7401088: infihead-armature|anger1 //// jaw
+    7401090: infihead-armature|fear1 //// jaw
+    7401092: infihead-armature|fear2 //// jaw
+    7401094: infihead-armature|joy1 //// jaw
+    7401096: infihead-armature|joy2 //// jaw
+    7401098: infihead-armature|joy3 //// jaw
+    7401100: infihead-armature|rest //// jaw
+    7401102: infihead-armature|sick1 //// jaw
+    7401104: infihead-armature|sick2 //// jaw
+    7401106: infihead-armature|sick3 //// jaw
+    7401108: infihead-armature|anger1 //// mouth.L
+    7401110: infihead-armature|fear1 //// mouth.L
+    7401112: infihead-armature|fear2 //// mouth.L
+    7401114: infihead-armature|joy1 //// mouth.L
+    7401116: infihead-armature|joy2 //// mouth.L
+    7401118: infihead-armature|joy3 //// mouth.L
+    7401120: infihead-armature|rest //// mouth.L
+    7401122: infihead-armature|sick1 //// mouth.L
+    7401124: infihead-armature|sick2 //// mouth.L
+    7401126: infihead-armature|sick3 //// mouth.L
+    7401128: infihead-armature|anger1 //// eyebrow.L
+    7401130: infihead-armature|fear1 //// eyebrow.L
+    7401132: infihead-armature|fear2 //// eyebrow.L
+    7401134: infihead-armature|joy1 //// eyebrow.L
+    7401136: infihead-armature|joy2 //// eyebrow.L
+    7401138: infihead-armature|joy3 //// eyebrow.L
+    7401140: infihead-armature|rest //// eyebrow.L
+    7401142: infihead-armature|sick1 //// eyebrow.L
+    7401144: infihead-armature|sick2 //// eyebrow.L
+    7401146: infihead-armature|sick3 //// eyebrow.L
+    7401148: infihead-armature|anger1 //// eyelids.R
+    7401150: infihead-armature|fear1 //// eyelids.R
+    7401152: infihead-armature|fear2 //// eyelids.R
+    7401154: infihead-armature|joy1 //// eyelids.R
+    7401156: infihead-armature|joy2 //// eyelids.R
+    7401158: infihead-armature|joy3 //// eyelids.R
+    7401160: infihead-armature|rest //// eyelids.R
+    7401162: infihead-armature|sick1 //// eyelids.R
+    7401164: infihead-armature|sick2 //// eyelids.R
+    7401166: infihead-armature|sick3 //// eyelids.R
+    7401168: infihead-armature|anger1 //// mouth.R
+    7401170: infihead-armature|fear1 //// mouth.R
+    7401172: infihead-armature|fear2 //// mouth.R
+    7401174: infihead-armature|joy1 //// mouth.R
+    7401176: infihead-armature|joy2 //// mouth.R
+    7401178: infihead-armature|joy3 //// mouth.R
+    7401180: infihead-armature|rest //// mouth.R
+    7401182: infihead-armature|sick1 //// mouth.R
+    7401184: infihead-armature|sick2 //// mouth.R
+    7401186: infihead-armature|sick3 //// mouth.R
+    7401188: infihead-armature|anger1 //// eyebrow.R
+    7401190: infihead-armature|fear1 //// eyebrow.R
+    7401192: infihead-armature|fear2 //// eyebrow.R
+    7401194: infihead-armature|joy1 //// eyebrow.R
+    7401196: infihead-armature|joy2 //// eyebrow.R
+    7401198: infihead-armature|joy3 //// eyebrow.R
+    7401200: infihead-armature|rest //// eyebrow.R
+    7401202: infihead-armature|sick1 //// eyebrow.R
+    7401204: infihead-armature|sick2 //// eyebrow.R
+    7401206: infihead-armature|sick3 //// eyebrow.R
+    7401208: infihead-armature|anger1 //// neck
+    7401210: infihead-armature|fear1 //// neck
+    7401212: infihead-armature|fear2 //// neck
+    7401214: infihead-armature|joy1 //// neck
+    7401216: infihead-armature|joy2 //// neck
+    7401218: infihead-armature|joy3 //// neck
+    7401220: infihead-armature|rest //// neck
+    7401222: infihead-armature|sick1 //// neck
+    7401224: infihead-armature|sick2 //// neck
+    7401226: infihead-armature|sick3 //// neck
+    7401228: infihead-armature|anger1 //// eyelids.L
+    7401230: infihead-armature|fear1 //// eyelids.L
+    7401232: infihead-armature|fear2 //// eyelids.L
+    7401234: infihead-armature|joy1 //// eyelids.L
+    7401236: infihead-armature|joy2 //// eyelids.L
+    7401238: infihead-armature|joy3 //// eyelids.L
+    7401240: infihead-armature|rest //// eyelids.L
+    7401242: infihead-armature|sick1 //// eyelids.L
+    7401244: infihead-armature|sick2 //// eyelids.L
+    7401246: infihead-armature|sick3 //// eyelids.L
+    7401248: infihead-armature|anger1 //// BASE
+    7401250: infihead-armature|fear1 //// BASE
+    7401252: infihead-armature|fear2 //// BASE
+    7401254: infihead-armature|joy1 //// BASE
+    7401256: infihead-armature|joy2 //// BASE
+    7401258: infihead-armature|joy3 //// BASE
+    7401260: infihead-armature|rest //// BASE
+    7401262: infihead-armature|sick1 //// BASE
+    7401264: infihead-armature|sick2 //// BASE
+    7401266: infihead-armature|sick3 //// BASE
+    7401268: infihead-armature|anger1 //// jaw
+    7401270: infihead-armature|fear1 //// jaw
+    7401272: infihead-armature|fear2 //// jaw
+    7401274: infihead-armature|joy1 //// jaw
+    7401276: infihead-armature|joy2 //// jaw
+    7401278: infihead-armature|joy3 //// jaw
+    7401280: infihead-armature|rest //// jaw
+    7401282: infihead-armature|sick1 //// jaw
+    7401284: infihead-armature|sick2 //// jaw
+    7401286: infihead-armature|sick3 //// jaw
+    7401288: infihead-armature|anger1 //// mouth.L
+    7401290: infihead-armature|fear1 //// mouth.L
+    7401292: infihead-armature|fear2 //// mouth.L
+    7401294: infihead-armature|joy1 //// mouth.L
+    7401296: infihead-armature|joy2 //// mouth.L
+    7401298: infihead-armature|joy3 //// mouth.L
+    7401300: infihead-armature|rest //// mouth.L
+    7401302: infihead-armature|sick1 //// mouth.L
+    7401304: infihead-armature|sick2 //// mouth.L
+    7401306: infihead-armature|sick3 //// mouth.L
+    7401308: infihead-armature|anger1 //// eyebrow.L
+    7401310: infihead-armature|fear1 //// eyebrow.L
+    7401312: infihead-armature|fear2 //// eyebrow.L
+    7401314: infihead-armature|joy1 //// eyebrow.L
+    7401316: infihead-armature|joy2 //// eyebrow.L
+    7401318: infihead-armature|joy3 //// eyebrow.L
+    7401320: infihead-armature|rest //// eyebrow.L
+    7401322: infihead-armature|sick1 //// eyebrow.L
+    7401324: infihead-armature|sick2 //// eyebrow.L
+    7401326: infihead-armature|sick3 //// eyebrow.L
+    7401328: infihead-armature|anger1 //// eyelids.R
+    7401330: infihead-armature|fear1 //// eyelids.R
+    7401332: infihead-armature|fear2 //// eyelids.R
+    7401334: infihead-armature|joy1 //// eyelids.R
+    7401336: infihead-armature|joy2 //// eyelids.R
+    7401338: infihead-armature|joy3 //// eyelids.R
+    7401340: infihead-armature|rest //// eyelids.R
+    7401342: infihead-armature|sick1 //// eyelids.R
+    7401344: infihead-armature|sick2 //// eyelids.R
+    7401346: infihead-armature|sick3 //// eyelids.R
+    7401348: infihead-armature|anger1 //// mouth.R
+    7401350: infihead-armature|fear1 //// mouth.R
+    7401352: infihead-armature|fear2 //// mouth.R
+    7401354: infihead-armature|joy1 //// mouth.R
+    7401356: infihead-armature|joy2 //// mouth.R
+    7401358: infihead-armature|joy3 //// mouth.R
+    7401360: infihead-armature|rest //// mouth.R
+    7401362: infihead-armature|sick1 //// mouth.R
+    7401364: infihead-armature|sick2 //// mouth.R
+    7401366: infihead-armature|sick3 //// mouth.R
+    7401368: infihead-armature|anger1 //// eyebrow.R
+    7401370: infihead-armature|fear1 //// eyebrow.R
+    7401372: infihead-armature|fear2 //// eyebrow.R
+    7401374: infihead-armature|joy1 //// eyebrow.R
+    7401376: infihead-armature|joy2 //// eyebrow.R
+    7401378: infihead-armature|joy3 //// eyebrow.R
+    7401380: infihead-armature|rest //// eyebrow.R
+    7401382: infihead-armature|sick1 //// eyebrow.R
+    7401384: infihead-armature|sick2 //// eyebrow.R
+    7401386: infihead-armature|sick3 //// eyebrow.R
+    7401388: infihead-armature|anger1 //// neck
+    7401390: infihead-armature|fear1 //// neck
+    7401392: infihead-armature|fear2 //// neck
+    7401394: infihead-armature|joy1 //// neck
+    7401396: infihead-armature|joy2 //// neck
+    7401398: infihead-armature|joy3 //// neck
+    7401400: infihead-armature|rest //// neck
+    7401402: infihead-armature|sick1 //// neck
+    7401404: infihead-armature|sick2 //// neck
+    7401406: infihead-armature|sick3 //// neck
+    7401408: infihead-armature|anger1 //// eyelids.L
+    7401410: infihead-armature|fear1 //// eyelids.L
+    7401412: infihead-armature|fear2 //// eyelids.L
+    7401414: infihead-armature|joy1 //// eyelids.L
+    7401416: infihead-armature|joy2 //// eyelids.L
+    7401418: infihead-armature|joy3 //// eyelids.L
+    7401420: infihead-armature|rest //// eyelids.L
+    7401422: infihead-armature|sick1 //// eyelids.L
+    7401424: infihead-armature|sick2 //// eyelids.L
+    7401426: infihead-armature|sick3 //// eyelids.L
+    7401428: infihead-armature|anger1 //// BASE
+    7401430: infihead-armature|fear1 //// BASE
+    7401432: infihead-armature|fear2 //// BASE
+    7401434: infihead-armature|joy1 //// BASE
+    7401436: infihead-armature|joy2 //// BASE
+    7401438: infihead-armature|joy3 //// BASE
+    7401440: infihead-armature|rest //// BASE
+    7401442: infihead-armature|sick1 //// BASE
+    7401444: infihead-armature|sick2 //// BASE
+    7401446: infihead-armature|sick3 //// BASE
+    7401448: infihead-armature|anger1 //// jaw
+    7401450: infihead-armature|fear1 //// jaw
+    7401452: infihead-armature|fear2 //// jaw
+    7401454: infihead-armature|joy1 //// jaw
+    7401456: infihead-armature|joy2 //// jaw
+    7401458: infihead-armature|joy3 //// jaw
+    7401460: infihead-armature|rest //// jaw
+    7401462: infihead-armature|sick1 //// jaw
+    7401464: infihead-armature|sick2 //// jaw
+    7401466: infihead-armature|sick3 //// jaw
+    7401468: infihead-armature|anger1 //// mouth.L
+    7401470: infihead-armature|fear1 //// mouth.L
+    7401472: infihead-armature|fear2 //// mouth.L
+    7401474: infihead-armature|joy1 //// mouth.L
+    7401476: infihead-armature|joy2 //// mouth.L
+    7401478: infihead-armature|joy3 //// mouth.L
+    7401480: infihead-armature|rest //// mouth.L
+    7401482: infihead-armature|sick1 //// mouth.L
+    7401484: infihead-armature|sick2 //// mouth.L
+    7401486: infihead-armature|sick3 //// mouth.L
+    7401488: infihead-armature|anger1 //// eyebrow.L
+    7401490: infihead-armature|fear1 //// eyebrow.L
+    7401492: infihead-armature|fear2 //// eyebrow.L
+    7401494: infihead-armature|joy1 //// eyebrow.L
+    7401496: infihead-armature|joy2 //// eyebrow.L
+    7401498: infihead-armature|joy3 //// eyebrow.L
+    7401500: infihead-armature|rest //// eyebrow.L
+    7401502: infihead-armature|sick1 //// eyebrow.L
+    7401504: infihead-armature|sick2 //// eyebrow.L
+    7401506: infihead-armature|sick3 //// eyebrow.L
+    7401508: infihead-armature|anger1 //// eyelids.R
+    7401510: infihead-armature|fear1 //// eyelids.R
+    7401512: infihead-armature|fear2 //// eyelids.R
+    7401514: infihead-armature|joy1 //// eyelids.R
+    7401516: infihead-armature|joy2 //// eyelids.R
+    7401518: infihead-armature|joy3 //// eyelids.R
+    7401520: infihead-armature|rest //// eyelids.R
+    7401522: infihead-armature|sick1 //// eyelids.R
+    7401524: infihead-armature|sick2 //// eyelids.R
+    7401526: infihead-armature|sick3 //// eyelids.R
+    7401528: infihead-armature|anger1 //// mouth.R
+    7401530: infihead-armature|fear1 //// mouth.R
+    7401532: infihead-armature|fear2 //// mouth.R
+    7401534: infihead-armature|joy1 //// mouth.R
+    7401536: infihead-armature|joy2 //// mouth.R
+    7401538: infihead-armature|joy3 //// mouth.R
+    7401540: infihead-armature|rest //// mouth.R
+    7401542: infihead-armature|sick1 //// mouth.R
+    7401544: infihead-armature|sick2 //// mouth.R
+    7401546: infihead-armature|sick3 //// mouth.R
+    7401548: infihead-armature|anger1 //// eyebrow.R
+    7401550: infihead-armature|fear1 //// eyebrow.R
+    7401552: infihead-armature|fear2 //// eyebrow.R
+    7401554: infihead-armature|joy1 //// eyebrow.R
+    7401556: infihead-armature|joy2 //// eyebrow.R
+    7401558: infihead-armature|joy3 //// eyebrow.R
+    7401560: infihead-armature|rest //// eyebrow.R
+    7401562: infihead-armature|sick1 //// eyebrow.R
+    7401564: infihead-armature|sick2 //// eyebrow.R
+    7401566: infihead-armature|sick3 //// eyebrow.R
+    7401568: infihead-armature|anger1 //// neck
+    7401570: infihead-armature|fear1 //// neck
+    7401572: infihead-armature|fear2 //// neck
+    7401574: infihead-armature|joy1 //// neck
+    7401576: infihead-armature|joy2 //// neck
+    7401578: infihead-armature|joy3 //// neck
+    7401580: infihead-armature|rest //// neck
+    7401582: infihead-armature|sick1 //// neck
+    7401584: infihead-armature|sick2 //// neck
+    7401586: infihead-armature|sick3 //// neck
+    7401588: infihead-armature|anger1 //// eyelids.L
+    7401590: infihead-armature|fear1 //// eyelids.L
+    7401592: infihead-armature|fear2 //// eyelids.L
+    7401594: infihead-armature|joy1 //// eyelids.L
+    7401596: infihead-armature|joy2 //// eyelids.L
+    7401598: infihead-armature|joy3 //// eyelids.L
+    7401600: infihead-armature|rest //// eyelids.L
+    7401602: infihead-armature|sick1 //// eyelids.L
+    7401604: infihead-armature|sick2 //// eyelids.L
+    7401606: infihead-armature|sick3 //// eyelids.L
+    7401608: infihead-armature|anger1 //// BASE
+    7401610: infihead-armature|fear1 //// BASE
+    7401612: infihead-armature|fear2 //// BASE
+    7401614: infihead-armature|joy1 //// BASE
+    7401616: infihead-armature|joy2 //// BASE
+    7401618: infihead-armature|joy3 //// BASE
+    7401620: infihead-armature|rest //// BASE
+    7401622: infihead-armature|sick1 //// BASE
+    7401624: infihead-armature|sick2 //// BASE
+    7401626: infihead-armature|sick3 //// BASE
+    7401628: infihead-armature|anger1 //// jaw
+    7401630: infihead-armature|fear1 //// jaw
+    7401632: infihead-armature|fear2 //// jaw
+    7401634: infihead-armature|joy1 //// jaw
+    7401636: infihead-armature|joy2 //// jaw
+    7401638: infihead-armature|joy3 //// jaw
+    7401640: infihead-armature|rest //// jaw
+    7401642: infihead-armature|sick1 //// jaw
+    7401644: infihead-armature|sick2 //// jaw
+    7401646: infihead-armature|sick3 //// jaw
+    7401648: infihead-armature|anger1 //// mouth.L
+    7401650: infihead-armature|fear1 //// mouth.L
+    7401652: infihead-armature|fear2 //// mouth.L
+    7401654: infihead-armature|joy1 //// mouth.L
+    7401656: infihead-armature|joy2 //// mouth.L
+    7401658: infihead-armature|joy3 //// mouth.L
+    7401660: infihead-armature|rest //// mouth.L
+    7401662: infihead-armature|sick1 //// mouth.L
+    7401664: infihead-armature|sick2 //// mouth.L
+    7401666: infihead-armature|sick3 //// mouth.L
+    7401668: infihead-armature|anger1 //// eyebrow.L
+    7401670: infihead-armature|fear1 //// eyebrow.L
+    7401672: infihead-armature|fear2 //// eyebrow.L
+    7401674: infihead-armature|joy1 //// eyebrow.L
+    7401676: infihead-armature|joy2 //// eyebrow.L
+    7401678: infihead-armature|joy3 //// eyebrow.L
+    7401680: infihead-armature|rest //// eyebrow.L
+    7401682: infihead-armature|sick1 //// eyebrow.L
+    7401684: infihead-armature|sick2 //// eyebrow.L
+    7401686: infihead-armature|sick3 //// eyebrow.L
+    7401688: infihead-armature|anger1 //// eyelids.R
+    7401690: infihead-armature|fear1 //// eyelids.R
+    7401692: infihead-armature|fear2 //// eyelids.R
+    7401694: infihead-armature|joy1 //// eyelids.R
+    7401696: infihead-armature|joy2 //// eyelids.R
+    7401698: infihead-armature|joy3 //// eyelids.R
+    7401700: infihead-armature|rest //// eyelids.R
+    7401702: infihead-armature|sick1 //// eyelids.R
+    7401704: infihead-armature|sick2 //// eyelids.R
+    7401706: infihead-armature|sick3 //// eyelids.R
+    7401708: infihead-armature|anger1 //// mouth.R
+    7401710: infihead-armature|fear1 //// mouth.R
+    7401712: infihead-armature|fear2 //// mouth.R
+    7401714: infihead-armature|joy1 //// mouth.R
+    7401716: infihead-armature|joy2 //// mouth.R
+    7401718: infihead-armature|joy3 //// mouth.R
+    7401720: infihead-armature|rest //// mouth.R
+    7401722: infihead-armature|sick1 //// mouth.R
+    7401724: infihead-armature|sick2 //// mouth.R
+    7401726: infihead-armature|sick3 //// mouth.R
+    7401728: infihead-armature|anger1 //// eyebrow.R
+    7401730: infihead-armature|fear1 //// eyebrow.R
+    7401732: infihead-armature|fear2 //// eyebrow.R
+    7401734: infihead-armature|joy1 //// eyebrow.R
+    7401736: infihead-armature|joy2 //// eyebrow.R
+    7401738: infihead-armature|joy3 //// eyebrow.R
+    7401740: infihead-armature|rest //// eyebrow.R
+    7401742: infihead-armature|sick1 //// eyebrow.R
+    7401744: infihead-armature|sick2 //// eyebrow.R
+    7401746: infihead-armature|sick3 //// eyebrow.R
+    7401748: infihead-armature|anger1 //// neck
+    7401750: infihead-armature|fear1 //// neck
+    7401752: infihead-armature|fear2 //// neck
+    7401754: infihead-armature|joy1 //// neck
+    7401756: infihead-armature|joy2 //// neck
+    7401758: infihead-armature|joy3 //// neck
+    7401760: infihead-armature|rest //// neck
+    7401762: infihead-armature|sick1 //// neck
+    7401764: infihead-armature|sick2 //// neck
+    7401766: infihead-armature|sick3 //// neck
+    7401768: infihead-armature|anger1 //// eyelids.L
+    7401770: infihead-armature|fear1 //// eyelids.L
+    7401772: infihead-armature|fear2 //// eyelids.L
+    7401774: infihead-armature|joy1 //// eyelids.L
+    7401776: infihead-armature|joy2 //// eyelids.L
+    7401778: infihead-armature|joy3 //// eyelids.L
+    7401780: infihead-armature|rest //// eyelids.L
+    7401782: infihead-armature|sick1 //// eyelids.L
+    7401784: infihead-armature|sick2 //// eyelids.L
+    7401786: infihead-armature|sick3 //// eyelids.L
+    7401788: infihead-armature|anger1 //// BASE
+    7401790: infihead-armature|fear1 //// BASE
+    7401792: infihead-armature|fear2 //// BASE
+    7401794: infihead-armature|joy1 //// BASE
+    7401796: infihead-armature|joy2 //// BASE
+    7401798: infihead-armature|joy3 //// BASE
+    7401800: infihead-armature|rest //// BASE
+    7401802: infihead-armature|sick1 //// BASE
+    7401804: infihead-armature|sick2 //// BASE
+    7401806: infihead-armature|sick3 //// BASE
+    7401808: infihead-armature|anger1 //// jaw
+    7401810: infihead-armature|fear1 //// jaw
+    7401812: infihead-armature|fear2 //// jaw
+    7401814: infihead-armature|joy1 //// jaw
+    7401816: infihead-armature|joy2 //// jaw
+    7401818: infihead-armature|joy3 //// jaw
+    7401820: infihead-armature|rest //// jaw
+    7401822: infihead-armature|sick1 //// jaw
+    7401824: infihead-armature|sick2 //// jaw
+    7401826: infihead-armature|sick3 //// jaw
+    7401828: infihead-armature|anger1 //// mouth.L
+    7401830: infihead-armature|fear1 //// mouth.L
+    7401832: infihead-armature|fear2 //// mouth.L
+    7401834: infihead-armature|joy1 //// mouth.L
+    7401836: infihead-armature|joy2 //// mouth.L
+    7401838: infihead-armature|joy3 //// mouth.L
+    7401840: infihead-armature|rest //// mouth.L
+    7401842: infihead-armature|sick1 //// mouth.L
+    7401844: infihead-armature|sick2 //// mouth.L
+    7401846: infihead-armature|sick3 //// mouth.L
+    7401848: infihead-armature|anger1 //// eyebrow.L
+    7401850: infihead-armature|fear1 //// eyebrow.L
+    7401852: infihead-armature|fear2 //// eyebrow.L
+    7401854: infihead-armature|joy1 //// eyebrow.L
+    7401856: infihead-armature|joy2 //// eyebrow.L
+    7401858: infihead-armature|joy3 //// eyebrow.L
+    7401860: infihead-armature|rest //// eyebrow.L
+    7401862: infihead-armature|sick1 //// eyebrow.L
+    7401864: infihead-armature|sick2 //// eyebrow.L
+    7401866: infihead-armature|sick3 //// eyebrow.L
+    7401868: infihead-armature|anger1 //// eyelids.R
+    7401870: infihead-armature|fear1 //// eyelids.R
+    7401872: infihead-armature|fear2 //// eyelids.R
+    7401874: infihead-armature|joy1 //// eyelids.R
+    7401876: infihead-armature|joy2 //// eyelids.R
+    7401878: infihead-armature|joy3 //// eyelids.R
+    7401880: infihead-armature|rest //// eyelids.R
+    7401882: infihead-armature|sick1 //// eyelids.R
+    7401884: infihead-armature|sick2 //// eyelids.R
+    7401886: infihead-armature|sick3 //// eyelids.R
+    7401888: infihead-armature|anger1 //// mouth.R
+    7401890: infihead-armature|fear1 //// mouth.R
+    7401892: infihead-armature|fear2 //// mouth.R
+    7401894: infihead-armature|joy1 //// mouth.R
+    7401896: infihead-armature|joy2 //// mouth.R
+    7401898: infihead-armature|joy3 //// mouth.R
+    7401900: infihead-armature|rest //// mouth.R
+    7401902: infihead-armature|sick1 //// mouth.R
+    7401904: infihead-armature|sick2 //// mouth.R
+    7401906: infihead-armature|sick3 //// mouth.R
+    7401908: infihead-armature|anger1 //// eyebrow.R
+    7401910: infihead-armature|fear1 //// eyebrow.R
+    7401912: infihead-armature|fear2 //// eyebrow.R
+    7401914: infihead-armature|joy1 //// eyebrow.R
+    7401916: infihead-armature|joy2 //// eyebrow.R
+    7401918: infihead-armature|joy3 //// eyebrow.R
+    7401920: infihead-armature|rest //// eyebrow.R
+    7401922: infihead-armature|sick1 //// eyebrow.R
+    7401924: infihead-armature|sick2 //// eyebrow.R
+    7401926: infihead-armature|sick3 //// eyebrow.R
+    7401928: infihead-armature|anger1 //// neck
+    7401930: infihead-armature|fear1 //// neck
+    7401932: infihead-armature|fear2 //// neck
+    7401934: infihead-armature|joy1 //// neck
+    7401936: infihead-armature|joy2 //// neck
+    7401938: infihead-armature|joy3 //// neck
+    7401940: infihead-armature|rest //// neck
+    7401942: infihead-armature|sick1 //// neck
+    7401944: infihead-armature|sick2 //// neck
+    7401946: infihead-armature|sick3 //// neck
+    7401948: infihead-armature|anger1 //// eyelids.L
+    7401950: infihead-armature|fear1 //// eyelids.L
+    7401952: infihead-armature|fear2 //// eyelids.L
+    7401954: infihead-armature|joy1 //// eyelids.L
+    7401956: infihead-armature|joy2 //// eyelids.L
+    7401958: infihead-armature|joy3 //// eyelids.L
+    7401960: infihead-armature|rest //// eyelids.L
+    7401962: infihead-armature|sick1 //// eyelids.L
+    7401964: infihead-armature|sick2 //// eyelids.L
+    7401966: infihead-armature|sick3 //// eyelids.L
+    7401968: infihead-armature|anger1 //// BASE
+    7401970: infihead-armature|fear1 //// BASE
+    7401972: infihead-armature|fear2 //// BASE
+    7401974: infihead-armature|joy1 //// BASE
+    7401976: infihead-armature|joy2 //// BASE
+    7401978: infihead-armature|joy3 //// BASE
+    7401980: infihead-armature|rest //// BASE
+    7401982: infihead-armature|sick1 //// BASE
+    7401984: infihead-armature|sick2 //// BASE
+    7401986: infihead-armature|sick3 //// BASE
+    7401988: infihead-armature|anger1 //// jaw
+    7401990: infihead-armature|fear1 //// jaw
+    7401992: infihead-armature|fear2 //// jaw
+    7401994: infihead-armature|joy1 //// jaw
+    7401996: infihead-armature|joy2 //// jaw
+    7401998: infihead-armature|joy3 //// jaw
+    7402000: infihead-armature|rest //// jaw
+    7402002: infihead-armature|sick1 //// jaw
+    7402004: infihead-armature|sick2 //// jaw
+    7402006: infihead-armature|sick3 //// jaw
+    7402008: infihead-armature|anger1 //// mouth.L
+    7402010: infihead-armature|fear1 //// mouth.L
+    7402012: infihead-armature|fear2 //// mouth.L
+    7402014: infihead-armature|joy1 //// mouth.L
+    7402016: infihead-armature|joy2 //// mouth.L
+    7402018: infihead-armature|joy3 //// mouth.L
+    7402020: infihead-armature|rest //// mouth.L
+    7402022: infihead-armature|sick1 //// mouth.L
+    7402024: infihead-armature|sick2 //// mouth.L
+    7402026: infihead-armature|sick3 //// mouth.L
+    7402028: infihead-armature|anger1 //// eyebrow.L
+    7402030: infihead-armature|fear1 //// eyebrow.L
+    7402032: infihead-armature|fear2 //// eyebrow.L
+    7402034: infihead-armature|joy1 //// eyebrow.L
+    7402036: infihead-armature|joy2 //// eyebrow.L
+    7402038: infihead-armature|joy3 //// eyebrow.L
+    7402040: infihead-armature|rest //// eyebrow.L
+    7402042: infihead-armature|sick1 //// eyebrow.L
+    7402044: infihead-armature|sick2 //// eyebrow.L
+    7402046: infihead-armature|sick3 //// eyebrow.L
+    7402048: infihead-armature|anger1 //// eyelids.R
+    7402050: infihead-armature|fear1 //// eyelids.R
+    7402052: infihead-armature|fear2 //// eyelids.R
+    7402054: infihead-armature|joy1 //// eyelids.R
+    7402056: infihead-armature|joy2 //// eyelids.R
+    7402058: infihead-armature|joy3 //// eyelids.R
+    7402060: infihead-armature|rest //// eyelids.R
+    7402062: infihead-armature|sick1 //// eyelids.R
+    7402064: infihead-armature|sick2 //// eyelids.R
+    7402066: infihead-armature|sick3 //// eyelids.R
+    7402068: infihead-armature|anger1 //// mouth.R
+    7402070: infihead-armature|fear1 //// mouth.R
+    7402072: infihead-armature|fear2 //// mouth.R
+    7402074: infihead-armature|joy1 //// mouth.R
+    7402076: infihead-armature|joy2 //// mouth.R
+    7402078: infihead-armature|joy3 //// mouth.R
+    7402080: infihead-armature|rest //// mouth.R
+    7402082: infihead-armature|sick1 //// mouth.R
+    7402084: infihead-armature|sick2 //// mouth.R
+    7402086: infihead-armature|sick3 //// mouth.R
+    7402088: infihead-armature|anger1 //// eyebrow.R
+    7402090: infihead-armature|fear1 //// eyebrow.R
+    7402092: infihead-armature|fear2 //// eyebrow.R
+    7402094: infihead-armature|joy1 //// eyebrow.R
+    7402096: infihead-armature|joy2 //// eyebrow.R
+    7402098: infihead-armature|joy3 //// eyebrow.R
+    7402100: infihead-armature|rest //// eyebrow.R
+    7402102: infihead-armature|sick1 //// eyebrow.R
+    7402104: infihead-armature|sick2 //// eyebrow.R
+    7402106: infihead-armature|sick3 //// eyebrow.R
+    7402108: infihead-armature|anger1 //// neck
+    7402110: infihead-armature|fear1 //// neck
+    7402112: infihead-armature|fear2 //// neck
+    7402114: infihead-armature|joy1 //// neck
+    7402116: infihead-armature|joy2 //// neck
+    7402118: infihead-armature|joy3 //// neck
+    7402120: infihead-armature|rest //// neck
+    7402122: infihead-armature|sick1 //// neck
+    7402124: infihead-armature|sick2 //// neck
+    7402126: infihead-armature|sick3 //// neck
+    7402128: infihead-armature|anger1 //// eyelids.L
+    7402130: infihead-armature|fear1 //// eyelids.L
+    7402132: infihead-armature|fear2 //// eyelids.L
+    7402134: infihead-armature|joy1 //// eyelids.L
+    7402136: infihead-armature|joy2 //// eyelids.L
+    7402138: infihead-armature|joy3 //// eyelids.L
+    7402140: infihead-armature|rest //// eyelids.L
+    7402142: infihead-armature|sick1 //// eyelids.L
+    7402144: infihead-armature|sick2 //// eyelids.L
+    7402146: infihead-armature|sick3 //// eyelids.L
+    7402148: infihead-armature|anger1 //// BASE
+    7402150: infihead-armature|fear1 //// BASE
+    7402152: infihead-armature|fear2 //// BASE
+    7402154: infihead-armature|joy1 //// BASE
+    7402156: infihead-armature|joy2 //// BASE
+    7402158: infihead-armature|joy3 //// BASE
+    7402160: infihead-armature|rest //// BASE
+    7402162: infihead-armature|sick1 //// BASE
+    7402164: infihead-armature|sick2 //// BASE
+    7402166: infihead-armature|sick3 //// BASE
+    7402168: infihead-armature|anger1 //// jaw
+    7402170: infihead-armature|fear1 //// jaw
+    7402172: infihead-armature|fear2 //// jaw
+    7402174: infihead-armature|joy1 //// jaw
+    7402176: infihead-armature|joy2 //// jaw
+    7402178: infihead-armature|joy3 //// jaw
+    7402180: infihead-armature|rest //// jaw
+    7402182: infihead-armature|sick1 //// jaw
+    7402184: infihead-armature|sick2 //// jaw
+    7402186: infihead-armature|sick3 //// jaw
+    7402188: infihead-armature|anger1 //// mouth.L
+    7402190: infihead-armature|fear1 //// mouth.L
+    7402192: infihead-armature|fear2 //// mouth.L
+    7402194: infihead-armature|joy1 //// mouth.L
+    7402196: infihead-armature|joy2 //// mouth.L
+    7402198: infihead-armature|joy3 //// mouth.L
+    7402200: infihead-armature|rest //// mouth.L
+    7402202: infihead-armature|sick1 //// mouth.L
+    7402204: infihead-armature|sick2 //// mouth.L
+    7402206: infihead-armature|sick3 //// mouth.L
+    7402208: infihead-armature|anger1 //// eyebrow.L
+    7402210: infihead-armature|fear1 //// eyebrow.L
+    7402212: infihead-armature|fear2 //// eyebrow.L
+    7402214: infihead-armature|joy1 //// eyebrow.L
+    7402216: infihead-armature|joy2 //// eyebrow.L
+    7402218: infihead-armature|joy3 //// eyebrow.L
+    7402220: infihead-armature|rest //// eyebrow.L
+    7402222: infihead-armature|sick1 //// eyebrow.L
+    7402224: infihead-armature|sick2 //// eyebrow.L
+    7402226: infihead-armature|sick3 //// eyebrow.L
+    7402228: infihead-armature|anger1 //// eyelids.R
+    7402230: infihead-armature|fear1 //// eyelids.R
+    7402232: infihead-armature|fear2 //// eyelids.R
+    7402234: infihead-armature|joy1 //// eyelids.R
+    7402236: infihead-armature|joy2 //// eyelids.R
+    7402238: infihead-armature|joy3 //// eyelids.R
+    7402240: infihead-armature|rest //// eyelids.R
+    7402242: infihead-armature|sick1 //// eyelids.R
+    7402244: infihead-armature|sick2 //// eyelids.R
+    7402246: infihead-armature|sick3 //// eyelids.R
+    7402248: infihead-armature|anger1 //// mouth.R
+    7402250: infihead-armature|fear1 //// mouth.R
+    7402252: infihead-armature|fear2 //// mouth.R
+    7402254: infihead-armature|joy1 //// mouth.R
+    7402256: infihead-armature|joy2 //// mouth.R
+    7402258: infihead-armature|joy3 //// mouth.R
+    7402260: infihead-armature|rest //// mouth.R
+    7402262: infihead-armature|sick1 //// mouth.R
+    7402264: infihead-armature|sick2 //// mouth.R
+    7402266: infihead-armature|sick3 //// mouth.R
+    7402268: infihead-armature|anger1 //// eyebrow.R
+    7402270: infihead-armature|fear1 //// eyebrow.R
+    7402272: infihead-armature|fear2 //// eyebrow.R
+    7402274: infihead-armature|joy1 //// eyebrow.R
+    7402276: infihead-armature|joy2 //// eyebrow.R
+    7402278: infihead-armature|joy3 //// eyebrow.R
+    7402280: infihead-armature|rest //// eyebrow.R
+    7402282: infihead-armature|sick1 //// eyebrow.R
+    7402284: infihead-armature|sick2 //// eyebrow.R
+    7402286: infihead-armature|sick3 //// eyebrow.R
+    7402288: infihead-armature|anger1 //// neck
+    7402290: infihead-armature|fear1 //// neck
+    7402292: infihead-armature|fear2 //// neck
+    7402294: infihead-armature|joy1 //// neck
+    7402296: infihead-armature|joy2 //// neck
+    7402298: infihead-armature|joy3 //// neck
+    7402300: infihead-armature|rest //// neck
+    7402302: infihead-armature|sick1 //// neck
+    7402304: infihead-armature|sick2 //// neck
+    7402306: infihead-armature|sick3 //// neck
+    7402308: infihead-armature|anger1 //// eyelids.L
+    7402310: infihead-armature|fear1 //// eyelids.L
+    7402312: infihead-armature|fear2 //// eyelids.L
+    7402314: infihead-armature|joy1 //// eyelids.L
+    7402316: infihead-armature|joy2 //// eyelids.L
+    7402318: infihead-armature|joy3 //// eyelids.L
+    7402320: infihead-armature|rest //// eyelids.L
+    7402322: infihead-armature|sick1 //// eyelids.L
+    7402324: infihead-armature|sick2 //// eyelids.L
+    7402326: infihead-armature|sick3 //// eyelids.L
+    7402328: infihead-armature|anger1 //// BASE
+    7402330: infihead-armature|fear1 //// BASE
+    7402332: infihead-armature|fear2 //// BASE
+    7402334: infihead-armature|joy1 //// BASE
+    7402336: infihead-armature|joy2 //// BASE
+    7402338: infihead-armature|joy3 //// BASE
+    7402340: infihead-armature|rest //// BASE
+    7402342: infihead-armature|sick1 //// BASE
+    7402344: infihead-armature|sick2 //// BASE
+    7402346: infihead-armature|sick3 //// BASE
+    7402348: infihead-armature|anger1 //// jaw
+    7402350: infihead-armature|fear1 //// jaw
+    7402352: infihead-armature|fear2 //// jaw
+    7402354: infihead-armature|joy1 //// jaw
+    7402356: infihead-armature|joy2 //// jaw
+    7402358: infihead-armature|joy3 //// jaw
+    7402360: infihead-armature|rest //// jaw
+    7402362: infihead-armature|sick1 //// jaw
+    7402364: infihead-armature|sick2 //// jaw
+    7402366: infihead-armature|sick3 //// jaw
+    7402368: infihead-armature|anger1 //// mouth.L
+    7402370: infihead-armature|fear1 //// mouth.L
+    7402372: infihead-armature|fear2 //// mouth.L
+    7402374: infihead-armature|joy1 //// mouth.L
+    7402376: infihead-armature|joy2 //// mouth.L
+    7402378: infihead-armature|joy3 //// mouth.L
+    7402380: infihead-armature|rest //// mouth.L
+    7402382: infihead-armature|sick1 //// mouth.L
+    7402384: infihead-armature|sick2 //// mouth.L
+    7402386: infihead-armature|sick3 //// mouth.L
+    7402388: infihead-armature|anger1 //// eyebrow.L
+    7402390: infihead-armature|fear1 //// eyebrow.L
+    7402392: infihead-armature|fear2 //// eyebrow.L
+    7402394: infihead-armature|joy1 //// eyebrow.L
+    7402396: infihead-armature|joy2 //// eyebrow.L
+    7402398: infihead-armature|joy3 //// eyebrow.L
+    7402400: infihead-armature|rest //// eyebrow.L
+    7402402: infihead-armature|sick1 //// eyebrow.L
+    7402404: infihead-armature|sick2 //// eyebrow.L
+    7402406: infihead-armature|sick3 //// eyebrow.L
+    7402408: infihead-armature|anger1 //// eyelids.R
+    7402410: infihead-armature|fear1 //// eyelids.R
+    7402412: infihead-armature|fear2 //// eyelids.R
+    7402414: infihead-armature|joy1 //// eyelids.R
+    7402416: infihead-armature|joy2 //// eyelids.R
+    7402418: infihead-armature|joy3 //// eyelids.R
+    7402420: infihead-armature|rest //// eyelids.R
+    7402422: infihead-armature|sick1 //// eyelids.R
+    7402424: infihead-armature|sick2 //// eyelids.R
+    7402426: infihead-armature|sick3 //// eyelids.R
+    7402428: infihead-armature|anger1 //// mouth.R
+    7402430: infihead-armature|fear1 //// mouth.R
+    7402432: infihead-armature|fear2 //// mouth.R
+    7402434: infihead-armature|joy1 //// mouth.R
+    7402436: infihead-armature|joy2 //// mouth.R
+    7402438: infihead-armature|joy3 //// mouth.R
+    7402440: infihead-armature|rest //// mouth.R
+    7402442: infihead-armature|sick1 //// mouth.R
+    7402444: infihead-armature|sick2 //// mouth.R
+    7402446: infihead-armature|sick3 //// mouth.R
+    7402448: infihead-armature|anger1 //// eyebrow.R
+    7402450: infihead-armature|fear1 //// eyebrow.R
+    7402452: infihead-armature|fear2 //// eyebrow.R
+    7402454: infihead-armature|joy1 //// eyebrow.R
+    7402456: infihead-armature|joy2 //// eyebrow.R
+    7402458: infihead-armature|joy3 //// eyebrow.R
+    7402460: infihead-armature|rest //// eyebrow.R
+    7402462: infihead-armature|sick1 //// eyebrow.R
+    7402464: infihead-armature|sick2 //// eyebrow.R
+    7402466: infihead-armature|sick3 //// eyebrow.R
+    7402468: infihead-armature|anger1 //// neck
+    7402470: infihead-armature|fear1 //// neck
+    7402472: infihead-armature|fear2 //// neck
+    7402474: infihead-armature|joy1 //// neck
+    7402476: infihead-armature|joy2 //// neck
+    7402478: infihead-armature|joy3 //// neck
+    7402480: infihead-armature|rest //// neck
+    7402482: infihead-armature|sick1 //// neck
+    7402484: infihead-armature|sick2 //// neck
+    7402486: infihead-armature|sick3 //// neck
+    7402488: infihead-armature|anger1 //// eyelids.L
+    7402490: infihead-armature|fear1 //// eyelids.L
+    7402492: infihead-armature|fear2 //// eyelids.L
+    7402494: infihead-armature|joy1 //// eyelids.L
+    7402496: infihead-armature|joy2 //// eyelids.L
+    7402498: infihead-armature|joy3 //// eyelids.L
+    7402500: infihead-armature|rest //// eyelids.L
+    7402502: infihead-armature|sick1 //// eyelids.L
+    7402504: infihead-armature|sick2 //// eyelids.L
+    7402506: infihead-armature|sick3 //// eyelids.L
+    7402508: infihead-armature|anger1 //// BASE
+    7402510: infihead-armature|fear1 //// BASE
+    7402512: infihead-armature|fear2 //// BASE
+    7402514: infihead-armature|joy1 //// BASE
+    7402516: infihead-armature|joy2 //// BASE
+    7402518: infihead-armature|joy3 //// BASE
+    7402520: infihead-armature|rest //// BASE
+    7402522: infihead-armature|sick1 //// BASE
+    7402524: infihead-armature|sick2 //// BASE
+    7402526: infihead-armature|sick3 //// BASE
+    7402528: infihead-armature|anger1 //// jaw
+    7402530: infihead-armature|fear1 //// jaw
+    7402532: infihead-armature|fear2 //// jaw
+    7402534: infihead-armature|joy1 //// jaw
+    7402536: infihead-armature|joy2 //// jaw
+    7402538: infihead-armature|joy3 //// jaw
+    7402540: infihead-armature|rest //// jaw
+    7402542: infihead-armature|sick1 //// jaw
+    7402544: infihead-armature|sick2 //// jaw
+    7402546: infihead-armature|sick3 //// jaw
+    7402548: infihead-armature|anger1 //// mouth.L
+    7402550: infihead-armature|fear1 //// mouth.L
+    7402552: infihead-armature|fear2 //// mouth.L
+    7402554: infihead-armature|joy1 //// mouth.L
+    7402556: infihead-armature|joy2 //// mouth.L
+    7402558: infihead-armature|joy3 //// mouth.L
+    7402560: infihead-armature|rest //// mouth.L
+    7402562: infihead-armature|sick1 //// mouth.L
+    7402564: infihead-armature|sick2 //// mouth.L
+    7402566: infihead-armature|sick3 //// mouth.L
+    7402568: infihead-armature|anger1 //// eyebrow.L
+    7402570: infihead-armature|fear1 //// eyebrow.L
+    7402572: infihead-armature|fear2 //// eyebrow.L
+    7402574: infihead-armature|joy1 //// eyebrow.L
+    7402576: infihead-armature|joy2 //// eyebrow.L
+    7402578: infihead-armature|joy3 //// eyebrow.L
+    7402580: infihead-armature|rest //// eyebrow.L
+    7402582: infihead-armature|sick1 //// eyebrow.L
+    7402584: infihead-armature|sick2 //// eyebrow.L
+    7402586: infihead-armature|sick3 //// eyebrow.L
+    7402588: infihead-armature|anger1 //// eyelids.R
+    7402590: infihead-armature|fear1 //// eyelids.R
+    7402592: infihead-armature|fear2 //// eyelids.R
+    7402594: infihead-armature|joy1 //// eyelids.R
+    7402596: infihead-armature|joy2 //// eyelids.R
+    7402598: infihead-armature|joy3 //// eyelids.R
+    7402600: infihead-armature|rest //// eyelids.R
+    7402602: infihead-armature|sick1 //// eyelids.R
+    7402604: infihead-armature|sick2 //// eyelids.R
+    7402606: infihead-armature|sick3 //// eyelids.R
+    7402608: infihead-armature|anger1 //// mouth.R
+    7402610: infihead-armature|fear1 //// mouth.R
+    7402612: infihead-armature|fear2 //// mouth.R
+    7402614: infihead-armature|joy1 //// mouth.R
+    7402616: infihead-armature|joy2 //// mouth.R
+    7402618: infihead-armature|joy3 //// mouth.R
+    7402620: infihead-armature|rest //// mouth.R
+    7402622: infihead-armature|sick1 //// mouth.R
+    7402624: infihead-armature|sick2 //// mouth.R
+    7402626: infihead-armature|sick3 //// mouth.R
+    7402628: infihead-armature|anger1 //// eyebrow.R
+    7402630: infihead-armature|fear1 //// eyebrow.R
+    7402632: infihead-armature|fear2 //// eyebrow.R
+    7402634: infihead-armature|joy1 //// eyebrow.R
+    7402636: infihead-armature|joy2 //// eyebrow.R
+    7402638: infihead-armature|joy3 //// eyebrow.R
+    7402640: infihead-armature|rest //// eyebrow.R
+    7402642: infihead-armature|sick1 //// eyebrow.R
+    7402644: infihead-armature|sick2 //// eyebrow.R
+    7402646: infihead-armature|sick3 //// eyebrow.R
+    7402648: infihead-armature|anger1 //// neck
+    7402650: infihead-armature|fear1 //// neck
+    7402652: infihead-armature|fear2 //// neck
+    7402654: infihead-armature|joy1 //// neck
+    7402656: infihead-armature|joy2 //// neck
+    7402658: infihead-armature|joy3 //// neck
+    7402660: infihead-armature|rest //// neck
+    7402662: infihead-armature|sick1 //// neck
+    7402664: infihead-armature|sick2 //// neck
+    7402666: infihead-armature|sick3 //// neck
+    7402668: infihead-armature|anger1 //// eyelids.L
+    7402670: infihead-armature|fear1 //// eyelids.L
+    7402672: infihead-armature|fear2 //// eyelids.L
+    7402674: infihead-armature|joy1 //// eyelids.L
+    7402676: infihead-armature|joy2 //// eyelids.L
+    7402678: infihead-armature|joy3 //// eyelids.L
+    7402680: infihead-armature|rest //// eyelids.L
+    7402682: infihead-armature|sick1 //// eyelids.L
+    7402684: infihead-armature|sick2 //// eyelids.L
+    7402686: infihead-armature|sick3 //// eyelids.L
+    7402688: infihead-armature|anger1 //// BASE
+    7402690: infihead-armature|fear1 //// BASE
+    7402692: infihead-armature|fear2 //// BASE
+    7402694: infihead-armature|joy1 //// BASE
+    7402696: infihead-armature|joy2 //// BASE
+    7402698: infihead-armature|joy3 //// BASE
+    7402700: infihead-armature|rest //// BASE
+    7402702: infihead-armature|sick1 //// BASE
+    7402704: infihead-armature|sick2 //// BASE
+    7402706: infihead-armature|sick3 //// BASE
+    7402708: infihead-armature|anger1 //// jaw
+    7402710: infihead-armature|fear1 //// jaw
+    7402712: infihead-armature|fear2 //// jaw
+    7402714: infihead-armature|joy1 //// jaw
+    7402716: infihead-armature|joy2 //// jaw
+    7402718: infihead-armature|joy3 //// jaw
+    7402720: infihead-armature|rest //// jaw
+    7402722: infihead-armature|sick1 //// jaw
+    7402724: infihead-armature|sick2 //// jaw
+    7402726: infihead-armature|sick3 //// jaw
+    7402728: infihead-armature|anger1 //// mouth.L
+    7402730: infihead-armature|fear1 //// mouth.L
+    7402732: infihead-armature|fear2 //// mouth.L
+    7402734: infihead-armature|joy1 //// mouth.L
+    7402736: infihead-armature|joy2 //// mouth.L
+    7402738: infihead-armature|joy3 //// mouth.L
+    7402740: infihead-armature|rest //// mouth.L
+    7402742: infihead-armature|sick1 //// mouth.L
+    7402744: infihead-armature|sick2 //// mouth.L
+    7402746: infihead-armature|sick3 //// mouth.L
+    7402748: infihead-armature|anger1 //// eyebrow.L
+    7402750: infihead-armature|fear1 //// eyebrow.L
+    7402752: infihead-armature|fear2 //// eyebrow.L
+    7402754: infihead-armature|joy1 //// eyebrow.L
+    7402756: infihead-armature|joy2 //// eyebrow.L
+    7402758: infihead-armature|joy3 //// eyebrow.L
+    7402760: infihead-armature|rest //// eyebrow.L
+    7402762: infihead-armature|sick1 //// eyebrow.L
+    7402764: infihead-armature|sick2 //// eyebrow.L
+    7402766: infihead-armature|sick3 //// eyebrow.L
+    7402768: infihead-armature|anger1 //// eyelids.R
+    7402770: infihead-armature|fear1 //// eyelids.R
+    7402772: infihead-armature|fear2 //// eyelids.R
+    7402774: infihead-armature|joy1 //// eyelids.R
+    7402776: infihead-armature|joy2 //// eyelids.R
+    7402778: infihead-armature|joy3 //// eyelids.R
+    7402780: infihead-armature|rest //// eyelids.R
+    7402782: infihead-armature|sick1 //// eyelids.R
+    7402784: infihead-armature|sick2 //// eyelids.R
+    7402786: infihead-armature|sick3 //// eyelids.R
+    7402788: infihead-armature|anger1 //// mouth.R
+    7402790: infihead-armature|fear1 //// mouth.R
+    7402792: infihead-armature|fear2 //// mouth.R
+    7402794: infihead-armature|joy1 //// mouth.R
+    7402796: infihead-armature|joy2 //// mouth.R
+    7402798: infihead-armature|joy3 //// mouth.R
+    7402800: infihead-armature|rest //// mouth.R
+    7402802: infihead-armature|sick1 //// mouth.R
+    7402804: infihead-armature|sick2 //// mouth.R
+    7402806: infihead-armature|sick3 //// mouth.R
+    7402808: infihead-armature|anger1 //// eyebrow.R
+    7402810: infihead-armature|fear1 //// eyebrow.R
+    7402812: infihead-armature|fear2 //// eyebrow.R
+    7402814: infihead-armature|joy1 //// eyebrow.R
+    7402816: infihead-armature|joy2 //// eyebrow.R
+    7402818: infihead-armature|joy3 //// eyebrow.R
+    7402820: infihead-armature|rest //// eyebrow.R
+    7402822: infihead-armature|sick1 //// eyebrow.R
+    7402824: infihead-armature|sick2 //// eyebrow.R
+    7402826: infihead-armature|sick3 //// eyebrow.R
+    7402828: infihead-armature|anger1 //// neck
+    7402830: infihead-armature|fear1 //// neck
+    7402832: infihead-armature|fear2 //// neck
+    7402834: infihead-armature|joy1 //// neck
+    7402836: infihead-armature|joy2 //// neck
+    7402838: infihead-armature|joy3 //// neck
+    7402840: infihead-armature|rest //// neck
+    7402842: infihead-armature|sick1 //// neck
+    7402844: infihead-armature|sick2 //// neck
+    7402846: infihead-armature|sick3 //// neck
+    7402848: infihead-armature|anger1 //// eyelids.L
+    7402850: infihead-armature|fear1 //// eyelids.L
+    7402852: infihead-armature|fear2 //// eyelids.L
+    7402854: infihead-armature|joy1 //// eyelids.L
+    7402856: infihead-armature|joy2 //// eyelids.L
+    7402858: infihead-armature|joy3 //// eyelids.L
+    7402860: infihead-armature|rest //// eyelids.L
+    7402862: infihead-armature|sick1 //// eyelids.L
+    7402864: infihead-armature|sick2 //// eyelids.L
+    7402866: infihead-armature|sick3 //// eyelids.L
+    7402868: infihead-armature|anger1 //// BASE
+    7402870: infihead-armature|fear1 //// BASE
+    7402872: infihead-armature|fear2 //// BASE
+    7402874: infihead-armature|joy1 //// BASE
+    7402876: infihead-armature|joy2 //// BASE
+    7402878: infihead-armature|joy3 //// BASE
+    7402880: infihead-armature|rest //// BASE
+    7402882: infihead-armature|sick1 //// BASE
+    7402884: infihead-armature|sick2 //// BASE
+    7402886: infihead-armature|sick3 //// BASE
+    7402888: infihead-armature|anger1 //// jaw
+    7402890: infihead-armature|fear1 //// jaw
+    7402892: infihead-armature|fear2 //// jaw
+    7402894: infihead-armature|joy1 //// jaw
+    7402896: infihead-armature|joy2 //// jaw
+    7402898: infihead-armature|joy3 //// jaw
+    7402900: infihead-armature|rest //// jaw
+    7402902: infihead-armature|sick1 //// jaw
+    7402904: infihead-armature|sick2 //// jaw
+    7402906: infihead-armature|sick3 //// jaw
+    7402908: infihead-armature|anger1 //// mouth.L
+    7402910: infihead-armature|fear1 //// mouth.L
+    7402912: infihead-armature|fear2 //// mouth.L
+    7402914: infihead-armature|joy1 //// mouth.L
+    7402916: infihead-armature|joy2 //// mouth.L
+    7402918: infihead-armature|joy3 //// mouth.L
+    7402920: infihead-armature|rest //// mouth.L
+    7402922: infihead-armature|sick1 //// mouth.L
+    7402924: infihead-armature|sick2 //// mouth.L
+    7402926: infihead-armature|sick3 //// mouth.L
+    7402928: infihead-armature|anger1 //// eyebrow.L
+    7402930: infihead-armature|fear1 //// eyebrow.L
+    7402932: infihead-armature|fear2 //// eyebrow.L
+    7402934: infihead-armature|joy1 //// eyebrow.L
+    7402936: infihead-armature|joy2 //// eyebrow.L
+    7402938: infihead-armature|joy3 //// eyebrow.L
+    7402940: infihead-armature|rest //// eyebrow.L
+    7402942: infihead-armature|sick1 //// eyebrow.L
+    7402944: infihead-armature|sick2 //// eyebrow.L
+    7402946: infihead-armature|sick3 //// eyebrow.L
+    7402948: infihead-armature|anger1 //// eyelids.R
+    7402950: infihead-armature|fear1 //// eyelids.R
+    7402952: infihead-armature|fear2 //// eyelids.R
+    7402954: infihead-armature|joy1 //// eyelids.R
+    7402956: infihead-armature|joy2 //// eyelids.R
+    7402958: infihead-armature|joy3 //// eyelids.R
+    7402960: infihead-armature|rest //// eyelids.R
+    7402962: infihead-armature|sick1 //// eyelids.R
+    7402964: infihead-armature|sick2 //// eyelids.R
+    7402966: infihead-armature|sick3 //// eyelids.R
+    7402968: infihead-armature|anger1 //// mouth.R
+    7402970: infihead-armature|fear1 //// mouth.R
+    7402972: infihead-armature|fear2 //// mouth.R
+    7402974: infihead-armature|joy1 //// mouth.R
+    7402976: infihead-armature|joy2 //// mouth.R
+    7402978: infihead-armature|joy3 //// mouth.R
+    7402980: infihead-armature|rest //// mouth.R
+    7402982: infihead-armature|sick1 //// mouth.R
+    7402984: infihead-armature|sick2 //// mouth.R
+    7402986: infihead-armature|sick3 //// mouth.R
+    7402988: infihead-armature|anger1 //// eyebrow.R
+    7402990: infihead-armature|fear1 //// eyebrow.R
+    7402992: infihead-armature|fear2 //// eyebrow.R
+    7402994: infihead-armature|joy1 //// eyebrow.R
+    7402996: infihead-armature|joy2 //// eyebrow.R
+    7402998: infihead-armature|joy3 //// eyebrow.R
+    7403000: infihead-armature|rest //// eyebrow.R
+    7403002: infihead-armature|sick1 //// eyebrow.R
+    7403004: infihead-armature|sick2 //// eyebrow.R
+    7403006: infihead-armature|sick3 //// eyebrow.R
+    7403008: infihead-armature|anger1 //// neck
+    7403010: infihead-armature|fear1 //// neck
+    7403012: infihead-armature|fear2 //// neck
+    7403014: infihead-armature|joy1 //// neck
+    7403016: infihead-armature|joy2 //// neck
+    7403018: infihead-armature|joy3 //// neck
+    7403020: infihead-armature|rest //// neck
+    7403022: infihead-armature|sick1 //// neck
+    7403024: infihead-armature|sick2 //// neck
+    7403026: infihead-armature|sick3 //// neck
+    7403028: infihead-armature|anger1 //// eyelids.L
+    7403030: infihead-armature|fear1 //// eyelids.L
+    7403032: infihead-armature|fear2 //// eyelids.L
+    7403034: infihead-armature|joy1 //// eyelids.L
+    7403036: infihead-armature|joy2 //// eyelids.L
+    7403038: infihead-armature|joy3 //// eyelids.L
+    7403040: infihead-armature|rest //// eyelids.L
+    7403042: infihead-armature|sick1 //// eyelids.L
+    7403044: infihead-armature|sick2 //// eyelids.L
+    7403046: infihead-armature|sick3 //// eyelids.L
+    7403048: infihead-armature|anger1 //// BASE
+    7403050: infihead-armature|fear1 //// BASE
+    7403052: infihead-armature|fear2 //// BASE
+    7403054: infihead-armature|joy1 //// BASE
+    7403056: infihead-armature|joy2 //// BASE
+    7403058: infihead-armature|joy3 //// BASE
+    7403060: infihead-armature|rest //// BASE
+    7403062: infihead-armature|sick1 //// BASE
+    7403064: infihead-armature|sick2 //// BASE
+    7403066: infihead-armature|sick3 //// BASE
+    7403068: infihead-armature|anger1 //// jaw
+    7403070: infihead-armature|fear1 //// jaw
+    7403072: infihead-armature|fear2 //// jaw
+    7403074: infihead-armature|joy1 //// jaw
+    7403076: infihead-armature|joy2 //// jaw
+    7403078: infihead-armature|joy3 //// jaw
+    7403080: infihead-armature|rest //// jaw
+    7403082: infihead-armature|sick1 //// jaw
+    7403084: infihead-armature|sick2 //// jaw
+    7403086: infihead-armature|sick3 //// jaw
+    7403088: infihead-armature|anger1 //// mouth.L
+    7403090: infihead-armature|fear1 //// mouth.L
+    7403092: infihead-armature|fear2 //// mouth.L
+    7403094: infihead-armature|joy1 //// mouth.L
+    7403096: infihead-armature|joy2 //// mouth.L
+    7403098: infihead-armature|joy3 //// mouth.L
+    7403100: infihead-armature|rest //// mouth.L
+    7403102: infihead-armature|sick1 //// mouth.L
+    7403104: infihead-armature|sick2 //// mouth.L
+    7403106: infihead-armature|sick3 //// mouth.L
+    7403108: infihead-armature|anger1 //// eyebrow.L
+    7403110: infihead-armature|fear1 //// eyebrow.L
+    7403112: infihead-armature|fear2 //// eyebrow.L
+    7403114: infihead-armature|joy1 //// eyebrow.L
+    7403116: infihead-armature|joy2 //// eyebrow.L
+    7403118: infihead-armature|joy3 //// eyebrow.L
+    7403120: infihead-armature|rest //// eyebrow.L
+    7403122: infihead-armature|sick1 //// eyebrow.L
+    7403124: infihead-armature|sick2 //// eyebrow.L
+    7403126: infihead-armature|sick3 //// eyebrow.L
+    7403128: infihead-armature|anger1 //// eyelids.R
+    7403130: infihead-armature|fear1 //// eyelids.R
+    7403132: infihead-armature|fear2 //// eyelids.R
+    7403134: infihead-armature|joy1 //// eyelids.R
+    7403136: infihead-armature|joy2 //// eyelids.R
+    7403138: infihead-armature|joy3 //// eyelids.R
+    7403140: infihead-armature|rest //// eyelids.R
+    7403142: infihead-armature|sick1 //// eyelids.R
+    7403144: infihead-armature|sick2 //// eyelids.R
+    7403146: infihead-armature|sick3 //// eyelids.R
+    7403148: infihead-armature|anger1 //// mouth.R
+    7403150: infihead-armature|fear1 //// mouth.R
+    7403152: infihead-armature|fear2 //// mouth.R
+    7403154: infihead-armature|joy1 //// mouth.R
+    7403156: infihead-armature|joy2 //// mouth.R
+    7403158: infihead-armature|joy3 //// mouth.R
+    7403160: infihead-armature|rest //// mouth.R
+    7403162: infihead-armature|sick1 //// mouth.R
+    7403164: infihead-armature|sick2 //// mouth.R
+    7403166: infihead-armature|sick3 //// mouth.R
+    7403168: infihead-armature|anger1 //// eyebrow.R
+    7403170: infihead-armature|fear1 //// eyebrow.R
+    7403172: infihead-armature|fear2 //// eyebrow.R
+    7403174: infihead-armature|joy1 //// eyebrow.R
+    7403176: infihead-armature|joy2 //// eyebrow.R
+    7403178: infihead-armature|joy3 //// eyebrow.R
+    7403180: infihead-armature|rest //// eyebrow.R
+    7403182: infihead-armature|sick1 //// eyebrow.R
+    7403184: infihead-armature|sick2 //// eyebrow.R
+    7403186: infihead-armature|sick3 //// eyebrow.R
+    7403188: infihead-armature|anger1 //// neck
+    7403190: infihead-armature|fear1 //// neck
+    7403192: infihead-armature|fear2 //// neck
+    7403194: infihead-armature|joy1 //// neck
+    7403196: infihead-armature|joy2 //// neck
+    7403198: infihead-armature|joy3 //// neck
+    7403200: infihead-armature|rest //// neck
+    7403202: infihead-armature|sick1 //// neck
+    7403204: infihead-armature|sick2 //// neck
+    7403206: infihead-armature|sick3 //// neck
+    7403208: infihead-armature|anger1 //// eyelids.L
+    7403210: infihead-armature|fear1 //// eyelids.L
+    7403212: infihead-armature|fear2 //// eyelids.L
+    7403214: infihead-armature|joy1 //// eyelids.L
+    7403216: infihead-armature|joy2 //// eyelids.L
+    7403218: infihead-armature|joy3 //// eyelids.L
+    7403220: infihead-armature|rest //// eyelids.L
+    7403222: infihead-armature|sick1 //// eyelids.L
+    7403224: infihead-armature|sick2 //// eyelids.L
+    7403226: infihead-armature|sick3 //// eyelids.L
+    7403228: infihead-armature|anger1 //// BASE
+    7403230: infihead-armature|fear1 //// BASE
+    7403232: infihead-armature|fear2 //// BASE
+    7403234: infihead-armature|joy1 //// BASE
+    7403236: infihead-armature|joy2 //// BASE
+    7403238: infihead-armature|joy3 //// BASE
+    7403240: infihead-armature|rest //// BASE
+    7403242: infihead-armature|sick1 //// BASE
+    7403244: infihead-armature|sick2 //// BASE
+    7403246: infihead-armature|sick3 //// BASE
+    7403248: infihead-armature|anger1 //// jaw
+    7403250: infihead-armature|fear1 //// jaw
+    7403252: infihead-armature|fear2 //// jaw
+    7403254: infihead-armature|joy1 //// jaw
+    7403256: infihead-armature|joy2 //// jaw
+    7403258: infihead-armature|joy3 //// jaw
+    7403260: infihead-armature|rest //// jaw
+    7403262: infihead-armature|sick1 //// jaw
+    7403264: infihead-armature|sick2 //// jaw
+    7403266: infihead-armature|sick3 //// jaw
+    7403268: infihead-armature|anger1 //// mouth.L
+    7403270: infihead-armature|fear1 //// mouth.L
+    7403272: infihead-armature|fear2 //// mouth.L
+    7403274: infihead-armature|joy1 //// mouth.L
+    7403276: infihead-armature|joy2 //// mouth.L
+    7403278: infihead-armature|joy3 //// mouth.L
+    7403280: infihead-armature|rest //// mouth.L
+    7403282: infihead-armature|sick1 //// mouth.L
+    7403284: infihead-armature|sick2 //// mouth.L
+    7403286: infihead-armature|sick3 //// mouth.L
+    7403288: infihead-armature|anger1 //// eyebrow.L
+    7403290: infihead-armature|fear1 //// eyebrow.L
+    7403292: infihead-armature|fear2 //// eyebrow.L
+    7403294: infihead-armature|joy1 //// eyebrow.L
+    7403296: infihead-armature|joy2 //// eyebrow.L
+    7403298: infihead-armature|joy3 //// eyebrow.L
+    7403300: infihead-armature|rest //// eyebrow.L
+    7403302: infihead-armature|sick1 //// eyebrow.L
+    7403304: infihead-armature|sick2 //// eyebrow.L
+    7403306: infihead-armature|sick3 //// eyebrow.L
+    7403308: infihead-armature|anger1 //// eyelids.R
+    7403310: infihead-armature|fear1 //// eyelids.R
+    7403312: infihead-armature|fear2 //// eyelids.R
+    7403314: infihead-armature|joy1 //// eyelids.R
+    7403316: infihead-armature|joy2 //// eyelids.R
+    7403318: infihead-armature|joy3 //// eyelids.R
+    7403320: infihead-armature|rest //// eyelids.R
+    7403322: infihead-armature|sick1 //// eyelids.R
+    7403324: infihead-armature|sick2 //// eyelids.R
+    7403326: infihead-armature|sick3 //// eyelids.R
+    7403328: infihead-armature|anger1 //// mouth.R
+    7403330: infihead-armature|fear1 //// mouth.R
+    7403332: infihead-armature|fear2 //// mouth.R
+    7403334: infihead-armature|joy1 //// mouth.R
+    7403336: infihead-armature|joy2 //// mouth.R
+    7403338: infihead-armature|joy3 //// mouth.R
+    7403340: infihead-armature|rest //// mouth.R
+    7403342: infihead-armature|sick1 //// mouth.R
+    7403344: infihead-armature|sick2 //// mouth.R
+    7403346: infihead-armature|sick3 //// mouth.R
+    7403348: infihead-armature|anger1 //// eyebrow.R
+    7403350: infihead-armature|fear1 //// eyebrow.R
+    7403352: infihead-armature|fear2 //// eyebrow.R
+    7403354: infihead-armature|joy1 //// eyebrow.R
+    7403356: infihead-armature|joy2 //// eyebrow.R
+    7403358: infihead-armature|joy3 //// eyebrow.R
+    7403360: infihead-armature|rest //// eyebrow.R
+    7403362: infihead-armature|sick1 //// eyebrow.R
+    7403364: infihead-armature|sick2 //// eyebrow.R
+    7403366: infihead-armature|sick3 //// eyebrow.R
+    7403368: infihead-armature|anger1 //// neck
+    7403370: infihead-armature|fear1 //// neck
+    7403372: infihead-armature|fear2 //// neck
+    7403374: infihead-armature|joy1 //// neck
+    7403376: infihead-armature|joy2 //// neck
+    7403378: infihead-armature|joy3 //// neck
+    7403380: infihead-armature|rest //// neck
+    7403382: infihead-armature|sick1 //// neck
+    7403384: infihead-armature|sick2 //// neck
+    7403386: infihead-armature|sick3 //// neck
+    7403388: infihead-armature|anger1 //// eyelids.L
+    7403390: infihead-armature|fear1 //// eyelids.L
+    7403392: infihead-armature|fear2 //// eyelids.L
+    7403394: infihead-armature|joy1 //// eyelids.L
+    7403396: infihead-armature|joy2 //// eyelids.L
+    7403398: infihead-armature|joy3 //// eyelids.L
+    7403400: infihead-armature|rest //// eyelids.L
+    7403402: infihead-armature|sick1 //// eyelids.L
+    7403404: infihead-armature|sick2 //// eyelids.L
+    7403406: infihead-armature|sick3 //// eyelids.L
+    7403408: infihead-armature|anger1 //// BASE
+    7403410: infihead-armature|fear1 //// BASE
+    7403412: infihead-armature|fear2 //// BASE
+    7403414: infihead-armature|joy1 //// BASE
+    7403416: infihead-armature|joy2 //// BASE
+    7403418: infihead-armature|joy3 //// BASE
+    7403420: infihead-armature|rest //// BASE
+    7403422: infihead-armature|sick1 //// BASE
+    7403424: infihead-armature|sick2 //// BASE
+    7403426: infihead-armature|sick3 //// BASE
+    7403428: infihead-armature|anger1 //// jaw
+    7403430: infihead-armature|fear1 //// jaw
+    7403432: infihead-armature|fear2 //// jaw
+    7403434: infihead-armature|joy1 //// jaw
+    7403436: infihead-armature|joy2 //// jaw
+    7403438: infihead-armature|joy3 //// jaw
+    7403440: infihead-armature|rest //// jaw
+    7403442: infihead-armature|sick1 //// jaw
+    7403444: infihead-armature|sick2 //// jaw
+    7403446: infihead-armature|sick3 //// jaw
+    7403448: infihead-armature|anger1 //// mouth.L
+    7403450: infihead-armature|fear1 //// mouth.L
+    7403452: infihead-armature|fear2 //// mouth.L
+    7403454: infihead-armature|joy1 //// mouth.L
+    7403456: infihead-armature|joy2 //// mouth.L
+    7403458: infihead-armature|joy3 //// mouth.L
+    7403460: infihead-armature|rest //// mouth.L
+    7403462: infihead-armature|sick1 //// mouth.L
+    7403464: infihead-armature|sick2 //// mouth.L
+    7403466: infihead-armature|sick3 //// mouth.L
+    7403468: infihead-armature|anger1 //// eyebrow.L
+    7403470: infihead-armature|fear1 //// eyebrow.L
+    7403472: infihead-armature|fear2 //// eyebrow.L
+    7403474: infihead-armature|joy1 //// eyebrow.L
+    7403476: infihead-armature|joy2 //// eyebrow.L
+    7403478: infihead-armature|joy3 //// eyebrow.L
+    7403480: infihead-armature|rest //// eyebrow.L
+    7403482: infihead-armature|sick1 //// eyebrow.L
+    7403484: infihead-armature|sick2 //// eyebrow.L
+    7403486: infihead-armature|sick3 //// eyebrow.L
+    7403488: infihead-armature|anger1 //// eyelids.R
+    7403490: infihead-armature|fear1 //// eyelids.R
+    7403492: infihead-armature|fear2 //// eyelids.R
+    7403494: infihead-armature|joy1 //// eyelids.R
+    7403496: infihead-armature|joy2 //// eyelids.R
+    7403498: infihead-armature|joy3 //// eyelids.R
+    7403500: infihead-armature|rest //// eyelids.R
+    7403502: infihead-armature|sick1 //// eyelids.R
+    7403504: infihead-armature|sick2 //// eyelids.R
+    7403506: infihead-armature|sick3 //// eyelids.R
+    7403508: infihead-armature|anger1 //// mouth.R
+    7403510: infihead-armature|fear1 //// mouth.R
+    7403512: infihead-armature|fear2 //// mouth.R
+    7403514: infihead-armature|joy1 //// mouth.R
+    7403516: infihead-armature|joy2 //// mouth.R
+    7403518: infihead-armature|joy3 //// mouth.R
+    7403520: infihead-armature|rest //// mouth.R
+    7403522: infihead-armature|sick1 //// mouth.R
+    7403524: infihead-armature|sick2 //// mouth.R
+    7403526: infihead-armature|sick3 //// mouth.R
+    7403528: infihead-armature|anger1 //// eyebrow.R
+    7403530: infihead-armature|fear1 //// eyebrow.R
+    7403532: infihead-armature|fear2 //// eyebrow.R
+    7403534: infihead-armature|joy1 //// eyebrow.R
+    7403536: infihead-armature|joy2 //// eyebrow.R
+    7403538: infihead-armature|joy3 //// eyebrow.R
+    7403540: infihead-armature|rest //// eyebrow.R
+    7403542: infihead-armature|sick1 //// eyebrow.R
+    7403544: infihead-armature|sick2 //// eyebrow.R
+    7403546: infihead-armature|sick3 //// eyebrow.R
+    7403548: infihead-armature|anger1 //// neck
+    7403550: infihead-armature|fear1 //// neck
+    7403552: infihead-armature|fear2 //// neck
+    7403554: infihead-armature|joy1 //// neck
+    7403556: infihead-armature|joy2 //// neck
+    7403558: infihead-armature|joy3 //// neck
+    7403560: infihead-armature|rest //// neck
+    7403562: infihead-armature|sick1 //// neck
+    7403564: infihead-armature|sick2 //// neck
+    7403566: infihead-armature|sick3 //// neck
+    7403568: infihead-armature|anger1 //// eyelids.L
+    7403570: infihead-armature|fear1 //// eyelids.L
+    7403572: infihead-armature|fear2 //// eyelids.L
+    7403574: infihead-armature|joy1 //// eyelids.L
+    7403576: infihead-armature|joy2 //// eyelids.L
+    7403578: infihead-armature|joy3 //// eyelids.L
+    7403580: infihead-armature|rest //// eyelids.L
+    7403582: infihead-armature|sick1 //// eyelids.L
+    7403584: infihead-armature|sick2 //// eyelids.L
+    7403586: infihead-armature|sick3 //// eyelids.L
+    7403588: infihead-armature|anger1 //// BASE
+    7403590: infihead-armature|fear1 //// BASE
+    7403592: infihead-armature|fear2 //// BASE
+    7403594: infihead-armature|joy1 //// BASE
+    7403596: infihead-armature|joy2 //// BASE
+    7403598: infihead-armature|joy3 //// BASE
+    7403600: infihead-armature|rest //// BASE
+    7403602: infihead-armature|sick1 //// BASE
+    7403604: infihead-armature|sick2 //// BASE
+    7403606: infihead-armature|sick3 //// BASE
+    7403608: infihead-armature|anger1 //// jaw
+    7403610: infihead-armature|fear1 //// jaw
+    7403612: infihead-armature|fear2 //// jaw
+    7403614: infihead-armature|joy1 //// jaw
+    7403616: infihead-armature|joy2 //// jaw
+    7403618: infihead-armature|joy3 //// jaw
+    7403620: infihead-armature|rest //// jaw
+    7403622: infihead-armature|sick1 //// jaw
+    7403624: infihead-armature|sick2 //// jaw
+    7403626: infihead-armature|sick3 //// jaw
+    7403628: infihead-armature|anger1 //// mouth.L
+    7403630: infihead-armature|fear1 //// mouth.L
+    7403632: infihead-armature|fear2 //// mouth.L
+    7403634: infihead-armature|joy1 //// mouth.L
+    7403636: infihead-armature|joy2 //// mouth.L
+    7403638: infihead-armature|joy3 //// mouth.L
+    7403640: infihead-armature|rest //// mouth.L
+    7403642: infihead-armature|sick1 //// mouth.L
+    7403644: infihead-armature|sick2 //// mouth.L
+    7403646: infihead-armature|sick3 //// mouth.L
+    7403648: infihead-armature|anger1 //// eyebrow.L
+    7403650: infihead-armature|fear1 //// eyebrow.L
+    7403652: infihead-armature|fear2 //// eyebrow.L
+    7403654: infihead-armature|joy1 //// eyebrow.L
+    7403656: infihead-armature|joy2 //// eyebrow.L
+    7403658: infihead-armature|joy3 //// eyebrow.L
+    7403660: infihead-armature|rest //// eyebrow.L
+    7403662: infihead-armature|sick1 //// eyebrow.L
+    7403664: infihead-armature|sick2 //// eyebrow.L
+    7403666: infihead-armature|sick3 //// eyebrow.L
+    7403668: infihead-armature|anger1 //// eyelids.R
+    7403670: infihead-armature|fear1 //// eyelids.R
+    7403672: infihead-armature|fear2 //// eyelids.R
+    7403674: infihead-armature|joy1 //// eyelids.R
+    7403676: infihead-armature|joy2 //// eyelids.R
+    7403678: infihead-armature|joy3 //// eyelids.R
+    7403680: infihead-armature|rest //// eyelids.R
+    7403682: infihead-armature|sick1 //// eyelids.R
+    7403684: infihead-armature|sick2 //// eyelids.R
+    7403686: infihead-armature|sick3 //// eyelids.R
+    7403688: infihead-armature|anger1 //// mouth.R
+    7403690: infihead-armature|fear1 //// mouth.R
+    7403692: infihead-armature|fear2 //// mouth.R
+    7403694: infihead-armature|joy1 //// mouth.R
+    7403696: infihead-armature|joy2 //// mouth.R
+    7403698: infihead-armature|joy3 //// mouth.R
+    7403700: infihead-armature|rest //// mouth.R
+    7403702: infihead-armature|sick1 //// mouth.R
+    7403704: infihead-armature|sick2 //// mouth.R
+    7403706: infihead-armature|sick3 //// mouth.R
+    7403708: infihead-armature|anger1 //// eyebrow.R
+    7403710: infihead-armature|fear1 //// eyebrow.R
+    7403712: infihead-armature|fear2 //// eyebrow.R
+    7403714: infihead-armature|joy1 //// eyebrow.R
+    7403716: infihead-armature|joy2 //// eyebrow.R
+    7403718: infihead-armature|joy3 //// eyebrow.R
+    7403720: infihead-armature|rest //// eyebrow.R
+    7403722: infihead-armature|sick1 //// eyebrow.R
+    7403724: infihead-armature|sick2 //// eyebrow.R
+    7403726: infihead-armature|sick3 //// eyebrow.R
+    7403728: infihead-armature|anger1 //// neck
+    7403730: infihead-armature|fear1 //// neck
+    7403732: infihead-armature|fear2 //// neck
+    7403734: infihead-armature|joy1 //// neck
+    7403736: infihead-armature|joy2 //// neck
+    7403738: infihead-armature|joy3 //// neck
+    7403740: infihead-armature|rest //// neck
+    7403742: infihead-armature|sick1 //// neck
+    7403744: infihead-armature|sick2 //// neck
+    7403746: infihead-armature|sick3 //// neck
+    7403748: infihead-armature|anger1 //// eyelids.L
+    7403750: infihead-armature|fear1 //// eyelids.L
+    7403752: infihead-armature|fear2 //// eyelids.L
+    7403754: infihead-armature|joy1 //// eyelids.L
+    7403756: infihead-armature|joy2 //// eyelids.L
+    7403758: infihead-armature|joy3 //// eyelids.L
+    7403760: infihead-armature|rest //// eyelids.L
+    7403762: infihead-armature|sick1 //// eyelids.L
+    7403764: infihead-armature|sick2 //// eyelids.L
+    7403766: infihead-armature|sick3 //// eyelids.L
+    7403768: infihead-armature|anger1 //// BASE
+    7403770: infihead-armature|fear1 //// BASE
+    7403772: infihead-armature|fear2 //// BASE
+    7403774: infihead-armature|joy1 //// BASE
+    7403776: infihead-armature|joy2 //// BASE
+    7403778: infihead-armature|joy3 //// BASE
+    7403780: infihead-armature|rest //// BASE
+    7403782: infihead-armature|sick1 //// BASE
+    7403784: infihead-armature|sick2 //// BASE
+    7403786: infihead-armature|sick3 //// BASE
+    7403788: infihead-armature|anger1 //// jaw
+    7403790: infihead-armature|fear1 //// jaw
+    7403792: infihead-armature|fear2 //// jaw
+    7403794: infihead-armature|joy1 //// jaw
+    7403796: infihead-armature|joy2 //// jaw
+    7403798: infihead-armature|joy3 //// jaw
+    7403800: infihead-armature|rest //// jaw
+    7403802: infihead-armature|sick1 //// jaw
+    7403804: infihead-armature|sick2 //// jaw
+    7403806: infihead-armature|sick3 //// jaw
+    7403808: infihead-armature|anger1 //// mouth.L
+    7403810: infihead-armature|fear1 //// mouth.L
+    7403812: infihead-armature|fear2 //// mouth.L
+    7403814: infihead-armature|joy1 //// mouth.L
+    7403816: infihead-armature|joy2 //// mouth.L
+    7403818: infihead-armature|joy3 //// mouth.L
+    7403820: infihead-armature|rest //// mouth.L
+    7403822: infihead-armature|sick1 //// mouth.L
+    7403824: infihead-armature|sick2 //// mouth.L
+    7403826: infihead-armature|sick3 //// mouth.L
+    7403828: infihead-armature|anger1 //// eyebrow.L
+    7403830: infihead-armature|fear1 //// eyebrow.L
+    7403832: infihead-armature|fear2 //// eyebrow.L
+    7403834: infihead-armature|joy1 //// eyebrow.L
+    7403836: infihead-armature|joy2 //// eyebrow.L
+    7403838: infihead-armature|joy3 //// eyebrow.L
+    7403840: infihead-armature|rest //// eyebrow.L
+    7403842: infihead-armature|sick1 //// eyebrow.L
+    7403844: infihead-armature|sick2 //// eyebrow.L
+    7403846: infihead-armature|sick3 //// eyebrow.L
+    7403848: infihead-armature|anger1 //// eyelids.R
+    7403850: infihead-armature|fear1 //// eyelids.R
+    7403852: infihead-armature|fear2 //// eyelids.R
+    7403854: infihead-armature|joy1 //// eyelids.R
+    7403856: infihead-armature|joy2 //// eyelids.R
+    7403858: infihead-armature|joy3 //// eyelids.R
+    7403860: infihead-armature|rest //// eyelids.R
+    7403862: infihead-armature|sick1 //// eyelids.R
+    7403864: infihead-armature|sick2 //// eyelids.R
+    7403866: infihead-armature|sick3 //// eyelids.R
+    7403868: infihead-armature|anger1 //// mouth.R
+    7403870: infihead-armature|fear1 //// mouth.R
+    7403872: infihead-armature|fear2 //// mouth.R
+    7403874: infihead-armature|joy1 //// mouth.R
+    7403876: infihead-armature|joy2 //// mouth.R
+    7403878: infihead-armature|joy3 //// mouth.R
+    7403880: infihead-armature|rest //// mouth.R
+    7403882: infihead-armature|sick1 //// mouth.R
+    7403884: infihead-armature|sick2 //// mouth.R
+    7403886: infihead-armature|sick3 //// mouth.R
+    7403888: infihead-armature|anger1 //// eyebrow.R
+    7403890: infihead-armature|fear1 //// eyebrow.R
+    7403892: infihead-armature|fear2 //// eyebrow.R
+    7403894: infihead-armature|joy1 //// eyebrow.R
+    7403896: infihead-armature|joy2 //// eyebrow.R
+    7403898: infihead-armature|joy3 //// eyebrow.R
+    7403900: infihead-armature|rest //// eyebrow.R
+    7403902: infihead-armature|sick1 //// eyebrow.R
+    7403904: infihead-armature|sick2 //// eyebrow.R
+    7403906: infihead-armature|sick3 //// eyebrow.R
+    7403908: infihead-armature|anger1 //// neck
+    7403910: infihead-armature|fear1 //// neck
+    7403912: infihead-armature|fear2 //// neck
+    7403914: infihead-armature|joy1 //// neck
+    7403916: infihead-armature|joy2 //// neck
+    7403918: infihead-armature|joy3 //// neck
+    7403920: infihead-armature|rest //// neck
+    7403922: infihead-armature|sick1 //// neck
+    7403924: infihead-armature|sick2 //// neck
+    7403926: infihead-armature|sick3 //// neck
+    9500000: //RootNode
+    11100000: //RootNode
+    11100002: BASE
+    11100004: eye
+    11100006: eye.001
+    11100008: eyebrow.L
+    11100010: eyebrow.R
+    11100012: eyelids.L
+    11100014: eyelids.R
+    11100016: infihead-armature
+    11100018: infihead-mesh
+    11100020: jaw
+    11100022: mouth.L
+    11100024: mouth.R
+    11100026: neck
+    13700000: bottom-teeth
+    13700002: infihead-mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: infihead-armature|anger1
+      takeName: infihead-armature|anger1
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom-teeth
+        weight: 1
+      - path: infihead-armature
+        weight: 1
+      - path: infihead-armature/BASE
+        weight: 1
+      - path: infihead-armature/eye
+        weight: 1
+      - path: infihead-armature/eye.001
+        weight: 1
+      - path: infihead-armature/eyebrow.L
+        weight: 1
+      - path: infihead-armature/eyebrow.R
+        weight: 1
+      - path: infihead-armature/eyelids.L
+        weight: 1
+      - path: infihead-armature/eyelids.R
+        weight: 1
+      - path: infihead-armature/jaw
+        weight: 1
+      - path: infihead-armature/mouth.L
+        weight: 1
+      - path: infihead-armature/mouth.R
+        weight: 1
+      - path: infihead-armature/neck
+        weight: 1
+      - path: infihead-armature/top-teeth
+        weight: 1
+      - path: infihead-mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: infihead-armature|fear1
+      takeName: infihead-armature|fear1
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: infihead-armature
+        weight: 1
+      - path: infihead-armature/BASE
+        weight: 1
+      - path: infihead-armature/eye
+        weight: 1
+      - path: infihead-armature/eye.001
+        weight: 1
+      - path: infihead-armature/eyebrow.L
+        weight: 1
+      - path: infihead-armature/eyebrow.R
+        weight: 1
+      - path: infihead-armature/eyelids.L
+        weight: 1
+      - path: infihead-armature/eyelids.R
+        weight: 1
+      - path: infihead-armature/jaw
+        weight: 1
+      - path: infihead-armature/mouth.L
+        weight: 1
+      - path: infihead-armature/mouth.R
+        weight: 1
+      - path: infihead-armature/neck
+        weight: 1
+      - path: infihead-mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: infihead-armature|fear2
+      takeName: infihead-armature|fear2
+      firstFrame: 0
+      lastFrame: 44
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom-teeth
+        weight: 1
+      - path: infihead-armature
+        weight: 1
+      - path: infihead-armature/BASE
+        weight: 1
+      - path: infihead-armature/eye
+        weight: 1
+      - path: infihead-armature/eye.001
+        weight: 1
+      - path: infihead-armature/eyebrow.L
+        weight: 1
+      - path: infihead-armature/eyebrow.R
+        weight: 1
+      - path: infihead-armature/eyelids.L
+        weight: 1
+      - path: infihead-armature/eyelids.R
+        weight: 1
+      - path: infihead-armature/jaw
+        weight: 1
+      - path: infihead-armature/mouth.L
+        weight: 1
+      - path: infihead-armature/mouth.R
+        weight: 1
+      - path: infihead-armature/neck
+        weight: 1
+      - path: infihead-armature/top-teeth
+        weight: 1
+      - path: infihead-mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: infihead-armature|joy1
+      takeName: infihead-armature|joy1
+      firstFrame: 0
+      lastFrame: 111
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom-teeth
+        weight: 1
+      - path: infihead-armature
+        weight: 1
+      - path: infihead-armature/BASE
+        weight: 1
+      - path: infihead-armature/eye
+        weight: 1
+      - path: infihead-armature/eye.001
+        weight: 1
+      - path: infihead-armature/eyebrow.L
+        weight: 1
+      - path: infihead-armature/eyebrow.R
+        weight: 1
+      - path: infihead-armature/eyelids.L
+        weight: 1
+      - path: infihead-armature/eyelids.R
+        weight: 1
+      - path: infihead-armature/jaw
+        weight: 1
+      - path: infihead-armature/mouth.L
+        weight: 1
+      - path: infihead-armature/mouth.R
+        weight: 1
+      - path: infihead-armature/neck
+        weight: 1
+      - path: infihead-armature/top-teeth
+        weight: 1
+      - path: infihead-mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: infihead-armature|joy2
+      takeName: infihead-armature|joy2
+      firstFrame: 0
+      lastFrame: 111
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom-teeth
+        weight: 1
+      - path: infihead-armature
+        weight: 1
+      - path: infihead-armature/BASE
+        weight: 1
+      - path: infihead-armature/eye
+        weight: 1
+      - path: infihead-armature/eye.001
+        weight: 1
+      - path: infihead-armature/eyebrow.L
+        weight: 1
+      - path: infihead-armature/eyebrow.R
+        weight: 1
+      - path: infihead-armature/eyelids.L
+        weight: 1
+      - path: infihead-armature/eyelids.R
+        weight: 1
+      - path: infihead-armature/jaw
+        weight: 1
+      - path: infihead-armature/mouth.L
+        weight: 1
+      - path: infihead-armature/mouth.R
+        weight: 1
+      - path: infihead-armature/neck
+        weight: 1
+      - path: infihead-armature/top-teeth
+        weight: 1
+      - path: infihead-mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: infihead-armature|joy3
+      takeName: infihead-armature|joy3
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom-teeth
+        weight: 1
+      - path: infihead-armature
+        weight: 1
+      - path: infihead-armature/BASE
+        weight: 1
+      - path: infihead-armature/eye
+        weight: 1
+      - path: infihead-armature/eye.001
+        weight: 1
+      - path: infihead-armature/eyebrow.L
+        weight: 1
+      - path: infihead-armature/eyebrow.R
+        weight: 1
+      - path: infihead-armature/eyelids.L
+        weight: 1
+      - path: infihead-armature/eyelids.R
+        weight: 1
+      - path: infihead-armature/jaw
+        weight: 1
+      - path: infihead-armature/mouth.L
+        weight: 1
+      - path: infihead-armature/mouth.R
+        weight: 1
+      - path: infihead-armature/neck
+        weight: 1
+      - path: infihead-armature/top-teeth
+        weight: 1
+      - path: infihead-mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: infihead-armature|rest
+      takeName: infihead-armature|rest
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom-teeth
+        weight: 1
+      - path: infihead-armature
+        weight: 1
+      - path: infihead-armature/BASE
+        weight: 1
+      - path: infihead-armature/eye
+        weight: 1
+      - path: infihead-armature/eye.001
+        weight: 1
+      - path: infihead-armature/eyebrow.L
+        weight: 1
+      - path: infihead-armature/eyebrow.R
+        weight: 1
+      - path: infihead-armature/eyelids.L
+        weight: 1
+      - path: infihead-armature/eyelids.R
+        weight: 1
+      - path: infihead-armature/jaw
+        weight: 1
+      - path: infihead-armature/mouth.L
+        weight: 1
+      - path: infihead-armature/mouth.R
+        weight: 1
+      - path: infihead-armature/neck
+        weight: 1
+      - path: infihead-armature/top-teeth
+        weight: 1
+      - path: infihead-mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: infihead-armature|sick1
+      takeName: infihead-armature|sick1
+      firstFrame: 0
+      lastFrame: 68
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom-teeth
+        weight: 1
+      - path: infihead-armature
+        weight: 1
+      - path: infihead-armature/BASE
+        weight: 1
+      - path: infihead-armature/eye
+        weight: 1
+      - path: infihead-armature/eye.001
+        weight: 1
+      - path: infihead-armature/eyebrow.L
+        weight: 1
+      - path: infihead-armature/eyebrow.R
+        weight: 1
+      - path: infihead-armature/eyelids.L
+        weight: 1
+      - path: infihead-armature/eyelids.R
+        weight: 1
+      - path: infihead-armature/jaw
+        weight: 1
+      - path: infihead-armature/mouth.L
+        weight: 1
+      - path: infihead-armature/mouth.R
+        weight: 1
+      - path: infihead-armature/neck
+        weight: 1
+      - path: infihead-armature/top-teeth
+        weight: 1
+      - path: infihead-mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: infihead-armature|sick2
+      takeName: infihead-armature|sick2
+      firstFrame: 0
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom-teeth
+        weight: 1
+      - path: infihead-armature
+        weight: 1
+      - path: infihead-armature/BASE
+        weight: 1
+      - path: infihead-armature/eye
+        weight: 1
+      - path: infihead-armature/eye.001
+        weight: 1
+      - path: infihead-armature/eyebrow.L
+        weight: 1
+      - path: infihead-armature/eyebrow.R
+        weight: 1
+      - path: infihead-armature/eyelids.L
+        weight: 1
+      - path: infihead-armature/eyelids.R
+        weight: 1
+      - path: infihead-armature/jaw
+        weight: 1
+      - path: infihead-armature/mouth.L
+        weight: 1
+      - path: infihead-armature/mouth.R
+        weight: 1
+      - path: infihead-armature/neck
+        weight: 1
+      - path: infihead-armature/top-teeth
+        weight: 1
+      - path: infihead-mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: infihead-armature|sick3
+      takeName: infihead-armature|sick3
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bottom-teeth
+        weight: 1
+      - path: infihead-armature
+        weight: 1
+      - path: infihead-armature/BASE
+        weight: 1
+      - path: infihead-armature/eye
+        weight: 1
+      - path: infihead-armature/eye.001
+        weight: 1
+      - path: infihead-armature/eyebrow.L
+        weight: 1
+      - path: infihead-armature/eyebrow.R
+        weight: 1
+      - path: infihead-armature/eyelids.L
+        weight: 1
+      - path: infihead-armature/eyelids.R
+        weight: 1
+      - path: infihead-armature/jaw
+        weight: 1
+      - path: infihead-armature/mouth.L
+        weight: 1
+      - path: infihead-armature/mouth.R
+        weight: 1
+      - path: infihead-armature/neck
+        weight: 1
+      - path: infihead-armature/top-teeth
+        weight: 1
+      - path: infihead-mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
