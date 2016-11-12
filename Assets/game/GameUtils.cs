@@ -4,7 +4,7 @@ public static class GameUtils
 {
     public static void PruneMiddle(GameObject container, int x, int y)
     {
-        SimpleTiledWFC WFC = container.GetComponent<SimpleTiledWFC>();
+        OverlapWFC WFC = container.GetComponent<OverlapWFC>();
         int width = WFC.rendering.GetLength(0);
         int height = WFC.rendering.GetLength(1);
         

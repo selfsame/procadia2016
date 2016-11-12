@@ -15,7 +15,7 @@
           GameUtils))
 
 (def park-scale 4.3)
-(def park-size 15)
+(def park-size 20)
 (def city-scale 4.3)
 (def city-size 30)
 (def player (atom nil))
@@ -62,7 +62,7 @@
          target (v3+ (.TransformPoint (.transform @player) offset)
                      (v3 0 8 0))]
      (position! o (lerp o target (∆ 4)))
-     (lerp-look! o @player (∆ 6))))
+     (lerp-look! o @player (∆ 6))) )
 
 (defn update-cam [o]
   (let [target (v3+ (.TransformPoint (.transform @player) (v3 0 0 -10))
@@ -78,7 +78,7 @@
 
 (defn upsidedown? [o]
   (and (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 1 0)))
-       #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0))))))
+       #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)))) ))
 
 (defn wheel-contact? [o]
   (if (and (first 
@@ -189,7 +189,7 @@
    (if (and was-in-air 
            (not @IN-AIR) 
            #_(or (not @TOUCHING)
-               grounded)) 
+               grounded) ) 
      (do (tally-tricks o)))
 
    (text! (the debug) 
@@ -259,7 +259,7 @@
    (Input/GetAxis "Vertical")))
 
 (defn make-park [w h]
-  (let [o (clone! :maps/autopark)
+  (let [o (clone! :maps/autopark (v3 26 4 26))
         wfc (.AddComponent o (type (SimpleTiledWFC.)))]
    (set! (.xmlpath wfc) "skaters.xml")
    (set! (.gridsize wfc) (int 2))
@@ -270,23 +270,46 @@
    (set! (.depth wfc) (int h)) o))
 
 (defn make-city [w h]
- (let [o (clone! :maps/autocity)
-       trainer (.AddComponent o (type (Training.)))]
-  (set! (.gridSize trainer) (int 10))
-  (set! (.width trainer) (int w))
-  (set! (.depth trainer) (int h))))
+ (let [o (clone! :maps/autocity (v3 0 0 0))
+       sample (clone! :maps/city-sample (v3 0 -500 0))
+       trainer (.AddComponent sample (type (Training.)))
+       wfc (.AddComponent o (type (OverlapWFC.)))]
+  (set! (.gridsize trainer) (int 10))
+  (set! (.width trainer) (int 20))
+  (set! (.depth trainer) (int 14))
+  (set! (.training wfc) trainer)
+  (set! (.gridsize wfc) (int 10))
+  (set! (.width wfc) (int w))
+  (set! (.depth wfc) (int h))
+  (set! (.periodicInput wfc) true)
+  (set! (.incremental wfc) true)
+  ;(set! (.iterations wfc) (int 1))
+  ;(.Generate wfc)
+  ;(.Run wfc)
+  wfc))
+
+
 
 (defn prune-city-center [city]
- (GameUtils/PruneMiddle city 5 5))
+ (GameUtils/PruneMiddle city 4 4))
 
 (defn make-level []
   (clear-cloned!)
   (destroy! (the Camera))
   (clone! :Canvas)
   (make-park park-size park-size)
-  (let [city (make-city city-size city-size :maps/autocity "city.xml" 10 city-scale true)]
-   (timeline [(wait 0.1)
-              #(do (prune-city-center city) false)]))          
+  (let [citywfc (make-city city-size city-size)
+        city (.gameObject citywfc)]
+   (timeline [
+    (wait 0.1)
+    #(do 
+      (prune-city-center city) 
+      (local-scale! city (v3 city-scale))
+      (position! city 
+        (v3 (* city-size -4 city-scale) 0 
+            (* city-size -4 city-scale)))
+      (cmpt- city (type citywfc))
+      false)]))          
   (reset! player (make-player 
                   (v3 (* park-size park-scale)
                     (* 6 park-scale) 
@@ -302,10 +325,6 @@
  (hook+ @player :on-collision-enter #(do %1 %2 (reset! TOUCHING true)))
  (hook+ @player :on-collision-exit #(do %1 %2 (reset! TOUCHING false))))
 
-
-
-
-
 '(timeline* :loop
   (wait 3.0)
   #(do (make-level) nil)
@@ -313,5 +332,4 @@
   #(do (message "brb   7min") nil))
 
 '(reset! game.data/seed (hash "selfsame"))
-(make-level)
-
+'(make-level)
