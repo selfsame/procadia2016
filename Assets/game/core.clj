@@ -4,7 +4,9 @@
     arcadia.linear
     tween.core
     hard.core
+    hard.seed
     hard.physics
+    hard.animation
     hard.input)
   (require [game.data :as data]
     human.core)
@@ -100,7 +102,11 @@
     (rotate! neck (v3 0 0 0))
     (position! neck (>v3 rag-neck))
     (parent! neck rag-neck)
-    (local-scale! neck (v3 0.2))))
+    (local-scale! neck (v3 0.2))
+    (timeline* :loop
+      #(do (cross-fade head (str (srand-nth human.core/emotions)) 0.5))
+      (wait (?f 0.3 1.0)))
+    head))
 
 '(make-head)
 
@@ -116,7 +122,10 @@
     (reset! ragmap (ragbody-map))
     (hook+ cam :update #'game.core/update-cam)
     (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
-    (timeline [(wait 0.01) #(do (make-head) nil)])
+    (timeline [(wait 0.01) 
+      #(do (make-head) 
+        (reset! ragmap (ragbody-map))
+        nil)])
     board))
 
 (defn fall-check [o]
@@ -191,9 +200,6 @@
       ;:delta-euler "  " (delta-euler (state o :rotation) rotation) "\n"
       ;:total-euler "  " (state o :total-euler) "\n"
       
-
-  
-
    (update-state! o :total-euler 
          #(v3+ % (delta-euler (state o :rotation) rotation)))
 
@@ -240,7 +246,7 @@
      (torque! body (* mass  -20) 0 0)
      (force! body 0 (* mass 500) 0))
    (if grounded (force! body 0 (* mass dspeed -25) 0))
-   (global-force! (->rigidbody (the Spine)) 0 650 0)
+   (global-force! (->rigidbody (:spine @ragmap)) 0 650 0)
   ;(global-force! (->rigidbody (the "ArmUpper.L")) 0 60 0)
   ;(global-force! (->rigidbody (the "ArmLower.L")) 0 60 0)
   
