@@ -41,7 +41,7 @@
 
 
 (defn make-head 
-  ([seed] (seed! seed) (make-human))
+  ([seed] (seed! seed) (make-head))
   ([] 
     (let [
       dna (make-dna)
