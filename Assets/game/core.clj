@@ -61,8 +61,8 @@
    (local-scale! neck (v3 0.2))
    (timeline* :loop
      #(do (cross-fade head (str (srand-nth human.core/emotions)) 0.5))
-     (wait (?f 0.3 1.0))
-    head)))
+     (wait (?f 0.3 1.0)))
+   head))
 
 (defn make-player [loc]
   (let [loc (or loc (v3 0 10 0))
@@ -98,8 +98,8 @@
     (reset! data/player-spawned? false)
     (destroy @data/player)
     (timeline [
-      (wait 0.1)
-      #(do (make-player p) nil)])))
+               (wait 0.1)
+               #(do (make-player p) nil)])))
 
 (reset! data/respawn-fn respawn-player)
 
