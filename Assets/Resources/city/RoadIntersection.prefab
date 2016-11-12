@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000014156107350}
   - 33: {fileID: 33000010738577640}
   - 23: {fileID: 23000013339142992}
+  - 64: {fileID: 64000013138280208}
   m_Layer: 0
   m_Name: RoadIntersection
   m_TagString: Untagged
@@ -76,4 +77,16 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011274042036}
+  m_Mesh: {fileID: 4300014, guid: d3069a6a847bd1e4994fa491ec95dd4e, type: 3}
+--- !u!64 &64000013138280208
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011274042036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300014, guid: d3069a6a847bd1e4994fa491ec95dd4e, type: 3}

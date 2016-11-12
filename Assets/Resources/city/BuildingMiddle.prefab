@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000011981018774}
   - 33: {fileID: 33000013667784566}
   - 23: {fileID: 23000010250470728}
+  - 64: {fileID: 64000011540907660}
   m_Layer: 0
   m_Name: BuildingMiddle
   m_TagString: Untagged
@@ -76,4 +77,16 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012841465184}
+  m_Mesh: {fileID: 4300010, guid: d3069a6a847bd1e4994fa491ec95dd4e, type: 3}
+--- !u!64 &64000011540907660
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012841465184}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300010, guid: d3069a6a847bd1e4994fa491ec95dd4e, type: 3}

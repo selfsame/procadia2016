@@ -6,7 +6,8 @@
     hard.core
     hard.physics
     hard.input)
-  (require [game.data :as data])
+  (require [game.data :as data]
+    human.core)
   (import [SimpleTiledWFC]))
 
 (def park-scale 4.3)
@@ -84,10 +85,24 @@
 
 
 
-(defn steer [n col]
-  (dorun (map #(set! (.steerAngle %) (float n)) col)))
-(defn motor [n col]
-  (dorun (map #(set! (.motorTorque %) (float n)) col)))
+(defn make-head []
+  (destroy (the infihead))
+  (destroy (the neck))
+  (let [head (human.core/make-head)
+        rag-head (the Bone.001)
+        rag-neck (the Bone.002)
+        neck (child-named head "neck")]
+    (local-scale! head (v3 1))
+    (rotation! head (.rotation (.transform rag-head)))
+    (rotate! head (v3 -90 0 0))
+    (position! head (.TransformPoint (.transform rag-head) (v3 0 0.0015 0)))
+    (parent! head rag-head)
+    (rotate! neck (v3 0 0 0))
+    (position! neck (>v3 rag-neck))
+    (parent! neck rag-neck)
+    (local-scale! neck (v3 0.2))))
+
+'(make-head)
 
 (defn make-player [loc]
   (let [loc (or loc (v3 0 10 0))
@@ -101,6 +116,7 @@
     (reset! ragmap (ragbody-map))
     (hook+ cam :update #'game.core/update-cam)
     (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
+    (timeline [(wait 0.01) #(do (make-head) nil)])
     board))
 
 (defn fall-check [o]
@@ -133,6 +149,11 @@
                 #(do (message (str [x y z])) nil) 
                 (wait 1.0) 
                 #(do (destroy (the message)) nil)]))))
+
+(defn steer [n col]
+  (dorun (map #(set! (.steerAngle %) (float n)) col)))
+(defn motor [n col]
+  (dorun (map #(set! (.motorTorque %) (float n)) col)))
 
 (defn handle-input [o]
   (let [body (->rigidbody o)
@@ -261,6 +282,7 @@
                   (v3 (* park-size park-scale)
                     (* 6 park-scale) 
                     (* park-size park-scale))))
+
  (reset! data/player-spawned? true)
  (set-state! @player :total-euler (v3))
  (set-state! @player :rotation (v3))
@@ -270,6 +292,10 @@
  (hook+ @player :update #'game.core/handle-input)
  (hook+ @player :on-collision-enter #(do %1 %2 (reset! TOUCHING true)))
  (hook+ @player :on-collision-exit #(do %1 %2 (reset! TOUCHING false))))
+
+
+
+
 
 '(timeline* :loop
   (wait 3.0)
