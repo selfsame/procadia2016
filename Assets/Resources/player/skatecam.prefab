@@ -25,7 +25,7 @@ GameObject:
   - 81: {fileID: 81000011163964708}
   m_Layer: 0
   m_Name: skatecam
-  m_TagString: Untagged
+  m_TagString: skatecam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

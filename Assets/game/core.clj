@@ -10,6 +10,7 @@
     hard.input)
   (require 
     [game.data :as data]
+    [game.gif :as gif]
     game.board
     human.core)
   (import [SimpleTiledWFC]
@@ -105,14 +106,14 @@
 
 (defn run-tiled [seed]
   (let [wfc (cmpt (the autopark) (type (SimpleTiledWFC.)))]
-  (if (.Run (.model wfc) 
-    seed 
-    (int 0))
-  true
-  (do 
-    (seed! seed)
-    #_(run-tiled (srand-int seed)) 
-    (srand-int seed)))))
+   (if (.Run (.model wfc) 
+        seed 
+        (int 0))
+    true
+    (do 
+      (seed! seed)
+      #_(run-tiled (srand-int seed)) 
+      (srand-int seed)))))
 
 '(run-tiled @data/seed)
 
@@ -167,17 +168,18 @@
    (timeline [
               (wait 0.1)
               #(do 
+                (gif/setup 800 480 24)
                 (prune-city-center city) 
                 (local-scale! city (v3 city-scale))
                 (position! city 
                   (v3 (* city-size -4 city-scale) 0 
                       (* city-size -4 city-scale)))
                 (cmpt- city (type citywfc))
-                false)]))          
-  (make-player 
-    (v3 (* park-size park-scale)
-        (* 6 park-scale) 
-        (* park-size park-scale))))
+                false)]))
+ (make-player 
+   (v3 (* park-size park-scale)
+       (* 6 park-scale) 
+       (* park-size park-scale))))
 
 '(timeline* :loop
   (wait 3.0)

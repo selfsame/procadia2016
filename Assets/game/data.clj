@@ -6,6 +6,7 @@
 (def skin-color (atom nil))
 (defonce respawn-fn (atom #()))
 (defonce selection-fn (atom #()))
+(def recording? (atom false))
 
 (def first-names
  ["alfred"
