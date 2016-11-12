@@ -1,5 +1,11 @@
 (ns game.todo)
 
+::player
+'(( ) detect crashes)
+'(( ) fn to set up skater on board, and to sever joints for crash
+  (( ) disable controlls, timeline animate crash camera, respawn))
+'(( ) fn to detect when ragdoll explodes + respawn)
+
 ::skateboard
 '((x) fn for checking if wheels are on ground)
 '((x) apply downward force to board when not in air)
@@ -10,7 +16,8 @@
 '(( ) at the top of half pipes force the board to stay on the
   vertical plane)
 '((x) jump command)
-'((x) keys to rotate the board)
+'((/) keys to rotate the board
+  (( ) :w :s key rotate X axis in air))
 
 ::camera
 '(( ) chase velocity, not Z+)

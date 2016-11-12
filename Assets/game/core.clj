@@ -75,7 +75,7 @@
 
 (defn wheel-contact? [o]
   (if (and (first 
-            (range-hits (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)) 0.6)))
+            (range-hits (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)) 0.9)))
     true false))
 
 (defn ->wheel [o] (cmpt o UnityEngine.WheelCollider))
@@ -144,8 +144,8 @@
         local-velocity (.InverseTransformPoint (.transform o) 
                                         (v3+ (>v3 o)(.velocity body)))
         forward-speed (.z local-velocity)
-        max-speed 10.0
-        max-turn (max 14 (min 42 (turn-limit forward-speed)))]
+        max-speed 15.0
+        max-turn (max 16 (min 42 (turn-limit forward-speed)))]
 
    (fall-check o)
    (reset! IN-AIR (and (not grounded) (not @TOUCHING)))
@@ -195,13 +195,13 @@
    (cond 
      (key? "a") 
      (if grounded
-         (do (swap! steerage #(max (- max-turn) (- % (∆ 35))))
+         (do (swap! steerage #(max (- max-turn) (- % (∆ 45))))
              (steer (- @steerage) (:rear wheels))
              (steer @steerage (:front wheels)))
          (torque! body 0 (* mass dspeed -24) 0))
      (key? "d") 
      (if grounded
-         (do (swap! steerage #(min max-turn (+ % (∆ 35))))
+         (do (swap! steerage #(min max-turn (+ % (∆ 45))))
              (steer (- @steerage) (:rear wheels))
              (steer @steerage (:front wheels)))
          (torque! body 0 (* mass dspeed 24) 0))
@@ -217,7 +217,7 @@
      (torque! body (* mass  -20) 0 0)
      (force! body 0 (* mass 500) 0))
    (if grounded (force! body 0 (* mass dspeed -25) 0))
-   (global-force! (->rigidbody (the Spine)) 0 350 0)
+   (global-force! (->rigidbody (the Spine)) 0 650 0)
   ;(global-force! (->rigidbody (the "ArmUpper.L")) 0 60 0)
   ;(global-force! (->rigidbody (the "ArmLower.L")) 0 60 0)
   
