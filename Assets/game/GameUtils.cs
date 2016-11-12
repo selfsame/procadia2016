@@ -37,7 +37,7 @@ public static class GameUtils
         CreateDocumentDir("procadia");
 
         string fileName = AppendTimeStamp("procadia");
-        string fullPath = GetDocumentsDir() + "\\procadia\\" + fileName + ".gif";
+        string fullPath = GetDocumentsDir() + "//procadia//" + fileName + ".gif";
         var file = System.IO.File.Create(fullPath);
         file.Close();
 
