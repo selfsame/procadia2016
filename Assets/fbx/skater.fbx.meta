@@ -74,6 +74,7 @@ ModelImporter:
     100132: Toes.R
     100134: Toes.R_end
     100136: TruckerHat
+    100138: Lamp
     400000: Armature
     400002: ArmLower.L
     400004: ArmLower.R
@@ -143,6 +144,7 @@ ModelImporter:
     400132: Toes.R
     400134: Toes.R_end
     400136: TruckerHat
+    400138: Lamp
     4300000: BodyMesh
     4300002: Shorts
     4300004: TruckerHat
@@ -180,12 +182,15 @@ ModelImporter:
     animationImportErrors: 
     animationImportWarnings: "\nClip 'GetUp' has import animation warnings that might
       lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
-      retargeting quality.\n\t'LegUpper.L' has scale animation that will be discarded.\n\t'LegUpper.R'
-      has scale animation that will be discarded.\n\t'Foot.R' has scale animation
-      that will be discarded.\n\t'Toes.R' has scale animation that will be discarded.\n\nClip
-      'Armature|GetUp' has import animation warnings that might lower retargeting
-      quality:\nNote: Activate translation DOF on avatar to improve retargeting quality.\n\t'LegUpper.L'
+      retargeting quality.\n\t'LegLower.L' has scale animation that will be discarded.\n\t'Foot.L'
       has scale animation that will be discarded.\n\t'LegUpper.R' has scale animation
+      that will be discarded.\n\t'LegLower.R' has scale animation that will be discarded.\n\t'Foot.R'
+      has scale animation that will be discarded.\n\t'Toes.R' has scale animation
+      that will be discarded.\n\nClip 'Armature|GetUp' has import animation warnings
+      that might lower retargeting quality:\nNote: Activate translation DOF on avatar
+      to improve retargeting quality.\n\t'LegLower.L' has scale animation that will
+      be discarded.\n\t'Foot.L' has scale animation that will be discarded.\n\t'LegUpper.R'
+      has scale animation that will be discarded.\n\t'LegLower.R' has scale animation
       that will be discarded.\n\t'Foot.R' has scale animation that will be discarded.\n\t'Toes.R'
       has scale animation that will be discarded.\n"
     animationRetargetingWarnings: 
