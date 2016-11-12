@@ -30,7 +30,7 @@
 (defn rand-color []
  (UnityEngine.Color. (UnityEngine.Random/value) (UnityEngine.Random/value) (UnityEngine.Random/value) 1))
 
-(defn change-clothing [val redo-prev-roll?]
+(defn change-clothing [val redo-prev-roll? rb?]
  (let [skater (a/object-named "skater")
        body (hard/child-named skater "BodyMesh")
        trucker-hat (a/cmpt (hard/child-named skater "TruckerHat") UnityEngine.Renderer)
@@ -41,16 +41,13 @@
        shoe-left (a/cmpt (hard/child-named skater "ShoeRight") UnityEngine.Renderer)] 
   (doseq [clothing [trucker-hat shirt pants shorts shoe-right shoe-left]]
    (set! (.enabled clothing) false))
+  (game/make-head rb?)
+  (vertex-color! body @data/skin-color)
   (if (not= "" val)
     (do
      (if redo-prev-roll?
       (set! UnityEngine.Random/state @rand-state)
       (reset! rand-state UnityEngine.Random/state))
-     (let [body-roll (UnityEngine.Random/value)]
-      (cond
-       (<= body-roll 0.33) (vertex-color! body (:pale skin-colors))
-       (<= body-roll 0.66) (vertex-color! body (:tan skin-colors))
-       :else (vertex-color! body (:dark skin-colors))))  
      (let [hat-roll (UnityEngine.Random/value)]
       (if (<= hat-roll 0.5)
         (set! (.enabled trucker-hat) true)))
@@ -80,7 +77,7 @@
        skater (a/object-named "skater")]
   (reset! data/seed seed) 
   (UnityEngine.Random/InitState seed)
-  (change-clothing trimmed-val false)))
+  (change-clothing trimmed-val false false)))
 
 (defn generate-name [go ptr]
  (let [rand-name (str (rand-nth data/first-names) " \"" (rand-nth data/nicknames) "\" " (rand-nth data/last-names))
@@ -88,11 +85,16 @@
   (set! (.text input) rand-name)))
 
 (defn setup-name-select []
- (let [skater (a/object-named "skater")
+ (hard/clear-cloned!)
+ (let [skater (hard/clone! :player/skater)
        skater-anim (a/cmpt skater UnityEngine.Animator)
        name-canvas (hard/clone! :ui/skater-name-canvas (l/v3 0 100 0))
        generate-button (hard/child-named name-canvas "GenerateButton")
        input (a/object-named "NameInput")]
+  (hard/clone! :EventSystem)
+  (hard/clone! :Camera (l/v3 0 1.5 -3.5))
+  (game/make-head false)
+  (vertex-color! (hard/child-named skater "BodyMesh") @data/skin-color)
   (set! (.worldCamera (a/cmpt name-canvas UnityEngine.Canvas)) UnityEngine.Camera/main)
   (a/hook+ generate-button :on-pointer-click #'generate-name)
   (a/hook+ name-canvas :update
@@ -105,7 +107,7 @@
          (timeline* (wait 0.5)
           (do (let [new-player (a/object-named "skater-ragdoll")]
                (set! (.name new-player) "skater")
-               (change-clothing "anything" true))) false))))
+               (change-clothing "anything" true true))) false))))
       (game/make-level)
       (a/destroy go)
       (a/destroy skater)))))
@@ -115,6 +117,6 @@
      (.LookAt rect (l/v3* (l/v3- (.position rect) (.. UnityEngine.Camera/main transform position)) 5)))))
   (ui/on-value-changed input #'on-name-change)
   (timeline*
-   (tween {:position (l/v3+ (l/v3 0 2.4 0) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
+   (tween {:position (l/v3+ (l/v3 0 2.4 -1) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
 
 '(setup-name-select)

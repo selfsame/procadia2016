@@ -36,26 +36,27 @@
 
 
 
-(defn make-head []
+(defn make-head [rb?]
   (destroy (the infihead))
   (destroy (the neck))
-  (let [head (human.core/make-head)
+  (let [head (human.core/make-head @data/seed)
         rag-head (the Bone.001)
         rag-neck (the Bone.002)
         neck (child-named head "neck")]
     (local-scale! head (v3 1))
     (rotation! head (.rotation (.transform rag-head)))
-    (rotate! head (v3 -90 0 0))
-    (position! head (.TransformPoint (.transform rag-head) (v3 0 0.0015 0)))
-    (parent! head rag-head)
-    (rotate! neck (v3 0 0 0))
-    (position! neck (>v3 rag-neck))
-    (parent! neck rag-neck)
-    (local-scale! neck (v3 0.2))
-    (timeline* :loop
-      #(do (cross-fade head (str (srand-nth human.core/emotions)) 0.5))
-      (wait (?f 0.3 1.0)))
-    head))
+    (if rb?
+      (rotate! head (v3 -90 0 0)))
+   (position! head (.TransformPoint (.transform rag-head) (v3 0 0.0015 0)))
+   (parent! head rag-head)
+   (rotate! neck (v3 0 0 0))
+   (position! neck (>v3 rag-neck))
+   (parent! neck rag-neck)
+   (local-scale! neck (v3 0.2))
+   (timeline* :loop
+     #(do (cross-fade head (str (srand-nth human.core/emotions)) 0.5))
+     (wait (?f 0.3 1.0))
+    head)))
 
 (defn make-player [loc]
   (let [loc (or loc (v3 0 10 0))
@@ -65,7 +66,7 @@
     (hook+ cam :update #'game.core/update-cam)
     (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
     (timeline [(wait 0.01) 
-               #(do (make-head) 
+               #(do (make-head true) 
                  (reset! game.board/ragmap (game.board/ragbody-map))
                  nil)])
     board))
@@ -114,19 +115,19 @@
   (let [citywfc (make-city city-size city-size)
         city (.gameObject citywfc)]
    (timeline [
-    (wait 0.1)
-    #(do 
-      (prune-city-center city) 
-      (local-scale! city (v3 city-scale))
-      (position! city 
-        (v3 (* city-size -4 city-scale) 0 
-            (* city-size -4 city-scale)))
-      (cmpt- city (type citywfc))
-      false)]))          
+              (wait 0.1)
+              #(do 
+                (prune-city-center city) 
+                (local-scale! city (v3 city-scale))
+                (position! city 
+                  (v3 (* city-size -4 city-scale) 0 
+                      (* city-size -4 city-scale)))
+                (cmpt- city (type citywfc))
+                false)]))          
   (reset! data/player (make-player 
-                  (v3 (* park-size park-scale)
-                    (* 6 park-scale) 
-                    (* park-size park-scale))))
+                       (v3 (* park-size park-scale)
+                         (* 6 park-scale) 
+                         (* park-size park-scale))))
 
  (reset! data/player-spawned? true)
  (set-state! @data/player :total-euler (v3))
@@ -145,5 +146,5 @@
   #(do (game.board/message "brb   7min") nil))
 
 '(reset! game.data/seed (hash "selfsame"))
-'(make-head)
+'(make-head true)
 '(make-level)

@@ -3,6 +3,7 @@
 (defonce seed (atom 0))
 (def player (atom nil))
 (defonce player-spawned? (atom false))
+(def skin-color (atom nil))
 
 (def first-names
  ["alfred"
