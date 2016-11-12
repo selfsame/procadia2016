@@ -117,6 +117,6 @@
      (.LookAt rect (l/v3* (l/v3- (.position rect) (.. UnityEngine.Camera/main transform position)) 5)))))
   (ui/on-value-changed input #'on-name-change)
   (timeline*
-   (tween {:position (l/v3+ (l/v3 0 2.4 -1) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
+   (tween {:position (l/v3+ (l/v3 0 2.4 1) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
 
 '(setup-name-select)
