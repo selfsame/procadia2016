@@ -153,7 +153,9 @@
          #(v3+ % (delta-euler (state o :rotation) rotation)))
 
    (set-state! o :rotation (.eulerAngles (.transform o)))
-   (if (key-down? "escape") (@game.data/selection-fn))
+   (when (key-down? "escape") 
+    (destroy-immediate @game.data/player)
+    (@game.data/selection-fn))
    (when @STANDING 
    (cond 
      (and (key? "w") (wheel-contact? o)) 
