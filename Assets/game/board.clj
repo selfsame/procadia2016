@@ -166,17 +166,21 @@
 
    (when @STANDING 
    (cond 
-     (and (key? "w") (wheel-contact? o)) 
-     (if (< forward-speed max-speed)
+     (key? "w")
+     (if grounded 
+      (if (< forward-speed max-speed)
          (do (force! body 0 0 (* mass dspeed 20))
              (motor motorforce (:rear wheels))
              (motor motorforce (:front wheels))))
+      (torque! body (* mass dspeed 10) 0 0))
 
-     (and (key? "s") (wheel-contact? o)) 
-     (if (> forward-speed (- max-speed))
+     (key? "s")
+     (if grounded 
+      (if (> forward-speed (- max-speed))
          (do (force! body 0 0 (* mass dspeed -20))
              (motor (- motorforce) (:rear wheels))
              (motor (- motorforce) (:front wheels))))
+      (torque! body (* mass dspeed -10) 0 0))
     
      :else
      (do (motor 0 (:rear wheels))
@@ -204,7 +208,7 @@
      (torque! body 0 0 (* mass  60)))
    (when (and (key-down? "space") grounded) 
      (torque! body (* mass  -20) 0 0)
-     (force! body 0 (* mass 500) 0))
+     (force! body 0 (* mass 540) 0))
    (if grounded (force! body 0 (* mass dspeed -25) 0))
    (global-force! (->rigidbody (:spine @ragmap)) 0 650 0))
    ::gravity
