@@ -127,7 +127,7 @@
         forward-speed (.z local-velocity)
         max-speed 15.0
         max-turn (max 16 (min 42 (turn-limit forward-speed)))]
-
+   (when-not (state o :speed) (set-state! o :speed forward-speed))
    (fall-check o)
    (reset! IN-AIR (and (not grounded) (not @TOUCHING)))
    (if (and (not was-in-air) @IN-AIR) 
@@ -139,9 +139,13 @@
                grounded) ) 
      (do (tally-tricks o)))
 
+   (when (< 1.0 (abs (- (abs forward-speed) (abs (state o :speed)))))
+    (detach-skater o))
+
    (text! (the debug) 
      (str :steerage "   " @steerage "\n"
        :forward-speed "  " forward-speed "\n"
+       :delta-speed "  " (- (abs forward-speed) (abs (state o :speed))) "\n"
        :max-turn "  " max-turn "\n"
        :in-air "  " @IN-AIR "\n"
        :touching "  " @TOUCHING "\n"
@@ -151,11 +155,14 @@
       
    (update-state! o :total-euler 
          #(v3+ % (delta-euler (state o :rotation) rotation)))
-
    (set-state! o :rotation (.eulerAngles (.transform o)))
+   (set-state! o :speed forward-speed)
+
+
    (when (key-down? "escape") 
     (destroy-immediate @game.data/player)
     (@game.data/selection-fn))
+
    (when @STANDING 
    (cond 
      (and (key? "w") (wheel-contact? o)) 
