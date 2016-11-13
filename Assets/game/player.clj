@@ -5,6 +5,7 @@
           [game.ui :as ui]
           [game.data :as data]
           [hard.core :as hard]
+          [game.gif :as gif]
           [tween.core :refer :all]))
 
 (defonce rand-state (atom nil))
@@ -109,6 +110,7 @@
                (set! (.name new-player) "skater")
                (change-clothing "anything" true true))) false))))
       (game/make-level)
+      (gif/setup)
       (a/destroy go)
       (a/destroy skater)))))
   (a/hook+ name-canvas :update :billboard

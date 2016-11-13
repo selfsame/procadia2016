@@ -76,9 +76,9 @@
     (hook+ cam :update #'game.core/update-cam)
     (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
     (timeline [
-      (wait 0.01) 
-     #(do (make-head true) 
-          (reset! game.board/ragmap (game.board/ragbody-map)) nil)])
+               (wait 0.01) 
+               #(do (make-head true) 
+                    (reset! game.board/ragmap (game.board/ragbody-map)) nil)])
     (reset! data/player-spawned? true)
     (reset! game.board/STANDING true)
     (reset! data/player board) 
@@ -96,14 +96,14 @@
   (let [p (>v3 @data/player)]
     (destroy @data/player)
     (timeline [
-      (wait 0.1)
-     #(do (make-player p) nil)])))
+               (wait 0.1)
+               #(do (make-player p) nil)])))
 (reset! data/respawn-fn respawn-player)
 
 (defn run-tiled [seed o ct]
   (let [cmptype (if (= :overlap ct) 
-          (type (OverlapWFC.)) 
-          (type (SimpleTiledWFC.)))
+                 (type (OverlapWFC.)) 
+                 (type (SimpleTiledWFC.)))
         wfc (cmpt o cmptype)]
     (.Generate wfc)
    (if (.Run (.model wfc) seed (int 0))
@@ -123,8 +123,8 @@
    (set! (.seed wfc) @data/seed)
    (set! (.gridsize wfc) (int 2))
    (timeline [
-      (wait 0.1)
-      #(do (local-scale! o (v3 park-scale)) false)])
+              (wait 0.1)
+              #(do (local-scale! o (v3 park-scale)) false)])
    (set! (.width wfc) (int w))
    (set! (.depth wfc) (int h))
    (run-tiled @data/seed o :tiled) o))
@@ -156,6 +156,7 @@
   (let [citywfc (make-city city-size city-size)
         city (.gameObject citywfc)]
     (timeline [
+<<<<<<< 772cd6bd0eab429fcc8af87a05da3f93bcaa37ec
       (wait 0.1)
       #(do 
         (prune-city-center city) 
@@ -166,6 +167,20 @@
               (* city-size -4 city-scale)))
         (cmpt- city (type citywfc)) nil)]))
  ;(gif/setup 800 480 24)
+=======
+               (wait 0.01)
+               #(do 
+                 (prune-city-center city) 
+                 (destroy (the city-sample))
+                 (local-scale! city (v3 city-scale))
+                 (position! city 
+                   (v3 (* city-size -4 city-scale) 0 
+                       (* city-size -4 city-scale)))
+                 (cmpt- city (type citywfc)) nil)]))
+ (clone! :ui/recording-canvas)
+ (if @data/recording?
+  (set! (.alpha (cmpt (object-tagged "skatecam") UnityEngine.CanvasGroup)) 1.0))
+>>>>>>> working gif capture
  (make-player 
    (v3 (* park-size park-scale)
        (* 6 park-scale) 
