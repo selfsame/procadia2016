@@ -179,7 +179,8 @@
 
     (when @STANDING 
      (cond 
-      (key? "w")
+      (or (key? "w")
+          (joy-up?))
       (if grounded 
        (if (< forward-speed max-speed)
           (do (force! body 0 0 (* mass dspeed 20))
@@ -187,7 +188,8 @@
               (motor motorforce (:front wheels))))
        (torque! body (* mass dspeed 10) 0 0))
 
-      (key? "s")
+      (or (key? "s")
+          (joy-down?))
       (if grounded 
        (if (> forward-speed (- max-speed))
           (do (force! body 0 0 (* mass dspeed -20))
@@ -199,13 +201,15 @@
        (do (motor 0 (:rear wheels))
            (motor 0 (:front wheels))))
      (cond 
-       (key? "a") 
+       (or (key? "a")
+           (joy-left?))
        (if grounded
            (do (swap! steerage #(max (- max-turn) (- % (∆ 45))))
                (steer (- @steerage) (:rear wheels))
                (steer @steerage (:front wheels)))
            (torque! body 0 (* mass dspeed -24) 0))
-       (key? "d") 
+       (or (key? "d")
+           (joy-right?))
        (if grounded
            (do (swap! steerage #(min max-turn (+ % (∆ 45))))
                (steer (- @steerage) (:rear wheels))
@@ -215,11 +219,18 @@
        (do (swap! steerage #(* % 0.95))
            (steer (- @steerage) (:rear wheels))
            (steer @steerage (:front wheels))))
-     (if (key? "e") (torque! body 0 0 (* mass -6)))
-     (if (key? "q") (torque! body 0 0 (* mass  6)))
-     (if (and (key? "tab") (upsidedown? o)) 
+     (if (or (key? "e")
+             (button? "Fire2"))
+       (torque! body 0 0 (* mass -6)))
+     (if (or (key? "q")
+             (button? "Fire3"))
+       (torque! body 0 0 (* mass  6)))
+     (if (and (key? "tab")
+              (upsidedown? o))
        (torque! body 0 0 (* mass  60)))
-     (when (and (key-down? "space") grounded) 
+     (when (and (or (key-down? "space")
+                    (button? "Jump"))
+                grounded)
        (torque! body (* mass  -20) 0 0)
        (force! body 0 (* mass 540) 0))
      (if grounded (force! body 0 (* mass dspeed -25) 0))
