@@ -109,6 +109,7 @@
                (set! (.name new-player) "skater")
                (change-clothing "anything" true true))) false))))
       (game/make-level)
+      (gif/setup 800 480 24)
       (a/destroy go)
       (a/destroy skater)))))
   (a/hook+ name-canvas :update :billboard

@@ -168,7 +168,6 @@
    (timeline [
               (wait 0.1)
               #(do 
-                (gif/setup 800 480 24)
                 (prune-city-center city) 
                 (local-scale! city (v3 city-scale))
                 (position! city 
