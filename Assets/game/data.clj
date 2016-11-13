@@ -4,6 +4,7 @@
 (def player (atom nil))
 (defonce player-spawned? (atom false))
 (def skin-color (atom nil))
+(defonce respawn-fn (atom #()))
 
 (def first-names
  ["alfred"

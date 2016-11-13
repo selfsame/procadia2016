@@ -15,6 +15,7 @@
 (def ragmap (atom nil))
 (def IN-AIR (atom false))
 (def TOUCHING (atom false))
+(def STANDING (atom true))
 
 (defn ragbody-map [] {
   :hips         (the Hips)
@@ -28,6 +29,8 @@
   :arm-lower-r  (the ArmLower.R)
   :leg-upper-r  (the LegUpper.R)
   :leg-lower-r  (the LegLower.R)})
+
+(defn ->wheel [o] (cmpt o UnityEngine.WheelCollider))
 
 (defn record-wheels [board]
   (reset! wheelmap 
@@ -47,6 +50,20 @@
     (set! (.text txt) s)
     (timeline [#(lerp-look! o cam (float 0.2))])))
 
+
+(defn detach-skater [o]
+  (let [legr (:leg-lower-r @ragmap)
+        legl (:leg-lower-l @ragmap)]
+    ;(set! (.connectedBody (cmpt legr UnityEngine.FixedJoint)) nil)
+    (cmpt- legr UnityEngine.FixedJoint)
+    (cmpt- legl UnityEngine.FixedJoint)
+    (reset! STANDING false)
+    (timeline [
+      (wait 4.0)
+      #(do (@game.data/respawn-fn) nil)])))
+
+
+
 (defn upsidedown? [o]
   (and (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 1 0)))
        #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)))) ))
@@ -56,7 +73,7 @@
             (range-hits (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)) 0.9)))
     true false))
 
-(defn ->wheel [o] (cmpt o UnityEngine.WheelCollider))
+
 
 
 (defn fall-check [o]
@@ -135,7 +152,7 @@
          #(v3+ % (delta-euler (state o :rotation) rotation)))
 
    (set-state! o :rotation (.eulerAngles (.transform o)))
-
+   (when @STANDING 
    (cond 
      (and (key? "w") (wheel-contact? o)) 
      (if (< forward-speed max-speed)
@@ -177,12 +194,6 @@
      (torque! body (* mass  -20) 0 0)
      (force! body 0 (* mass 500) 0))
    (if grounded (force! body 0 (* mass dspeed -25) 0))
-   (global-force! (->rigidbody (:spine @ragmap)) 0 650 0)
-  ;(global-force! (->rigidbody (the "ArmUpper.L")) 0 60 0)
-  ;(global-force! (->rigidbody (the "ArmLower.L")) 0 60 0)
-  
-  ;(global-force! (->rigidbody (the "ArmLower.R")) 0 60 0)
-  
+   (global-force! (->rigidbody (:spine @ragmap)) 0 650 0))
    ::gravity
-   (global-force! body 0 (* mass -8) 0)
-   (Input/GetAxis "Vertical")))
+   (global-force! body 0 (* mass -8) 0)))

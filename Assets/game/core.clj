@@ -23,16 +23,22 @@
 
 
 (defn update-cam [o]
-  (let [target (v3+ (.TransformPoint (.transform @data/player) (v3 0 0 -10))
-                    (v3 0 8 0))]
-    (position! o (lerp o target (∆ 4)))
-    (lerp-look! o @data/player (∆ 6))))
+  (try 
+    (let [target (v3+ (.TransformPoint (.transform @data/player) (v3 0 0 -10))
+                      (v3 0 8 0))
+          focus (if @game.board/STANDING @data/player (:head @game.board/ragmap))]
+      (position! o (lerp o target (∆ 4)))
+      (lerp-look! o focus (∆ 6)))
+    (catch Exception e nil)))
 
 (defn gizmo-cam [o]
-  (gizmo-color (color 1 0 0))
-  (gizmo-line (>v3 o) (>v3 @data/player))
-  (gizmo-color (color 0 1 1))
-  (gizmo-line  (>v3 @data/player) (.TransformPoint (.transform @data/player) (v3 0 -1.0 0))))
+  (try 
+    (gizmo-color (color 1 0 0))
+    (gizmo-line  (>v3 o) (>v3 @data/player))
+    (gizmo-color (color 0 1 1))
+    (gizmo-line  (>v3 @data/player) 
+                 (.TransformPoint (.transform @data/player) (v3 0 -1.0 0)))
+    (catch Exception e nil)))
 
 
 
@@ -61,7 +67,8 @@
 (defn make-player [loc]
   (let [loc (or loc (v3 0 10 0))
         board (clone! :player/board loc)
-        cam (clone! :player/skatecam (v3+ loc (v3 0 5 7)))]
+        cam (or (the skatecam) 
+                (clone! :player/skatecam (v3+ loc (v3 0 5 7))))]
     (game.board/record-wheels board)
     (hook+ cam :update #'game.core/update-cam)
     (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
@@ -69,8 +76,28 @@
                #(do (make-head true) 
                  (reset! game.board/ragmap (game.board/ragbody-map))
                  nil)])
+    (reset! data/player-spawned? true)
+    (reset! game.board/STANDING true)
+    (reset! data/player board) 
+    (set-state! @data/player :total-euler (v3))
+    (set-state! @data/player :rotation (v3))
+    (hook-clear @data/player :update)
+    (hook-clear @data/player :on-collision-enter)
+    (hook-clear @data/player :on-collision-exit)
+    (hook+ @data/player :update #'game.board/handle-input)
+    (hook+ @data/player :on-collision-enter #(do %1 %2 (reset! game.board/TOUCHING true)))
+    (hook+ @data/player :on-collision-exit #(do %1 %2 (reset! game.board/TOUCHING false)))
     board))
 
+(defn respawn-player []
+  (let [p (>v3 @data/player)]
+    (reset! data/player-spawned? false)
+    (destroy @data/player)
+    (timeline [
+      (wait 0.1)
+      #(do (make-player p) nil)])))
+
+(reset! data/respawn-fn respawn-player)
 
 (defn make-park [w h]
   (let [o (clone! :maps/autopark (v3 26 4 26))
@@ -124,27 +151,18 @@
                       (* city-size -4 city-scale)))
                 (cmpt- city (type citywfc))
                 false)]))          
-  (reset! data/player (make-player 
-                       (v3 (* park-size park-scale)
-                         (* 6 park-scale) 
-                         (* park-size park-scale))))
-
- (reset! data/player-spawned? true)
- (set-state! @data/player :total-euler (v3))
- (set-state! @data/player :rotation (v3))
- (hook-clear @data/player :update)
- (hook-clear @data/player :on-collision-enter)
- (hook-clear @data/player :on-collision-exit)
- (hook+ @data/player :update #'game.board/handle-input)
- (hook+ @data/player :on-collision-enter #(do %1 %2 (reset! game.board/TOUCHING true)))
- (hook+ @data/player :on-collision-exit #(do %1 %2 (reset! game.board/TOUCHING false))))
+  (make-player 
+    (v3 (* park-size park-scale)
+        (* 6 park-scale) 
+        (* park-size park-scale))))
 
 '(timeline* :loop
   (wait 3.0)
   #(do (make-level) nil)
   (wait 0.1)
-  #(do (game.board/message "brb   7min") nil))
+  #(do (game.board/message "") nil))
 
 '(reset! game.data/seed (hash "selfsame"))
 '(make-head true)
 '(make-level)
+'(game.board/detach-skater nil)
