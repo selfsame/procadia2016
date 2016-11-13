@@ -47,15 +47,12 @@
 (defn make-player [loc]
   (let [loc (or loc (v3 0 10 0))
         board (clone! :player/board loc)
-        prev-cam (the skatecam)
-        cam (clone! :player/skatecam)]
-    (when prev-cam
-      (position! cam (>v3 (the skatecam)))
-      (rotation! cam (.rotation (.transform (the skatecam))))
-      (destroy (the skatecam)))
+        prev-cam (the skatecam)]
+    (if-not prev-cam
+      (let [cam (clone! :player/skatecam)]
+        (hook+ cam :update #'game.cam/update-cam)
+        (hook+ cam :on-draw-gizmos #'game.cam/gizmo-cam)))
     (game.board/record-wheels board)
-    (hook+ cam :update #'game.cam/update-cam)
-    (hook+ cam :on-draw-gizmos #'game.cam/gizmo-cam)
     (timeline [
                (wait 0.01) 
                #(do (make-head true) 

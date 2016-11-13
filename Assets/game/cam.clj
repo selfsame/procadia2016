@@ -9,12 +9,12 @@
     game.board))
 
 (def dist 12)
-(def min-cam-dist 10.0)
+(def min-cam-dist 12.0)
 
 (defn update-cam [o]
   (try 
     (let [focus (if @game.board/STANDING @game.data/player (:head @game.board/ragmap))
-          target (v3+ (.TransformPoint (.transform @game.data/player) (v3 0 0 (- dist)))
+          target (v3+ (.TransformPoint (.transform @game.data/player) (v3 5 0 (- dist)))
                       (v3 0 10 0))
           cam-offset (v3- (>v3 o) (>v3 focus))
           cam-dist (.magnitude cam-offset)
@@ -22,7 +22,6 @@
           cam-correct (if (< cam-dist min-cam-dist) 
             (v3* camTP (-  cam-dist min-cam-dist))
             (v3 0))]
-
       (position! o 
         (v3+ cam-correct 
           (lerp o target (∆ 4))))
@@ -30,7 +29,7 @@
     (catch Exception e (log e))))
 
 (defn gizmo-cam [o]
-  (let [focus (if @game.board/STANDING @game.data/player (:head @game.board/ragmap))
+  #_(let [focus (if @game.board/STANDING @game.data/player (:head @game.board/ragmap))
         target (v3+ (.TransformPoint (.transform @game.data/player) (v3 0 0 (- dist)))
                     (v3 0 10 0))
         cam-offset (v3- (>v3 o) (>v3 focus))
@@ -48,4 +47,4 @@
       (gizmo-color (color 0 1 1))
       (gizmo-line  (>v3 @game.data/player) 
                    (.TransformPoint (.transform @game.data/player) (v3 0 -1.0 0)))
-      (catch Exception e (log e)))))
+      (catch Exception e (log e)))) )
