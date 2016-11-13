@@ -1,6 +1,7 @@
 (ns game.data)
 
 (defonce seed (atom 0))
+(def skater-name (atom ""))
 (def player (atom nil))
 (defonce player-spawned? (atom false))
 (def skin-color (atom nil))

@@ -31,7 +31,7 @@
 (defn rand-color []
  (UnityEngine.Color. (UnityEngine.Random/value) (UnityEngine.Random/value) (UnityEngine.Random/value) 1))
 
-(defn change-clothing [val redo-prev-roll? rb?]
+(defn change-clothing [redo-prev-roll? rb?]
  (let [skater (a/object-named "skater")
        body (hard/child-named skater "BodyMesh")
        trucker-hat (a/cmpt (hard/child-named skater "TruckerHat") UnityEngine.Renderer)
@@ -44,7 +44,7 @@
    (set! (.enabled clothing) false))
   (game/make-head rb?)
   (vertex-color! body @data/skin-color)
-  (if (not= "" val)
+  (if (not= "" @data/skater-name)
     (do
      (if redo-prev-roll?
       (set! UnityEngine.Random/state @rand-state)
@@ -77,8 +77,9 @@
        seed (hash trimmed-val)
        skater (a/object-named "skater")]
   (reset! data/seed seed) 
+  (reset! data/skater-name trimmed-val)
   (UnityEngine.Random/InitState seed)
-  (change-clothing trimmed-val false false)))
+  (change-clothing false false)))
 
 (defn generate-name [go ptr]
  (let [rand-name (str (rand-nth data/first-names) " \"" (rand-nth data/nicknames) "\" " (rand-nth data/last-names))
@@ -118,6 +119,8 @@
     (let [rect (a/cmpt go UnityEngine.RectTransform)]
      (.LookAt rect (l/v3* (l/v3- (.position rect) (.. UnityEngine.Camera/main transform position)) 5)))))
   (ui/on-value-changed input #'on-name-change)
+  (if (not= "" @data/skater-name)
+   (ui/set-input-text input @data/skater-name))
   (timeline*
    (tween {:position (l/v3+ (l/v3 0 2.4 1) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
 
