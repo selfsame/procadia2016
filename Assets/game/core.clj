@@ -10,6 +10,7 @@
     hard.input)
   (require 
     [game.data :as data]
+    [game.gif :as gif]
     game.board
     human.core)
   (import [SimpleTiledWFC]
@@ -174,6 +175,7 @@
                       (* city-size -4 city-scale)))
                 (cmpt- city (type citywfc))
                 false)]))
+ (gif/setup 800 480 24)
  (make-player 
    (v3 (* park-size park-scale)
        (* 6 park-scale) 

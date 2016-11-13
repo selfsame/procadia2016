@@ -9,7 +9,7 @@
 
 (def gif-cam (atom nil))
 (def gif-tex (atom nil))
-(def gif-encoder (atom nil))
+(def gif-encoder (atom false))
 
 (defn setup-encoder []
  (let [encoder (AnimatedGifEncoder. (GameUtils/CreateDocumentFile))]
@@ -22,7 +22,7 @@
        cam (a/cmpt cam-go Camera)]
   (reset! gif-cam cam)
   (reset! gif-tex render-texture)
-  (setup-encoder)
+  (if (false? @gif-encoder) (setup-encoder))
   (set! (.targetTexture cam) render-texture)
   (set! (.worldCamera (a/cmpt gif-canvas Canvas)) cam) 
   (a/hook+ cam-go :update
