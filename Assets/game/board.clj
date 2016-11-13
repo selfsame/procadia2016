@@ -8,7 +8,8 @@
     hard.physics
     hard.input)
   (:require
-    game.data))
+    game.data
+    game.player))
 
 (def steerage (atom 0.0))
 (def wheelmap (atom nil))
@@ -113,6 +114,7 @@
   (dorun (map #(set! (.motorTorque %) (float n)) col)))
 
 (defn handle-input [o]
+  (try
   (let [body (->rigidbody o)
         grounded (wheel-contact? o)
         was-in-air @IN-AIR
@@ -152,6 +154,7 @@
          #(v3+ % (delta-euler (state o :rotation) rotation)))
 
    (set-state! o :rotation (.eulerAngles (.transform o)))
+   (if (key-down? "escape") (game.player/setup-name-select))
    (when @STANDING 
    (cond 
      (and (key? "w") (wheel-contact? o)) 
@@ -196,4 +199,5 @@
    (if grounded (force! body 0 (* mass dspeed -25) 0))
    (global-force! (->rigidbody (:spine @ragmap)) 0 650 0))
    ::gravity
-   (global-force! body 0 (* mass -8) 0)))
+   (global-force! body 0 (* mass -8) 0))
+  (catch Exception e (log e))))

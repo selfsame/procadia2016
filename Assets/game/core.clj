@@ -67,8 +67,12 @@
 (defn make-player [loc]
   (let [loc (or loc (v3 0 10 0))
         board (clone! :player/board loc)
-        cam (or (the skatecam) 
-                (clone! :player/skatecam (v3+ loc (v3 0 5 7))))]
+        prev-cam (the skatecam)
+        cam (clone! :player/skatecam)]
+    (when prev-cam
+      (position! cam (>v3 (the skatecam)))
+      (rotation! cam (.rotation (.transform (the skatecam))))
+      (destroy (the skatecam)))
     (game.board/record-wheels board)
     (hook+ cam :update #'game.core/update-cam)
     (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
@@ -103,6 +107,7 @@
   (let [o (clone! :maps/autopark (v3 26 4 26))
         wfc (.AddComponent o (type (SimpleTiledWFC.)))]
    (set! (.xmlpath wfc) "skaters.xml")
+   (set! (.seed wfc) @data/seed)
    (set! (.gridsize wfc) (int 2))
    (timeline [
               (wait 0.1)
@@ -118,6 +123,7 @@
   (set! (.gridsize trainer) (int 10))
   (set! (.width trainer) (int 20))
   (set! (.depth trainer) (int 14))
+  (set! (.seed wfc) @data/seed)
   (set! (.training wfc) trainer)
   (set! (.gridsize wfc) (int 10))
   (set! (.width wfc) (int w))
