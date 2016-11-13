@@ -8,8 +8,7 @@
     hard.physics
     hard.input)
   (:require
-    game.data
-    game.player))
+    game.data))
 
 (def steerage (atom 0.0))
 (def wheelmap (atom nil))
@@ -154,7 +153,7 @@
          #(v3+ % (delta-euler (state o :rotation) rotation)))
 
    (set-state! o :rotation (.eulerAngles (.transform o)))
-   (if (key-down? "escape") (game.player/setup-name-select))
+   (if (key-down? "escape") (@game.data/selection-fn))
    (when @STANDING 
    (cond 
      (and (key? "w") (wheel-contact? o)) 

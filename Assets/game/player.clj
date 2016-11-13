@@ -119,4 +119,6 @@
   (timeline*
    (tween {:position (l/v3+ (l/v3 0 2.4 1) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
 
+(reset! game.data/selection-fn setup-name-select)
+
 '(setup-name-select)
