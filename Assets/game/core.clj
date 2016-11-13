@@ -22,25 +22,6 @@
 (def city-scale 4.3)
 (def city-size 30)
 
-
-(defn update-cam [o]
-  (try 
-    (let [target (v3+ (.TransformPoint (.transform @data/player) (v3 0 0 -10))
-                      (v3 0 8 0))
-          focus (if @game.board/STANDING @data/player (:head @game.board/ragmap))]
-      (position! o (lerp o target (∆ 4)))
-      (lerp-look! o focus (∆ 6)))
-    (catch Exception e nil)))
-
-(defn gizmo-cam [o]
-  (try 
-    (gizmo-color (color 1 0 0))
-    (gizmo-line  (>v3 o) (>v3 @data/player))
-    (gizmo-color (color 0 1 1))
-    (gizmo-line  (>v3 @data/player) 
-                 (.TransformPoint (.transform @data/player) (v3 0 -1.0 0)))
-    (catch Exception e nil)))
-
 (defn make-head [rb?]
   (dorun (map destroy (every infihead)))
   (dorun (map destroy (every neck)))
@@ -73,8 +54,8 @@
       (rotation! cam (.rotation (.transform (the skatecam))))
       (destroy (the skatecam)))
     (game.board/record-wheels board)
-    (hook+ cam :update #'game.core/update-cam)
-    (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
+    (hook+ cam :update #'game.cam/update-cam)
+    (hook+ cam :on-draw-gizmos #'game.cam/gizmo-cam)
     (timeline [
                (wait 0.01) 
                #(do (make-head true) 

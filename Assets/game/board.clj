@@ -71,7 +71,7 @@
      #_(timeline [
                   #(do (message (trick [x y z])) nil) 
                   (wait 1.0) 
-                  #(do (if (the message) (destroy (the message))) nil)]))))
+                  #(do (if (the message) (destroy (the message))) nil)]) )))
 
 
 (defn detach-skater [o]
@@ -91,20 +91,17 @@
 
 (defn upsidedown? [o]
   (and (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 1 0)))
-       #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0))))))
+       #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)))) ))
 
 (defn wheel-contact? [o]
   (if (and (first 
             (range-hits (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)) 0.9)))
     true false))
 
-
-
-
 (defn fall-check [o]
   (let [p (>v3 o)]
-    (when (< (.y p) -50)
-      (position! o (v3 (.x p) 20 (.z p)))
+    (when (or (< (.y p) -50) (> (.y p) 300))
+      (position! o (v3 100 20 100))
       (set! (.velocity (->rigidbody o)) (v3 0)))))
 
 (defn turn-limit [n]
@@ -149,7 +146,7 @@
     (if (and was-in-air 
             (not @IN-AIR) 
             #_(or (not @TOUCHING)
-                grounded)) 
+                grounded) ) 
       (do (tally-tricks o)))
 
     (when (< 8.0 (abs (- (abs forward-speed) (abs (state o :speed)))))
