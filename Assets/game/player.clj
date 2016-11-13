@@ -3,6 +3,7 @@
           [arcadia.linear :as l]
           [game.core :as game]
           [game.ui :as ui]
+          [game.gif :as gif]
           [game.data :as data]
           [hard.core :as hard]
           [tween.core :refer :all]))

@@ -10,7 +10,6 @@
     hard.input)
   (require 
     [game.data :as data]
-    [game.gif :as gif]
     game.board
     human.core)
   (import [SimpleTiledWFC]
