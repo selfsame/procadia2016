@@ -7,6 +7,7 @@ clone this repo, then in Assets clone
 * `https:github.com/selfsame/hard`
 * `https:github.com/selfsame/tween`
 * `https:github.com/selfsame/unity-wave-function-collapse`
+* `https://github.com/Chman/Moments`
 
 # project style
 
