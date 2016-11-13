@@ -139,7 +139,8 @@
                grounded) ) 
      (do (tally-tricks o)))
 
-   (when (< 1.0 (abs (- (abs forward-speed) (abs (state o :speed)))))
+   (when (< 8.0 (abs (- (abs forward-speed) (abs (state o :speed)))))
+    (log (abs (- (abs forward-speed) (abs (state o :speed)))))
     (detach-skater o))
 
    (text! (the debug) 
