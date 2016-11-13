@@ -6,7 +6,8 @@
     hard.core
     hard.seed
     hard.physics
-    hard.input)
+    hard.input
+    game.tricks)
   (:require
     game.data))
 
@@ -16,6 +17,8 @@
 (def IN-AIR (atom false))
 (def TOUCHING (atom false))
 (def STANDING (atom true))
+(def TRICK-STREAK (atom []))
+(def CRASH-COUNT (atom 0))
 
 (defn ragbody-map [] {
   :hips         (the Hips)
@@ -50,17 +53,41 @@
     (set! (.text txt) s)
     (timeline [#(lerp-look! o cam (float 0.2))])))
 
+(defn update-trick-ui []
+  (let [tricklist (apply str (map (comp #(str % "\n") first) @TRICK-STREAK))]
+    (text! (the tricks) tricklist)
+    (text! (the tricks-bg) tricklist)))
+
+(defn tally-tricks [o]
+  (let [total (v3* (state o :total-euler) 1/90)
+        x (int (.x total))
+        y (int (.y total))
+        z (int (.z total))]
+    (when (or (not (zero? x))
+            (not (zero? y))
+            (not (zero? z)))
+    (swap! TRICK-STREAK #(conj % [(trick [x y z]) (trick-score [x y z])]))
+    (update-trick-ui)
+    #_(timeline [
+      #(do (message (trick [x y z])) nil) 
+      (wait 1.0) 
+      #(do (if (the message) (destroy (the message))) nil)]) )))
+
 
 (defn detach-skater [o]
   (let [legr (:leg-lower-r @ragmap)
         legl (:leg-lower-l @ragmap)]
+    (swap! CRASH-COUNT inc)
+    (reset! TRICK-STREAK [])
     ;(set! (.connectedBody (cmpt legr UnityEngine.FixedJoint)) nil)
     (cmpt- legr UnityEngine.FixedJoint)
     (cmpt- legl UnityEngine.FixedJoint)
     (reset! STANDING false)
     (timeline [
       (wait 4.0)
-      #(do (@game.data/respawn-fn) nil)])))
+      #(do 
+        (update-trick-ui)
+        (@game.data/respawn-fn) nil)])))
 
 
 
@@ -93,19 +120,6 @@
   (let [d (v3- b a)
         x (.x d) y (.y d) z (.z d)]
     (v3 (ecl x)(ecl y)(ecl z))))
-
-(defn tally-tricks [o]
-  (let [total (v3* (state o :total-euler) 1/90)
-        x (int (.x total))
-        y (int (.y total))
-        z (int (.z total))]
-    (if (or (not (zero? x))
-            (not (zero? y))
-            (not (zero? z)))
-     (timeline [
-                #(do (message (str [x y z])) nil) 
-                (wait 1.0) 
-                #(do (destroy (the message)) nil)]))))
 
 (defn steer [n col]
   (dorun (map #(set! (.steerAngle %) (float n)) col)))
@@ -146,13 +160,10 @@
    (text! (the debug) 
      (str :steerage "   " @steerage "\n"
        :forward-speed "  " forward-speed "\n"
-       :delta-speed "  " (- (abs forward-speed) (abs (state o :speed))) "\n"
        :max-turn "  " max-turn "\n"
        :in-air "  " @IN-AIR "\n"
        :touching "  " @TOUCHING "\n"
        :angular-vel "  " (.angularVelocity body) "\n"))
-      ;:delta-euler "  " (delta-euler (state o :rotation) rotation) "\n"
-      ;:total-euler "  " (state o :total-euler) "\n"
       
    (update-state! o :total-euler 
          #(v3+ % (delta-euler (state o :rotation) rotation)))

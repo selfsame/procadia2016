@@ -100,8 +100,21 @@
     (timeline [
                (wait 0.1)
                #(do (make-player p) nil)])))
-
 (reset! data/respawn-fn respawn-player)
+
+
+(defn run-tiled [seed]
+  (let [wfc (cmpt (the autopark) (type (SimpleTiledWFC.)))]
+  (if (.Run (.model wfc) 
+    seed 
+    (int 0))
+  true
+  (do 
+    (seed! seed)
+    #_(run-tiled (srand-int seed)) 
+    (srand-int seed)))))
+
+'(run-tiled @data/seed)
 
 (defn make-park [w h]
   (let [o (clone! :maps/autopark (v3 26 4 26))
@@ -114,6 +127,10 @@
               #(do (local-scale! o (v3 park-scale)) false)])
    (set! (.width wfc) (int w))
    (set! (.depth wfc) (int h)) o))
+
+
+
+
 
 (defn make-city [w h]
  (let [o (clone! :maps/autocity (v3 0 0 0))

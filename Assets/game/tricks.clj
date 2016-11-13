@@ -1,6 +1,8 @@
 (ns game.tricks
   (:use 
-    hard.seed))
+    hard.seed)
+  (:require
+    game.data))
 
 (def prefixes [
   'fleeb
@@ -99,9 +101,20 @@
   [0 (- 7 (srand-int 14))(- 7 (srand-int 14))])
 
 (defn trick [seed]
-  (str 
-  (srand-nth prefixes)
-  "-"
-  (srand-nth suffixes)))
+  (seed! [@game.data/seed (mapv #(int (Mathf/Abs %)) seed)])
+  (let [trickname 
+        (str (srand-nth prefixes) "-"
+             (srand-nth suffixes))
+        dir (if (neg? (nth seed 1))
+            (str (srand-nth ccw) " "))]
+    (str dir trickname)))
 
-(trick (rand-trick))
+(defn trick-score [trick]
+  (reduce * (map #(inc (Mathf/Abs %)) trick)))
+
+
+'(trick-score [0 -3 5])
+'(trick (rand-trick))
+
+(trick [0 -2 1])
+(trick [0 2 1])

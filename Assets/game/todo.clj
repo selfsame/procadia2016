@@ -24,11 +24,12 @@
 '(( ) maintain minimum distance (lerped))
 
 ::tricks
-'((/) board touching ground state)
+'((x) board touching ground state)
 '((x) board in air state)
-'(( ) when board in air, track accumulated rotations
-  (( ) 1/4 1/2 3/4 :360)
-  (( ) delta-euler fn - handle 360 turnover))
+'((x) when board in air, track accumulated rotations
+  ((x) 1/4 1/2 3/4 :360)
+  ((x) delta-euler fn - handle 360 turnover))
+'(( ) don't award tricks that crash)
 
 
 '(.. (cmpt Selection/activeObject InputField)
