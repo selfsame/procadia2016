@@ -1,13 +1,13 @@
 (ns game.data)
 
 (defonce seed (atom 0))
-(def skater-name (atom ""))
-(def player (atom nil))
+(defonce skater-name (atom ""))
+(defonce player (atom nil))
 (defonce player-spawned? (atom false))
-(def skin-color (atom nil))
+(defonce skin-color (atom nil))
 (defonce respawn-fn (atom #()))
 (defonce selection-fn (atom #()))
-(def recording? (atom false))
+(defonce recording? (atom false))
 
 (def first-names
  ["alfred"
