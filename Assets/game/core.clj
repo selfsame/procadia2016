@@ -43,8 +43,8 @@
 
 
 (defn make-head [rb?]
-  (destroy (the infihead))
-  (destroy (the neck))
+  (dorun (map destroy (every infihead)))
+  (dorun (map destroy (every neck)))
   (let [head (human.core/make-head @data/seed)
         rag-head (the Bone.001)
         rag-neck (the Bone.002)
