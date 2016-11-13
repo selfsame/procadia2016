@@ -156,19 +156,7 @@
   (let [citywfc (make-city city-size city-size)
         city (.gameObject citywfc)]
     (timeline [
-<<<<<<< 772cd6bd0eab429fcc8af87a05da3f93bcaa37ec
-      (wait 0.1)
-      #(do 
-        (prune-city-center city) 
-        (destroy (the city-sample))
-        (local-scale! city (v3 city-scale))
-        (position! city 
-          (v3 (* city-size -4 city-scale) 0 
-              (* city-size -4 city-scale)))
-        (cmpt- city (type citywfc)) nil)]))
- ;(gif/setup 800 480 24)
-=======
-               (wait 0.01)
+               (wait 0.1)
                #(do 
                  (prune-city-center city) 
                  (destroy (the city-sample))
@@ -180,7 +168,6 @@
  (clone! :ui/recording-canvas)
  (if @data/recording?
   (set! (.alpha (cmpt (object-tagged "skatecam") UnityEngine.CanvasGroup)) 1.0))
->>>>>>> working gif capture
  (make-player 
    (v3 (* park-size park-scale)
        (* 6 park-scale) 
