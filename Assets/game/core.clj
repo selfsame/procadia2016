@@ -118,6 +118,7 @@
 (defn make-park [w h]
   (let [o (clone! :maps/autopark (v3 26 4 26))
         wfc (.AddComponent o (type (SimpleTiledWFC.)))]
+   (clone! :park-bounds)
    (set! (.xmlpath wfc) "skaters.xml")
    (set! (.seed wfc) @data/seed)
    (set! (.gridsize wfc) (int 2))
@@ -155,7 +156,7 @@
   (let [citywfc (make-city city-size city-size)
         city (.gameObject citywfc)]
     (timeline [
-      (wait 0.01)
+      (wait 0.1)
       #(do 
         (prune-city-center city) 
         (destroy (the city-sample))

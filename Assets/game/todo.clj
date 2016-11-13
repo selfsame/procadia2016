@@ -17,8 +17,8 @@
 '(( ) at the top of half pipes force the board to stay on the
   vertical plane)
 '((x) jump command)
-'((/) keys to rotate the board
-  (( ) :w :s key rotate X axis in air))
+'((x) keys to rotate the board
+  ((x) :w :s key rotate X axis in air))
 
 ::camera
 '(( ) chase velocity, not Z+)
