@@ -9,10 +9,11 @@
 
 (def gif-cam (atom nil))
 (def gif-tex (atom nil))
-(def gif-encoder (atom false))
+(def gif-encoder (atom nil))
 
 (defn setup-encoder []
  (let [encoder (AnimatedGifEncoder. (GameUtils/CreateDocumentFile))]
+  (.SetDelay @gif-encoder (float (/ 1000 24)))
   (reset! gif-encoder encoder)))
 
 (defn setup [w h b]
@@ -22,7 +23,6 @@
        cam (a/cmpt cam-go Camera)]
   (reset! gif-cam cam)
   (reset! gif-tex render-texture)
-  (if (false? @gif-encoder) (setup-encoder))
   (set! (.targetTexture cam) render-texture)
   (set! (.worldCamera (a/cmpt gif-canvas Canvas)) cam) 
   (a/hook+ cam-go :update
@@ -32,7 +32,6 @@
       (do
        (set! (.. go transform position) (.. (a/object-tagged "skatecam") transform position))
        (set! (.. go transform rotation) (.. (a/object-tagged "skatecam") transform rotation)))))))
-  (.SetDelay @gif-encoder (float (/ 1000 24)))
   (add-watch data/recording? nil
    (fn [_ _ _ new-state]
     (if new-state
@@ -41,6 +40,7 @@
 (defn start-recording []
  (let [start-time Time/time
        recording-canvas (hard/clone! :ui/recording-canvas)]
+  (setup-encoder)
   (set! (.worldCamera (a/cmpt recording-canvas Canvas)) (a/cmpt (a/object-tagged "skatecam") Camera))
   (timeline* :loop
    (wait Time/deltaTime)
@@ -64,4 +64,3 @@
      nil))))
 
 '(setup 800 480 24)
-'(start-recording)
