@@ -112,7 +112,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'fun-crunch
+
+'
 --- !u!114 &114000011432690518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -155,7 +157,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9aa99c331bab746dcb99474a270d8d21, type: 3}
-    m_FontSize: 14
+    m_FontSize: 11
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -166,17 +168,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ':steerage   0
+  m_Text: ':steerage   -1.56568889531753E-12
 
-    :forward-speed  -0.01911084
+    :forward-speed  -0.00259874
 
     :max-turn  42
 
     :in-air  False
 
-    :touching  False
+    :touching  True
 
-    :angular-vel  (0.2, 0.0, -0.3)
+    :angular-vel  (0.0, 0.0, 0.0)
 
 '
 --- !u!114 &114000012734004854
@@ -227,7 +229,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'fun-crunch
+
+'
 --- !u!222 &222000012053971756
 CanvasRenderer:
   m_ObjectHideFlags: 1

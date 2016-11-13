@@ -20,6 +20,7 @@
 sysinfo.txt
 
 *.gif
+*.gif.meta
 
 /*.sublime-workspace
 

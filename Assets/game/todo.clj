@@ -32,6 +32,10 @@
   ((x) delta-euler fn - handle 360 turnover))
 '(( ) don't award tricks that crash)
 
+::bugs
+'(( ) board can ride on vertical park-bounds)
+'(( ) falling through floor does not ensure respawn in bounds)
+
 
 '(.. (cmpt Selection/activeObject InputField)
     onValueChanged
