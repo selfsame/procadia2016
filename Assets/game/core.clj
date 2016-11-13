@@ -1,5 +1,5 @@
 (ns game.core
-  (use 
+  (:use 
     arcadia.core
     arcadia.linear
     tween.core
@@ -8,12 +8,12 @@
     hard.physics
     hard.animation
     hard.input)
-  (require 
+  (:require 
     [game.data :as data]
     [game.gif :as gif]
     game.board
     human.core)
-  (import [SimpleTiledWFC]
+  (:import [SimpleTiledWFC]
           [Training]
           GameUtils))
 
@@ -40,8 +40,6 @@
     (gizmo-line  (>v3 @data/player) 
                  (.TransformPoint (.transform @data/player) (v3 0 -1.0 0)))
     (catch Exception e nil)))
-
-
 
 (defn make-head [rb?]
   (dorun (map destroy (every infihead)))
@@ -77,10 +75,10 @@
     (game.board/record-wheels board)
     (hook+ cam :update #'game.core/update-cam)
     (hook+ cam :on-draw-gizmos #'game.core/gizmo-cam)
-    (timeline [(wait 0.01) 
-               #(do (make-head true) 
-                 (reset! game.board/ragmap (game.board/ragbody-map))
-                 nil)])
+    (timeline [
+      (wait 0.01) 
+     #(do (make-head true) 
+          (reset! game.board/ragmap (game.board/ragbody-map)) nil)])
     (reset! data/player-spawned? true)
     (reset! game.board/STANDING true)
     (reset! data/player board) 
@@ -96,26 +94,26 @@
 
 (defn respawn-player []
   (let [p (>v3 @data/player)]
-    (reset! data/player-spawned? false)
     (destroy @data/player)
     (timeline [
-               (wait 0.1)
-               #(do (make-player p) nil)])))
+      (wait 0.1)
+     #(do (make-player p) nil)])))
 (reset! data/respawn-fn respawn-player)
 
-
-(defn run-tiled [seed]
-  (let [wfc (cmpt (the autopark) (type (SimpleTiledWFC.)))]
-   (if (.Run (.model wfc) 
-        seed 
-        (int 0))
-    true
+(defn run-tiled [seed o ct]
+  (let [cmptype (if (= :overlap ct) 
+          (type (OverlapWFC.)) 
+          (type (SimpleTiledWFC.)))
+        wfc (cmpt o cmptype)]
+    (.Generate wfc)
+   (if (.Run (.model wfc) seed (int 0))
+    (do (.Draw wfc) true)
     (do 
+      (log "unsolvable seed " ct seed)
       (seed! seed)
-      #_(run-tiled (srand-int seed)) 
-      (srand-int seed)))))
-
-'(run-tiled @data/seed)
+      (let [newseed (srand-int seed)]
+        (set! (.seed wfc) newseed)
+        (run-tiled newseed o ct))))))
 
 (defn make-park [w h]
   (let [o (clone! :maps/autopark (v3 26 4 26))
@@ -124,14 +122,11 @@
    (set! (.seed wfc) @data/seed)
    (set! (.gridsize wfc) (int 2))
    (timeline [
-              (wait 0.1)
-              #(do (local-scale! o (v3 park-scale)) false)])
+      (wait 0.1)
+      #(do (local-scale! o (v3 park-scale)) false)])
    (set! (.width wfc) (int w))
-   (set! (.depth wfc) (int h)) o))
-
-
-
-
+   (set! (.depth wfc) (int h))
+   (run-tiled @data/seed o :tiled) o))
 
 (defn make-city [w h]
  (let [o (clone! :maps/autocity (v3 0 0 0))
@@ -141,19 +136,13 @@
   (set! (.gridsize trainer) (int 10))
   (set! (.width trainer) (int 20))
   (set! (.depth trainer) (int 14))
-  (set! (.seed wfc) @data/seed)
   (set! (.training wfc) trainer)
   (set! (.gridsize wfc) (int 10))
   (set! (.width wfc) (int w))
   (set! (.depth wfc) (int h))
   (set! (.periodicInput wfc) true)
   (set! (.incremental wfc) true)
-  ;(set! (.iterations wfc) (int 1))
-  ;(.Generate wfc)
-  ;(.Run wfc)
-  wfc))
-
-
+  (run-tiled @data/seed o :overlap) wfc))
 
 (defn prune-city-center [city]
  (GameUtils/PruneMiddle city 4 4))
@@ -165,29 +154,21 @@
   (make-park park-size park-size)
   (let [citywfc (make-city city-size city-size)
         city (.gameObject citywfc)]
-   (timeline [
-              (wait 0.1)
-              #(do 
-                (prune-city-center city) 
-                (local-scale! city (v3 city-scale))
-                (position! city 
-                  (v3 (* city-size -4 city-scale) 0 
-                      (* city-size -4 city-scale)))
-                (cmpt- city (type citywfc))
-                false)]))
- (gif/setup 800 480 24)
+    (timeline [
+      (wait 0.01)
+      #(do 
+        (prune-city-center city) 
+        (destroy (the city-sample))
+        (local-scale! city (v3 city-scale))
+        (position! city 
+          (v3 (* city-size -4 city-scale) 0 
+              (* city-size -4 city-scale)))
+        (cmpt- city (type citywfc)) nil)]))
+ ;(gif/setup 800 480 24)
  (make-player 
    (v3 (* park-size park-scale)
        (* 6 park-scale) 
        (* park-size park-scale))))
 
-'(timeline* :loop
-  (wait 3.0)
-  #(do (make-level) nil)
-  (wait 0.1)
-  #(do (game.board/message "") nil))
-
-'(reset! game.data/seed (hash "selfsame"))
-'(make-head true)
+'(game.board/message "")
 '(make-level)
-'(game.board/detach-skater nil)

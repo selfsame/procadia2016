@@ -1,10 +1,11 @@
 (ns game.todo)
 
 ::player
-'(( ) detect crashes)
-'(( ) fn to set up skater on board, and to sever joints for crash
-  (( ) disable controlls, timeline animate crash camera, respawn))
-'(( ) fn to detect when ragdoll explodes + respawn)
+'((/) detect crashes
+  (( ) bad landing crashes [board sideways, player hitting ground]))
+'((x) fn to set up skater on board, and to sever joints for crash
+  ((x) disable controlls, timeline animate crash camera, respawn))
+'((x) fn to detect when ragdoll explodes + respawn)
 
 ::skateboard
 '((x) fn for checking if wheels are on ground)
@@ -35,3 +36,5 @@
 '(.. (cmpt Selection/activeObject InputField)
     onValueChanged
     (AddListener (fn [] (log "x"))))
+
+'1720572706

@@ -79,15 +79,13 @@
         legl (:leg-lower-l @ragmap)]
     (swap! CRASH-COUNT inc)
     (reset! TRICK-STREAK [])
-    ;(set! (.connectedBody (cmpt legr UnityEngine.FixedJoint)) nil)
     (cmpt- legr UnityEngine.FixedJoint)
     (cmpt- legl UnityEngine.FixedJoint)
     (reset! STANDING false)
     (timeline [
       (wait 4.0)
-      #(do 
-        (update-trick-ui)
-        (@game.data/respawn-fn) nil)])))
+      #(do (update-trick-ui)
+           (@game.data/respawn-fn) nil)])))
 
 
 
@@ -105,8 +103,9 @@
 
 (defn fall-check [o]
   (let [p (>v3 o)]
-    (if (< (.y p) -50)
-      (position! o (v3 (.x p) 20 (.z p))))))
+    (when (< (.y p) -50)
+      (position! o (v3 (.x p) 20 (.z p)))
+      (set! (.velocity (->rigidbody o)) (v3 0)))))
 
 (defn turn-limit [n]
   (- 30 (* 8.3 (Mathf/Log (Mathf/Abs (float n))))))
