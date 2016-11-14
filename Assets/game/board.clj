@@ -90,7 +90,6 @@
                       (< (count @TRICK-STREAK) 30) 6
                       (< (count @TRICK-STREAK) 40) 7)]
      (reset! game.data/trick-multiplier multiplier)
-     (log (str "multiplier: " @game.data/trick-multiplier))
      (reset! game.data/trick-score (+ @game.data/trick-score (* multiplier (trick-score [x y z]))))
      (update-trick-ui)
      (game.ui/tween-rect-scale (the score) (v3 1.2 1.2 1) 0.2)))))
