@@ -10,13 +10,8 @@
     game.tricks)
   (:require
     game.data
-    tween.core))
-
-(deftag System.Int32 {:pair Int32Pair :lerp UnityEngine.Mathf/Lerp :identity (int 0)})
-(deftween [:text :size] [this]
- {:get (.fontSize this)
-  :base (cmpt this UnityEngine.UI.Text)
-  :tag System.Int32})
+    tween.core
+    game.ui))
 
 (def steerage (atom 0.0))
 (def wheelmap (atom nil))
@@ -79,9 +74,7 @@
     (swap! TRICK-STREAK #(conj % [(trick [x y z]) (trick-score [x y z])]))
     (reset! game.data/trick-score (+ @game.data/trick-score (trick-score [x y z])))
     (update-trick-ui)
-    (timeline*
-     (tween {:text {:size 40}} (the score) 0.25 {:in :pow3 :out :pow3})
-     (tween {:text {:size 30}} (the score) 0.25 {:in :pow3 :out :pow3}))
+    (game.ui/tween-rect-scale (the score) (v3 1.2 1.2 1) 0.2)
     #_(timeline [
                  #(do (message (trick [x y z])) nil) 
                  (wait 1.0) 
