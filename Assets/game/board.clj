@@ -23,17 +23,17 @@
 (def CRASH-COUNT (atom 0))
 
 (defn ragbody-map [] {
-  :hips         (the Hips)
-  :spine        (the Spine)
-  :head         (the Bone.001)
-  :arm-upper-l  (the ArmUpper.L)
-  :arm-lower-l  (the ArmLower.L)
-  :leg-upper-l  (the LegUpper.L)
-  :leg-lower-l  (the LegLower.L)
-  :arm-upper-r  (the ArmUpper.R)
-  :arm-lower-r  (the ArmLower.R)
-  :leg-upper-r  (the LegUpper.R)
-  :leg-lower-r  (the LegLower.R)})
+                      :hips         (the Hips)
+                      :spine        (the Spine)
+                      :head         (the Bone.001)
+                      :arm-upper-l  (the ArmUpper.L)
+                      :arm-lower-l  (the ArmLower.L)
+                      :leg-upper-l  (the LegUpper.L)
+                      :leg-lower-l  (the LegLower.L)
+                      :arm-upper-r  (the ArmUpper.R)
+                      :arm-lower-r  (the ArmLower.R)
+                      :leg-upper-r  (the LegUpper.R)
+                      :leg-lower-r  (the LegLower.R)})
 
 (defn ->wheel [o] (cmpt o UnityEngine.WheelCollider))
 
@@ -47,10 +47,18 @@
 (defn text! [o s] (set! (.text (cmpt o UnityEngine.UI.Text)) s))
 
 (defn update-trick-ui []
-  (let [tricklist (apply str (map (comp #(str % "\n") first) @TRICK-STREAK))]
+  (let [tricklist (apply str (map (comp #(str % "\n") first) @TRICK-STREAK))
+        multiplier-color (cond
+                          (< @game.data/trick-multiplier 6) "white"
+                          (< @game.data/trick-multiplier 15) "orange"
+                          (< @game.data/trick-multiplier 20) "purple"
+                          (< @game.data/trick-multiplier 30) "magenta"
+                          :else "red")]
     (text! (the tricks) tricklist)
     (text! (the tricks-bg) tricklist)
-    (text! (the score) (str @game.data/skater-name ": " @game.data/trick-score))))
+    (text! (the score) (str @game.data/skater-name ": "
+                        @game.data/trick-score " <color=\"" multiplier-color
+                        "\">x" @game.data/trick-multiplier "</color>"))))
 
 (defn message [s]
   (destroy (the message))
@@ -63,7 +71,6 @@
     (timeline [#(lerp-look! o cam (float 0.2))])))
 
 (defn tally-tricks [o]
- (log "tally")
  (let [total (v3* (state o :total-euler) 1/90)
        x (int (.x total))
        y (int (.y total))
@@ -72,13 +79,22 @@
            (not (zero? y))
            (not (zero? z)))
     (swap! TRICK-STREAK #(conj % [(trick [x y z]) (trick-score [x y z])]))
-    (reset! game.data/trick-score (+ @game.data/trick-score (trick-score [x y z])))
-    (update-trick-ui)
-    (game.ui/tween-rect-scale (the score) (v3 1.2 1.2 1) 0.2)
-    #_(timeline [
-                 #(do (message (trick [x y z])) nil) 
-                 (wait 1.0) 
-                 #(do (if (the message) (destroy (the message))) nil)]))))
+    (let [multiplier (cond
+                      (< 3 (count @TRICK-STREAK)) 1
+                      (< 6 (count @TRICK_STREAK)) 2
+                      (< 10 (count @TRICK_STREAK)) 3
+                      (< 15 (count @TRICK_STREAK)) 4
+                      (< 20 (count @TRICK_STREAK)) 5
+                      (< 30 (count @TRICK_STREAK)) 6
+                      (< 40 (count @TRICK_STREAK)) 7)]
+     (reset! game.data/trick-multiplier multiplier)
+     (reset! game.data/trick-score (+ @game.data/trick-score (* multiplier (trick-score [x y z]))))
+     (update-trick-ui)
+     (game.ui/tween-rect-scale (the score) (v3 1.2 1.2 1) 0.2)
+     #_(timeline [
+                  #(do (message (trick [x y z])) nil) 
+                  (wait 1.0) 
+                  #(do (if (the message) (destroy (the message))) nil)])))))
 
 (defn detach-skater [o]
   (let [legr (:leg-lower-r @ragmap)
@@ -86,6 +102,7 @@
     (swap! CRASH-COUNT inc)
     (reset! TRICK-STREAK [])
     (reset! game.data/trick-score 0)
+    (reset! game.data/trick-multiplier 0)
     (cmpt- legr UnityEngine.FixedJoint)
     (cmpt- legl UnityEngine.FixedJoint)
     (reset! STANDING false)

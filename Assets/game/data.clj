@@ -9,6 +9,7 @@
 (defonce selection-fn (atom #()))
 (defonce recording? (atom false))
 (defonce trick-score (atom 0))
+(defonce trick-multiplier (atom 1))
 
 (def first-names
  ["alfred"
