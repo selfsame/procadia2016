@@ -48,19 +48,19 @@
 
 (defn update-trick-ui []
   (try 
-  (let [tricklist (apply str (map (comp #(str % "\n") first) @TRICK-STREAK))
-        multiplier-color (cond
-                          (< @game.data/trick-multiplier 6) "white"
-                          (< @game.data/trick-multiplier 15) "orange"
-                          (< @game.data/trick-multiplier 20) "purple"
-                          (< @game.data/trick-multiplier 30) "magenta"
-                          :else "red")]
-    (text! (the tricks) tricklist)
-    (text! (the tricks-bg) tricklist)
-    (text! (the score) (str @game.data/skater-name ": "
-                        @game.data/trick-score " <color=\"" multiplier-color
-                        "\">x" @game.data/trick-multiplier "</color>")))
-  (catch Exception e (log e))))
+   (let [tricklist (apply str (map (comp #(str % "\n") first) @TRICK-STREAK))
+         multiplier-color (cond
+                           (< @game.data/trick-multiplier 6) "white"
+                           (< @game.data/trick-multiplier 15) "orange"
+                           (< @game.data/trick-multiplier 20) "purple"
+                           (< @game.data/trick-multiplier 30) "magenta"
+                           :else "red")]
+     (text! (the tricks) tricklist)
+     (text! (the tricks-bg) tricklist)
+     (text! (the score) (str @game.data/skater-name ": "
+                         @game.data/trick-score " <color=\"" multiplier-color
+                         "\">x" @game.data/trick-multiplier "</color>")))
+   (catch Exception e (log e))))
 
 (defn message [s]
   (destroy (the message))
@@ -82,14 +82,15 @@
            (not (zero? z)))
     (swap! TRICK-STREAK #(conj % [(trick [x y z]) (trick-score [x y z])]))
     (let [multiplier (cond
-                      (< 3 (count @TRICK-STREAK)) 1
-                      (< 6 (count @TRICK-STREAK)) 2
-                      (< 10 (count @TRICK-STREAK)) 3
-                      (< 15 (count @TRICK-STREAK)) 4
-                      (< 20 (count @TRICK-STREAK)) 5
-                      (< 30 (count @TRICK-STREAK)) 6
-                      (< 40 (count @TRICK-STREAK)) 7)]
+                      (< (count @TRICK-STREAK) 3) 1
+                      (< (count @TRICK-STREAK) 6) 2
+                      (< (count @TRICK-STREAK) 10) 3
+                      (< (count @TRICK-STREAK) 15) 4
+                      (< (count @TRICK-STREAK) 20) 5
+                      (< (count @TRICK-STREAK) 30) 6
+                      (< (count @TRICK-STREAK) 40) 7)]
      (reset! game.data/trick-multiplier multiplier)
+     (log (str "multiplier: " @game.data/trick-multiplier))
      (reset! game.data/trick-score (+ @game.data/trick-score (* multiplier (trick-score [x y z]))))
      (update-trick-ui)
      (game.ui/tween-rect-scale (the score) (v3 1.2 1.2 1) 0.2)))))
@@ -177,11 +178,11 @@
 
     (text! (the debug) ""
       #_(str :steerage "   " @steerage "\n"
-        :forward-speed "  " forward-speed "\n"
-        :max-turn "  " max-turn "\n"
-        :in-air "  " @IN-AIR "\n"
-        :touching "  " @TOUCHING "\n"
-        :angular-vel "  " (.angularVelocity body) "\n") )
+         :forward-speed "  " forward-speed "\n"
+         :max-turn "  " max-turn "\n"
+         :in-air "  " @IN-AIR "\n"
+         :touching "  " @TOUCHING "\n"
+         :angular-vel "  " (.angularVelocity body) "\n"))
       
     (update-state! o :total-euler 
           #(v3+ % (delta-euler (state o :rotation) rotation)))
