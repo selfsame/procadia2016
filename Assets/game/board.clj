@@ -102,7 +102,7 @@
     (swap! CRASH-COUNT inc)
     (reset! TRICK-STREAK [])
     (reset! game.data/trick-score 0)
-    (reset! game.data/trick-multiplier 0)
+    (reset! game.data/trick-multiplier 1)
     (cmpt- legr UnityEngine.FixedJoint)
     (cmpt- legl UnityEngine.FixedJoint)
     (reset! STANDING false)
