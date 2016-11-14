@@ -11,6 +11,7 @@
   (:require 
     [game.data :as data]
     [game.gif :as gif]
+    game.cam
     game.board
     human.core)
   (:import [SimpleTiledWFC]
@@ -153,3 +154,5 @@
 
 '(game.board/message "")
 '(make-level)
+
+'(hook+ (the hook) :start #'game.player/setup-name-select)

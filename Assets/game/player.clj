@@ -86,7 +86,7 @@
        input (a/cmpt (a/object-named "NameInput") UnityEngine.UI.InputField)]
   (set! (.text input) rand-name)))
 
-(defn setup-name-select []
+(defn setup-name-select [o]
  (hard/clear-cloned!)
  (let [skater (hard/clone! :player/skater)
        skater-anim (a/cmpt skater UnityEngine.Animator)
@@ -127,6 +127,7 @@
   (timeline*
    (tween {:position (l/v3+ (l/v3 0 3.25 1) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
 
-(reset! game.data/selection-fn setup-name-select)
+(reset! game.data/selection-fn #(setup-name-select nil))
 
-'(setup-name-select)
+'(setup-name-select nil)
+
