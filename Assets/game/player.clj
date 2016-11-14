@@ -130,4 +130,3 @@
 (reset! game.data/selection-fn #(setup-name-select nil))
 
 '(setup-name-select nil)
-

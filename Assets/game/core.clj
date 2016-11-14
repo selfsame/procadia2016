@@ -108,6 +108,14 @@
    (set! (.depth wfc) (int h))
    (run-tiled @data/seed o :tiled) o))
 
+(defn skyscrapers []
+  (dorun 
+    (map 
+     #(local-scale! % (v3 1 (?f 0.2 3) 1)) 
+      (concat 
+        (every "BuildingBottom(Clone)")
+        (every "BuildingMiddle(Clone)")))))
+
 (defn make-city [w h]
  (let [o (clone! :maps/autocity (v3 0 0 0))
        sample (clone! :maps/city-sample (v3 0 -500 0))
@@ -135,15 +143,16 @@
   (let [citywfc (make-city city-size city-size)
         city (.gameObject citywfc)]
     (timeline [
-               (wait 0.1)
-               #(do 
-                 (prune-city-center city) 
-                 (destroy (the city-sample))
-                 (local-scale! city (v3 city-scale))
-                 (position! city 
-                   (v3 (* city-size -4 city-scale) 0 
-                       (* city-size -4 city-scale)))
-                 (cmpt- city (type citywfc)) nil)]))
+      (wait 0.1)
+     #(do 
+      (prune-city-center city) 
+      (destroy (the city-sample))
+      (local-scale! city (v3 city-scale))
+      (position! city 
+        (v3 (* city-size -4 city-scale) 0 
+            (* city-size -4 city-scale)))
+      (cmpt- city (type citywfc))
+      (skyscrapers) nil)]))
  (clone! :ui/recording-canvas)
  (if @data/recording?
   (set! (.alpha (cmpt (object-tagged "skatecam") UnityEngine.CanvasGroup)) 1.0))
