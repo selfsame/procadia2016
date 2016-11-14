@@ -93,8 +93,9 @@
        name-canvas (hard/clone! :ui/skater-name-canvas (l/v3 0 100 0))
        generate-button (hard/child-named name-canvas "GenerateButton")
        input (a/object-named "NameInput")]
+  (hard/clone! :menu-backdrop (l/v3 210 39.6 23))
   (hard/clone! :EventSystem)
-  (hard/clone! :Camera (l/v3 0 1.5 -3.5))
+  (hard/clone! :Camera (l/v3 -1.81 1.92 -3.87))
   (game/make-head false)
   (vertex-color! (hard/child-named skater "BodyMesh") @data/skin-color)
   (set! (.worldCamera (a/cmpt name-canvas UnityEngine.Canvas)) UnityEngine.Camera/main)
@@ -117,12 +118,12 @@
   (a/hook+ name-canvas :update :billboard
    (fn [go]
     (let [rect (a/cmpt go UnityEngine.RectTransform)]
-     (.LookAt rect (l/v3* (l/v3- (.position rect) (.. UnityEngine.Camera/main transform position)) 5)))))
+     (.LookAt rect (l/v3* (l/v3- (.position rect) (.. UnityEngine.Camera/main transform position)) 2)))))
   (ui/on-value-changed input #'on-name-change)
   (if (not= "" @data/skater-name)
    (ui/set-input-text input @data/skater-name))
   (timeline*
-   (tween {:position (l/v3+ (l/v3 0 2.4 1) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
+   (tween {:position (l/v3+ (l/v3 0 3.25 1) (.. skater transform position))} name-canvas 2 {:out :pow3}))))
 
 (reset! game.data/selection-fn setup-name-select)
 
