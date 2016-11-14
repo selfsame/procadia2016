@@ -252,7 +252,7 @@
                     (button? "A"))
                 grounded)
        (torque! body (* mass  -20) 0 0)
-       (force! body 0 (* mass 540) 0))
+       (force! body 0 (* mass 580) 0))
      (if grounded (force! body 0 (* mass dspeed -25) 0))
      (global-force! (->rigidbody (:spine @ragmap)) 0 (* dspeed 650) 0))
     ::gravity

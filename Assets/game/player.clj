@@ -116,7 +116,7 @@
             (when-let [new-player (a/object-named "skater-ragdoll")]
               (set! (.name new-player) "skater")
               (change-clothing "anything" true true)) nil
-            (catch Exception e (a/log e)) )))))
+            (catch Exception e (a/log e)))))))
       (game/make-level)
       (gif/setup)
       (a/destroy go)
