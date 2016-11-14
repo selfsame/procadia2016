@@ -162,4 +162,10 @@ QualitySettings:
     asyncUploadTimeSlice: 2
     asyncUploadBufferSize: 4
     excludedTargetPlatforms: []
-  m_PerPlatformDefaultQuality: {}
+  m_PerPlatformDefaultQuality:
+    Android: 0
+    Samsung TV: 0
+    Standalone: 0
+    Tizen: 0
+    WebGL: 0
+    iPhone: 0

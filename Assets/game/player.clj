@@ -111,10 +111,12 @@
       (add-watch data/player-spawned? nil
        (fn [_ _ _ new-state]
         (if new-state
-         (timeline* (wait 0.5)
-          (do (let [new-player (a/object-named "skater-ragdoll")]
-               (set! (.name new-player) "skater")
-               (change-clothing "anything" true true))) false))))
+         (timeline* (wait 0.01)
+          #(try 
+            (when-let [new-player (a/object-named "skater-ragdoll")]
+              (set! (.name new-player) "skater")
+              (change-clothing "anything" true true)) nil
+            (catch Exception e (a/log e)) )))))
       (game/make-level)
       (gif/setup)
       (a/destroy go)

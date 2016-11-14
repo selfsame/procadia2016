@@ -47,6 +47,7 @@
 (defn text! [o s] (set! (.text (cmpt o UnityEngine.UI.Text)) s))
 
 (defn update-trick-ui []
+  (try 
   (let [tricklist (apply str (map (comp #(str % "\n") first) @TRICK-STREAK))
         multiplier-color (cond
                           (< @game.data/trick-multiplier 6) "white"
@@ -58,7 +59,8 @@
     (text! (the tricks-bg) tricklist)
     (text! (the score) (str @game.data/skater-name ": "
                         @game.data/trick-score " <color=\"" multiplier-color
-                        "\">x" @game.data/trick-multiplier "</color>"))))
+                        "\">x" @game.data/trick-multiplier "</color>")))
+  (catch Exception e (log e))))
 
 (defn message [s]
   (destroy (the message))
@@ -81,20 +83,16 @@
     (swap! TRICK-STREAK #(conj % [(trick [x y z]) (trick-score [x y z])]))
     (let [multiplier (cond
                       (< 3 (count @TRICK-STREAK)) 1
-                      (< 6 (count @TRICK_STREAK)) 2
-                      (< 10 (count @TRICK_STREAK)) 3
-                      (< 15 (count @TRICK_STREAK)) 4
-                      (< 20 (count @TRICK_STREAK)) 5
-                      (< 30 (count @TRICK_STREAK)) 6
-                      (< 40 (count @TRICK_STREAK)) 7)]
+                      (< 6 (count @TRICK-STREAK)) 2
+                      (< 10 (count @TRICK-STREAK)) 3
+                      (< 15 (count @TRICK-STREAK)) 4
+                      (< 20 (count @TRICK-STREAK)) 5
+                      (< 30 (count @TRICK-STREAK)) 6
+                      (< 40 (count @TRICK-STREAK)) 7)]
      (reset! game.data/trick-multiplier multiplier)
      (reset! game.data/trick-score (+ @game.data/trick-score (* multiplier (trick-score [x y z]))))
      (update-trick-ui)
-     (game.ui/tween-rect-scale (the score) (v3 1.2 1.2 1) 0.2)
-     #_(timeline [
-                  #(do (message (trick [x y z])) nil) 
-                  (wait 1.0) 
-                  #(do (if (the message) (destroy (the message))) nil)])))))
+     (game.ui/tween-rect-scale (the score) (v3 1.2 1.2 1) 0.2)))))
 
 (defn detach-skater [o]
   (let [legr (:leg-lower-r @ragmap)
@@ -177,13 +175,13 @@
      (log (abs (- (abs forward-speed) (abs (state o :speed)))))
      (detach-skater o))
 
-    (text! (the debug) 
-      (str :steerage "   " @steerage "\n"
+    (text! (the debug) ""
+      #_(str :steerage "   " @steerage "\n"
         :forward-speed "  " forward-speed "\n"
         :max-turn "  " max-turn "\n"
         :in-air "  " @IN-AIR "\n"
         :touching "  " @TOUCHING "\n"
-        :angular-vel "  " (.angularVelocity body) "\n"))
+        :angular-vel "  " (.angularVelocity body) "\n") )
       
     (update-state! o :total-euler 
           #(v3+ % (delta-euler (state o :rotation) rotation)))
@@ -242,21 +240,21 @@
            (steer @steerage (:front wheels))))
      (if (or (key? "e")
              (button? "RB"))
-       (torque! body 0 0 (* mass -6)))
+       (torque! body 0 0 (* mass dspeed -6)))
      (if (or (key? "q")
              (button? "LB"))
-       (torque! body 0 0 (* mass  6)))
+       (torque! body 0 0 (* mass dspeed 6)))
      (if (and (or (key? "tab")
                   (button? "X"))
               (upsidedown? o))
-       (torque! body 0 0 (* mass  60)))
+       (torque! body 0 0 (* mass  dspeed 60)))
      (when (and (or (key-down? "space")
                     (button? "A"))
                 grounded)
        (torque! body (* mass  -20) 0 0)
        (force! body 0 (* mass 540) 0))
      (if grounded (force! body 0 (* mass dspeed -25) 0))
-     (global-force! (->rigidbody (:spine @ragmap)) 0 650 0))
+     (global-force! (->rigidbody (:spine @ragmap)) 0 (* dspeed 650) 0))
     ::gravity
-    (global-force! body 0 (* mass -8) 0))
+    (global-force! body 0 (* mass dspeed -8) 0))
    (catch Exception e (log e))))

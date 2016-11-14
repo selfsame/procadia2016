@@ -85,7 +85,7 @@
                  (type (SimpleTiledWFC.)))
         wfc (cmpt o cmptype)]
     (.Generate wfc)
-   (if (.Run (.model wfc) seed (int 0))
+   (if (.Run (.model wfc) (int seed) (int 0))
     (do (.Draw wfc) true)
     (do 
       (log "unsolvable seed " ct seed)
@@ -99,7 +99,7 @@
         wfc (.AddComponent o (type (SimpleTiledWFC.)))]
    (clone! :park-bounds)
    (set! (.xmlpath wfc) "final.xml")
-   (set! (.seed wfc) @data/seed)
+   (set! (.seed wfc) (int @data/seed))
    (set! (.gridsize wfc) (int 2))
    (timeline [
               (wait 0.1)
