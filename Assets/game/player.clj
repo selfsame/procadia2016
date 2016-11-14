@@ -104,7 +104,7 @@
   (a/hook+ generate-button :on-pointer-click #'generate-name)
   (a/hook+ name-canvas :update
    (fn [go]
-    (if (UnityEngine.InputGetKeyDown UnityEngine.KeyCode/Escape)
+    (if (UnityEngine.Input/GetKeyDown UnityEngine.KeyCode/Escape)
      (UnityEngine.Application/Quit))
     (if (UnityEngine.Input/GetKeyDown UnityEngine.KeyCode/Return)
      (do
