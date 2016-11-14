@@ -12,7 +12,7 @@
     game.data
     tween.core))
 
-(deftag System.Int32 {:pair IntPair :lerp UnityEngine.Mathf/Lerp :identity (int 0)})
+(deftag System.Int32 {:pair Int32Pair :lerp UnityEngine.Mathf/Lerp :identity (int 0)})
 (deftween [:text :size] [this]
  {:get (.fontSize this)
   :base (cmpt this UnityEngine.UI.Text)
@@ -68,7 +68,7 @@
     (text! (the score) (str @game.data/skater-name ": " @game.data/trick-score))))
 
 (defn tally-tricks [o]
- (a/log "tally")
+ (log "tally")
  (let [total (v3* (state o :total-euler) 1/90)
        x (int (.x total))
        y (int (.y total))
