@@ -9,7 +9,14 @@
     hard.input
     game.tricks)
   (:require
-    game.data))
+    game.data
+    tween.core))
+
+(deftag System.Int32 {:pair IntPair :lerp UnityEngine.Mathf/Lerp :identity (int 0)})
+(deftween [:text :size] [this]
+ {:get (.fontSize this)
+  :base (cmpt this UnityEngine.UI.Text)
+  :tag System.Int32})
 
 (def steerage (atom 0.0))
 (def wheelmap (atom nil))
@@ -51,34 +58,41 @@
         txt (cmpt (child-named o "text") UnityEngine.TextMesh)]
     (parent! o cam)
     (set! (.text txt) s)
+    (update-trick-ui)
     (timeline [#(lerp-look! o cam (float 0.2))])))
 
 (defn update-trick-ui []
   (let [tricklist (apply str (map (comp #(str % "\n") first) @TRICK-STREAK))]
     (text! (the tricks) tricklist)
-    (text! (the tricks-bg) tricklist)))
+    (text! (the tricks-bg) tricklist)
+    (text! (the score) (str @game.data/skater-name ": " @game.data/trick-score))))
 
 (defn tally-tricks [o]
-  (let [total (v3* (state o :total-euler) 1/90)
-        x (int (.x total))
-        y (int (.y total))
-        z (int (.z total))]
-    (when (or (not (zero? x))
-            (not (zero? y))
-            (not (zero? z)))
-     (swap! TRICK-STREAK #(conj % [(trick [x y z]) (trick-score [x y z])]))
-     (update-trick-ui)
-     #_(timeline [
-                  #(do (message (trick [x y z])) nil) 
-                  (wait 1.0) 
-                  #(do (if (the message) (destroy (the message))) nil)]) )))
-
+ (a/log "tally")
+ (let [total (v3* (state o :total-euler) 1/90)
+       x (int (.x total))
+       y (int (.y total))
+       z (int (.z total))]
+   (when (or (not (zero? x))
+           (not (zero? y))
+           (not (zero? z)))
+    (swap! TRICK-STREAK #(conj % [(trick [x y z]) (trick-score [x y z])]))
+    (reset! game.data/trick-score (+ @game.data/trick-score (trick-score [x y z])))
+    (update-trick-ui)
+    (timeline*
+     (tween {:text {:size 40}} (the score) 0.25 {:in :pow3 :out :pow3})
+     (tween {:text {:size 30}} (the score) 0.25 {:in :pow3 :out :pow3}))
+    #_(timeline [
+                 #(do (message (trick [x y z])) nil) 
+                 (wait 1.0) 
+                 #(do (if (the message) (destroy (the message))) nil)]))))
 
 (defn detach-skater [o]
   (let [legr (:leg-lower-r @ragmap)
         legl (:leg-lower-l @ragmap)]
     (swap! CRASH-COUNT inc)
     (reset! TRICK-STREAK [])
+    (reset! game.data/trick-score 0)
     (cmpt- legr UnityEngine.FixedJoint)
     (cmpt- legl UnityEngine.FixedJoint)
     (reset! STANDING false)
@@ -91,7 +105,7 @@
 
 (defn upsidedown? [o]
   (and (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 1 0)))
-       #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)))) ))
+       #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0))))))
 
 (defn wheel-contact? [o]
   (if (and (first 
@@ -146,7 +160,7 @@
     (if (and was-in-air 
             (not @IN-AIR) 
             #_(or (not @TOUCHING)
-                grounded) ) 
+                grounded)) 
       (do (tally-tricks o)))
 
     (when (< 8.0 (abs (- (abs forward-speed) (abs (state o :speed)))))

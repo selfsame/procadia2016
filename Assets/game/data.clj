@@ -8,6 +8,7 @@
 (defonce respawn-fn (atom #()))
 (defonce selection-fn (atom #()))
 (defonce recording? (atom false))
+(defonce trick-score (atom 0))
 
 (def first-names
  ["alfred"
