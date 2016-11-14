@@ -1,5 +1,9 @@
 (ns game.todo)
 
+::park
+'(( ) populate tile empties with props)
+'(( ) smooth skate-ramp corners)
+
 ::player
 '((/) detect crashes
   (( ) bad landing crashes [board sideways, player hitting ground]))
@@ -21,8 +25,7 @@
   ((x) :w :s key rotate X axis in air))
 
 ::camera
-'(( ) chase velocity, not Z+)
-'(( ) maintain minimum distance (lerped))
+'((x) maintain minimum distance (lerped))
 
 ::tricks
 '((x) board touching ground state)

@@ -97,7 +97,7 @@
   (let [o (clone! :maps/autopark (v3 26 4 26))
         wfc (.AddComponent o (type (SimpleTiledWFC.)))]
    (clone! :park-bounds)
-   (set! (.xmlpath wfc) "skaters.xml")
+   (set! (.xmlpath wfc) "final.xml")
    (set! (.seed wfc) @data/seed)
    (set! (.gridsize wfc) (int 2))
    (timeline [
