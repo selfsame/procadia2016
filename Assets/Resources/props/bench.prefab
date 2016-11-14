@@ -21,6 +21,7 @@ GameObject:
   - 4: {fileID: 4000010765929628}
   - 33: {fileID: 33000010550724920}
   - 23: {fileID: 23000013287823070}
+  - 64: {fileID: 64000011285906938}
   m_Layer: 0
   m_Name: bench
   m_TagString: Untagged
@@ -34,8 +35,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013274065598}
-  m_LocalRotation: {x: -0.7071067, y: 0.7071068, z: 8.6595606e-17, w: 8.4303924e-24}
-  m_LocalPosition: {x: 1.4007428, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -76,4 +77,16 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013274065598}
+  m_Mesh: {fileID: 4300012, guid: 070757d51aef5f948831ebee51ae9afa, type: 3}
+--- !u!64 &64000011285906938
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013274065598}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
   m_Mesh: {fileID: 4300012, guid: 070757d51aef5f948831ebee51ae9afa, type: 3}

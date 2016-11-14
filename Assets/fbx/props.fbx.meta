@@ -16,6 +16,8 @@ ModelImporter:
     100016: BezierCurve.002
     100018: Camera
     100020: Lamp
+    100022: Cube
+    100024: Cube.001
     400000: BezierCurve
     400002: BezierCurve.000
     400004: BezierCurve.001
@@ -27,6 +29,8 @@ ModelImporter:
     400016: BezierCurve.002
     400018: Camera
     400020: Lamp
+    400022: Cube
+    400024: Cube.001
     2300000: BezierCurve
     2300002: BezierCurve.000
     2300004: BezierCurve.001
@@ -35,6 +39,8 @@ ModelImporter:
     2300010: Cylinder.002
     2300012: Cylinder.003
     2300014: BezierCurve.002
+    2300016: Cube
+    2300018: Cube.001
     3300000: BezierCurve
     3300002: BezierCurve.000
     3300004: BezierCurve.001
@@ -43,6 +49,8 @@ ModelImporter:
     3300010: Cylinder.002
     3300012: Cylinder.003
     3300014: BezierCurve.002
+    3300016: Cube
+    3300018: Cube.001
     4300000: Cylinder.003
     4300002: BezierCurve
     4300004: Cylinder.002
@@ -51,6 +59,8 @@ ModelImporter:
     4300010: Cylinder
     4300012: BezierCurve.001
     4300014: BezierCurve.002
+    4300016: Cube.001
+    4300018: Cube
   materials:
     importMaterials: 1
     materialName: 0

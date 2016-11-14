@@ -72,7 +72,7 @@
     board))
 
 (defn respawn-player []
-  (let [p (>v3 @data/player)]
+  (let [p (v3+ (v3 0 2 0) (>v3 @data/player))]
     (destroy @data/player)
     (timeline [
                (wait 0.1)
@@ -107,6 +107,26 @@
    (set! (.width wfc) (int w))
    (set! (.depth wfc) (int h))
    (run-tiled @data/seed o :tiled) o))
+
+(def props [:props/bench :props/trashcan :props/lightpole
+  :props/trashcan])
+
+(defn make-props []
+  (seed! @data/seed)
+  (dorun 
+    (map 
+      (fn [o]
+        (dorun (map destroy (children o)))
+        (when (< (srand-int 10) 1)
+        (let [prop (clone! (srand-nth props) (>v3 o))]
+        (parent! prop o)
+        (rotation! prop (rotation o))
+        (rotate! prop (srand-nth [
+          (v3 0 0 0)
+          ;(v3 0 90 0)
+          ;(v3 0 180 0)(v3 0 270 0)
+          ])))))
+      (every prop))))
 
 (defn skyscrapers []
   (dorun 
@@ -152,6 +172,7 @@
         (v3 (* city-size -4 city-scale) 0 
             (* city-size -4 city-scale)))
       (cmpt- city (type citywfc))
+      (make-props)
       (skyscrapers) nil)]))
  (clone! :ui/recording-canvas)
  (if @data/recording?
