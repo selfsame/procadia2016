@@ -104,6 +104,8 @@
   (a/hook+ generate-button :on-pointer-click #'generate-name)
   (a/hook+ name-canvas :update
    (fn [go]
+    (if (UnityEngine.Input/GetKeyDown UnityEngine.KeyCode/Escape)
+     (UnityEngine.Application/Quit))
     (if (UnityEngine.Input/GetKeyDown UnityEngine.KeyCode/Return)
      (do
       (add-watch data/player-spawned? nil
