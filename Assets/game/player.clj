@@ -92,7 +92,9 @@
        skater-anim (a/cmpt skater UnityEngine.Animator)
        name-canvas (hard/clone! :ui/skater-name-canvas (l/v3 0 100 0))
        generate-button (hard/child-named name-canvas "GenerateButton")
-       input (a/object-named "NameInput")]
+       input (a/object-named "NameInput")
+       help-canvas (hard/clone! :ui/help-canvas)]
+  (ui/tween-rect (hard/child-named help-canvas "Text") (l/v2 0 -183) 5)
   (hard/clone! :menu-backdrop (l/v3 210 39.6 23))
   (hard/clone! :EventSystem)
   (hard/clone! :Camera (l/v3 -1.81 1.92 -3.87))
