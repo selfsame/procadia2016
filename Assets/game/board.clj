@@ -11,7 +11,10 @@
   (:require
     game.data
     tween.core
-    game.ui))
+    game.ui)
+  (import
+    InputMap
+    [UnityEngine Mathf Quaternion]))
 
 (def steerage (atom 0.0))
 (def wheelmap (atom nil))
@@ -21,6 +24,9 @@
 (def STANDING (atom true))
 (def TRICK-STREAK (atom []))
 (def CRASH-COUNT (atom 0))
+(defonce INPUT (InputMap.))
+
+
 
 (defn ragbody-map [] {
                       :hips         (the Hips)
@@ -44,7 +50,7 @@
      :rear  [(->wheel (child-named board "rear-right"))
              (->wheel (child-named board "rear-left"))]}))
 
-(defn text! [o s] (set! (.text (cmpt o UnityEngine.UI.Text)) s))
+(defn ui-text! [o s] (set! (.text (cmpt o UnityEngine.UI.Text)) s))
 
 (defn update-trick-ui []
   (try 
@@ -55,9 +61,9 @@
                            (< @game.data/trick-multiplier 20) "purple"
                            (< @game.data/trick-multiplier 30) "magenta"
                            :else "red")]
-     (text! (the tricks) tricklist)
-     (text! (the tricks-bg) tricklist)
-     (text! (the score) (str @game.data/skater-name ": "
+     (ui-text! (the tricks) tricklist)
+     (ui-text! (the tricks-bg) tricklist)
+     (ui-text! (the score) (str @game.data/skater-name ": "
                          @game.data/trick-score " <color=\"" multiplier-color
                          "\">x" @game.data/trick-multiplier "</color>")))
    (catch Exception e (log e))))
@@ -65,7 +71,7 @@
 (defn message [s]
   (destroy (the message))
   (let [cam (the skatecam)
-        o (clone! :message (.TransformPoint (.transform cam) (v3 0 0 10)))
+        o (-clone! :message (.TransformPoint (.transform cam) (v3 0 0 10)))
         txt (cmpt (child-named o "text") UnityEngine.TextMesh)]
     (parent! o cam)
     (set! (.text txt) s)
@@ -113,11 +119,11 @@
 
 (defn upsidedown? [o]
   (and (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 1 0)))
-       #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0))))))
+       #_(not (hit (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)))) ))
 
 (defn wheel-contact? [o]
   (if (and (first 
-            (range-hits (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)) 0.9)))
+            (hits (>v3 o) (.TransformDirection (.transform o) (v3 0 -1 0)) 0.9)))
     true false))
 
 (defn fall-check [o]
@@ -144,8 +150,35 @@
 (defn motor [n col]
   (dorun (map #(set! (.motorTorque %) (float n)) col)))
 
-(defn handle-input [o]
+(defmacro set-input-fn [k v]
+  `(~'fn ~'[o e _] (set! (~(symbol (str "." k)) ~'INPUT) ~v)))
+
+(defn setup-touch-controls []
+  (let [[w a s d q e jump] [(the W)(the A)(the S)(the D)(the Q)(the E)(the JUMP)]]
+    (hook+ w :on-pointer-down (set-input-fn w true))
+    (hook+ w :on-pointer-up (set-input-fn w false))
+    (hook+ s :on-pointer-down (set-input-fn s true))
+    (hook+ s :on-pointer-up (set-input-fn s false))
+    (hook+ a :on-pointer-down (set-input-fn a true))
+    (hook+ a :on-pointer-up (set-input-fn a false))
+    (hook+ d :on-pointer-down (set-input-fn d true))
+    (hook+ d :on-pointer-up (set-input-fn d false))
+    (hook+ q :on-pointer-down (set-input-fn q true))
+    (hook+ q :on-pointer-up (set-input-fn q false))
+    (hook+ e :on-pointer-down (set-input-fn e true))
+    (hook+ e :on-pointer-up (set-input-fn e false))
+    (hook+ jump :on-pointer-down (set-input-fn jump true))
+    (hook+ jump :on-pointer-up (set-input-fn jump false))))
+
+(defmacro input? 
+  ([k]
+    `(~'or (~'key? ~(str k)) (~(symbol (str "." k)) ~'INPUT)))
+  ([s k]
+    `(~'or (~'key? ~(str s)) (~(symbol (str "." k)) ~'INPUT))))
+
+(defn handle-input [o _]
   (try
+  (when @ragmap 
    (let [body (->rigidbody o)
          grounded (wheel-contact? o)
          was-in-air @IN-AIR
@@ -159,34 +192,34 @@
          forward-speed (.z local-velocity)
          max-speed 15.0
          max-turn (max 16 (min 42 (turn-limit forward-speed)))]
-    (when-not (state o :speed) (set-state! o :speed forward-speed))
+    (when-not (state o :speed) (state+ o :speed forward-speed))
     (fall-check o)
     (reset! IN-AIR (and (not grounded) (not @TOUCHING)))
     (if (and (not was-in-air) @IN-AIR) 
       (do (message "")
-        (set-state! o :total-euler (v3))))
+        (state+ o :total-euler (v3))))
     (if (and was-in-air 
             (not @IN-AIR) 
             #_(or (not @TOUCHING)
-                grounded)) 
+                grounded) ) 
       (do (tally-tricks o)))
 
     (when (< 8.0 (abs (- (abs forward-speed) (abs (state o :speed)))))
      (log (abs (- (abs forward-speed) (abs (state o :speed)))))
      (detach-skater o))
 
-    (text! (the debug) ""
+    (ui-text! (the debug) ""
       #_(str :steerage "   " @steerage "\n"
          :forward-speed "  " forward-speed "\n"
          :max-turn "  " max-turn "\n"
          :in-air "  " @IN-AIR "\n"
          :touching "  " @TOUCHING "\n"
-         :angular-vel "  " (.angularVelocity body) "\n"))
+         :angular-vel "  " (.angularVelocity body) "\n") )
       
-    (update-state! o :total-euler 
+    (update-state o :total-euler 
           #(v3+ % (delta-euler (state o :rotation) rotation)))
-    (set-state! o :rotation (.eulerAngles (.transform o)))
-    (set-state! o :speed forward-speed)
+    (state+ o :rotation (.eulerAngles (.transform o)))
+    (state+ o :speed forward-speed)
 
 
     (when (key-down? "escape") 
@@ -195,10 +228,9 @@
 
     (when (key-up? "l")
      (reset! game.data/recording? (not @game.data/recording?)))
-
     (when @STANDING 
      (cond 
-      (or (key? "w")
+      (or (input? w)
           (joy-up?))
       (if grounded 
        (if (< forward-speed max-speed)
@@ -207,7 +239,7 @@
               (motor motorforce (:front wheels))))
        (torque! body (* mass dspeed 10) 0 0))
 
-      (or (key? "s")
+      (or (input? s)
           (joy-down?))
       (if grounded 
        (if (> forward-speed (- max-speed))
@@ -220,14 +252,14 @@
        (do (motor 0 (:rear wheels))
            (motor 0 (:front wheels))))
      (cond 
-       (or (key? "a")
+       (or (input? a)
            (joy-left?))
        (if grounded
            (do (swap! steerage #(max (- max-turn) (- % (∆ 45))))
                (steer (- @steerage) (:rear wheels))
                (steer @steerage (:front wheels)))
            (torque! body 0 (* mass dspeed -24) 0))
-       (or (key? "d")
+       (or (input? d)
            (joy-right?))
        (if grounded
            (do (swap! steerage #(min max-turn (+ % (∆ 45))))
@@ -238,23 +270,22 @@
        (do (swap! steerage #(* % 0.95))
            (steer (- @steerage) (:rear wheels))
            (steer @steerage (:front wheels))))
-     (if (or (key? "e")
+     (if (or (input? e)
              (button? "RB"))
        (torque! body 0 0 (* mass dspeed -6)))
-     (if (or (key? "q")
+     (if (or (input? q)
              (button? "LB"))
        (torque! body 0 0 (* mass dspeed 6)))
      (if (and (or (key? "tab")
                   (button? "X"))
               (upsidedown? o))
        (torque! body 0 0 (* mass  dspeed 60)))
-     (when (and (or (key-down? "space")
+     (when (and (or (input? space jump)
                     (button? "A"))
                 grounded)
-       (torque! body (* mass  -20) 0 0)
-       (force! body 0 (* mass 580) 0))
+       (torque! body (* mass  (∆ -400)) 0 0)
+       (force! body 0 (* mass (∆ 9000)) 0))
      (if grounded (force! body 0 (* mass dspeed -25) 0))
      (global-force! (->rigidbody (:spine @ragmap)) 0 (* dspeed 650) 0))
-    ::gravity
-    (global-force! body 0 (* mass dspeed -8) 0))
-   (catch Exception e (log e))))
+    (global-force! body 0 (* mass dspeed -8) 0)))
+  (catch Exception e nil)))

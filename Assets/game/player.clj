@@ -5,7 +5,6 @@
           [game.ui :as ui]
           [game.data :as data]
           [hard.core :as hard]
-          [game.gif :as gif]
           [tween.core :refer :all]))
 
 (defonce rand-state (atom nil))
@@ -81,29 +80,29 @@
   (UnityEngine.Random/InitState seed)
   (change-clothing false false)))
 
-(defn generate-name [go ptr]
+(defn generate-name [go ptr _]
  (let [rand-name (str (rand-nth data/first-names) " \"" (rand-nth data/nicknames) "\" " (rand-nth data/last-names))
        input (a/cmpt (a/object-named "NameInput") UnityEngine.UI.InputField)]
   (set! (.text input) rand-name)))
 
-(defn setup-name-select [o]
+(defn setup-name-select [o _]
  (hard/clear-cloned!)
- (let [skater (hard/clone! :player/skater)
+ (let [skater (hard/-clone! :player/skater)
        skater-anim (a/cmpt skater UnityEngine.Animator)
-       name-canvas (hard/clone! :ui/skater-name-canvas (l/v3 0 100 0))
+       name-canvas (hard/-clone! :ui/skater-name-canvas (l/v3 0 100 0))
        generate-button (hard/child-named name-canvas "GenerateButton")
        input (a/object-named "NameInput")
-       help-canvas (hard/clone! :ui/help-canvas)]
+       help-canvas (hard/-clone! :ui/help-canvas)]
   (ui/tween-rect (hard/child-named help-canvas "Text") (l/v2 0 -183) 5)
-  (hard/clone! :menu-backdrop (l/v3 210 39.6 23))
-  (hard/clone! :EventSystem)
-  (hard/clone! :Camera (l/v3 -1.81 1.92 -3.87))
+  (hard/-clone! :menu-backdrop (l/v3 210 39.6 23))
+  (hard/-clone! :EventSystem)
+  (hard/-clone! :Camera (l/v3 -1.81 1.92 -3.87))
   (game/make-head false)
   (vertex-color! (hard/child-named skater "BodyMesh") @data/skin-color)
   (set! (.worldCamera (a/cmpt name-canvas UnityEngine.Canvas)) UnityEngine.Camera/main)
   (a/hook+ generate-button :on-pointer-click #'generate-name)
   (a/hook+ name-canvas :update
-   (fn [go]
+   (fn [go _]
     (if (UnityEngine.Input/GetKeyDown UnityEngine.KeyCode/Escape)
      (UnityEngine.Application/Quit))
     (if (UnityEngine.Input/GetKeyDown UnityEngine.KeyCode/Return)
@@ -117,12 +116,11 @@
               (set! (.name new-player) "skater")
               (change-clothing "anything" true true)) nil
             (catch Exception e (a/log e)))))))
-      (game/make-level)
-      (gif/setup)
+      ;(game/make-level)
       (a/destroy go)
       (a/destroy skater)))))
   (a/hook+ name-canvas :update :billboard
-   (fn [go]
+   (fn [go _]
     (let [rect (a/cmpt go UnityEngine.RectTransform)]
      (.LookAt rect (l/v3* (l/v3- (.position rect) (.. UnityEngine.Camera/main transform position)) 2)))))
   (ui/on-value-changed input #'on-name-change)

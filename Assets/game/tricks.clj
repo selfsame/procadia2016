@@ -2,7 +2,9 @@
   (:use 
     hard.seed)
   (:require
-    game.data))
+    game.data)
+  (import
+    [UnityEngine Mathf]))
 
 (def prefixes [
                'fleeb

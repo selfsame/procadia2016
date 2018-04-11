@@ -11,7 +11,7 @@
 (def dist 12)
 (def min-cam-dist 12.0)
 
-(defn update-cam [o]
+(defn update-cam [o _]
   (try 
     (let [focus (if @game.board/STANDING @game.data/player (:head @game.board/ragmap))
           target (v3+ (.TransformPoint (.transform @game.data/player) (v3 5 0 (- dist)))
@@ -28,7 +28,7 @@
       (lerp-look! o focus (∆ 8)))
     (catch Exception e (log e))))
 
-(defn gizmo-cam [o]
+(defn gizmo-cam [o _]
   #_(let [focus (if @game.board/STANDING @game.data/player (:head @game.board/ragmap))
         target (v3+ (.TransformPoint (.transform @game.data/player) (v3 0 0 (- dist)))
                     (v3 0 10 0))

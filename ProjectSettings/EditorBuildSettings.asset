@@ -5,7 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/selfsame.unity
   - enabled: 1
-    path: Assets/scenes/skatepark.unity
+    path: Assets/scenes/loading.unity
+    guid: 6a442cfe89eaaf0488f43548b7b5294f
+  - enabled: 1
+    path: Assets/scenes/main.unity
+    guid: e2c0db784914fe94b89f07cf5e893eaa

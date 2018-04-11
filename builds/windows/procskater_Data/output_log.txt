@@ -1,0 +1,427 @@
+Mono path[0] = 'C:/dev/unity/procskater/builds/windows/procskater_Data/Managed'
+Mono path[1] = 'C:/dev/unity/procskater/builds/windows/procskater_Data/Mono'
+Mono config path = 'C:/dev/unity/procskater/builds/windows/procskater_Data/Mono/etc'
+PlayerConnection initialized from C:/dev/unity/procskater/builds/windows/procskater_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55013
+Multi-casting "[IP] 192.168.2.103 [Port] 55013 [Flags] 2 [Guid] 483262587 [EditorId] 3727557778 [Version] 1048832 [Id] WindowsPlayer(box) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.2.103:55013]
+Initialize engine version: 5.4.3f1 (01f4c123905a)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 960 (ID=0x1401)
+    Vendor:   NVIDIA
+    VRAM:     4011 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Clojure.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Clojure.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Ionic.Zip.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Ionic.Zip.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Microsoft.Dynamic.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Microsoft.Dynamic.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Microsoft.Scripting.Core.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Microsoft.Scripting.Core.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Microsoft.Scripting.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Microsoft.Scripting.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Microsoft.Scripting.Metadata.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\Microsoft.Scripting.Metadata.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.animation.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.animation.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.walk.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.walk.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.core.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.core.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.map_utils.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.map_utils.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.test.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.test.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.physics.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.physics.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.ui.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.ui.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.todo.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.todo.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.gif.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.gif.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\human.core.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\human.core.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.core.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.core.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.literals.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.literals.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.seed.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.seed.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.player.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.player.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.namespace.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.namespace.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.stacktrace.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.stacktrace.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.spec.gen.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.spec.gen.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\human.data.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\human.data.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.input.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.input.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core_print.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core_print.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.instant.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.instant.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\tween.core.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\tween.core.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.messages.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.messages.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.board.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.board.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.genclass.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.genclass.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.sound.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.sound.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.string.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.string.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core_clr.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core_clr.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.tricks.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.tricks.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.hook_help.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.hook_help.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.spec.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.spec.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.gvec.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.gvec.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core.protocols.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core.protocols.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.set.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.set.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.cam.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.cam.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core_deftype.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core_deftype.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.data.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\game.data.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.clr.io.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.clr.io.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.name_utils.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.name_utils.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.uuid.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.uuid.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.edit.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.edit.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.linear.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.linear.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.mesh.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.mesh.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core_proxy.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core_proxy.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.core.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.core.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.state_help.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.state_help.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.math.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.math.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.template.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.template.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.gobpool.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\hard.gobpool.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.macro.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\arcadia.internal.macro.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.main.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.main.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core.server.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.core.server.clj.dll into Unity Child Domain
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.edn.clj.dll (this message is harmless)
+Loading C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\clojure.edn.clj.dll into Unity Child Domain
+- Completed reload, in  0.125 seconds
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\dev\unity\procskater\builds\windows\procskater_Data\Managed\System.dll (this message is harmless)
+OnLevelWasLoaded was found on OnLevelWasLoadedHook
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+ 
+(Filename: C:/buildslave/unity/build/Runtime/Mono/MonoScriptCache.cpp Line: 375)
+
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.245701 ms
+Milliseconds to value type parser eval stuff: 26.4717
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+__Init__$arcadia$literals:Initialize()
+System.Reflection.MonoMethod:InternalInvoke(Object, Object[], Exception&)
+System.Reflection.MonoMethod:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:222)
+System.MonoType:InvokeMember(String, BindingFlags, Binder, Object, Object[], ParameterModifier[], CultureInfo, String[]) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/MonoType.cs:433)
+System.Type:InvokeMember(String, BindingFlags, Binder, Object, Object[]) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Type.cs:1149)
+clojure.lang.Compiler:InvokeInitType(Assembly, Type)
+clojure.lang.Compiler:InitAssembly(Assembly, String)
+clojure.lang.Compiler:LoadAssembly(FileInfo, String)
+clojure.lang.RT:load(String, Boolean)
+clojure.lang.RT:load(String)
+clojure/core$loadfn__57732__57736:invoke()
+clojure/core$load__57739:invokeStatic(ISeq)
+clojure/core$load__57739:doInvoke(Object)
+clojure.lang.RestFn:invoke(Object)
+clojure/core$load_one__57612:invokeStatic(Object, Object, Object)
+clojure/core$load_one__57612:invoke(Object, Object, Object)
+clojure/core$load_libfn__57650__57654:invoke()
+clojure/core$load_lib__57661:invokeStatic(Object, Object, ISeq)
+clojure/core$load_lib__57661:doInvoke(Object, Object, Object)
+clojure.lang.RestFn:applyTo(ISeq)
+clojure/core$apply__53036:invokeStatic(Object, Object, Object)
+clojure/core$apply__53036:invoke(Object, Object, Object)
+clojure/core$load_libs__57681:invokeStatic(ISeq)
+clojure/core$load_libs__57681:doInvoke(Object)
+clojure.lang.RestFn:applyTo(ISeq)
+clojure/core$apply__53036:invokeStatic(Object, Object, Object)
+clojure/core$apply__53036:invoke(Object, Object, Object)
+clojure/core$require__57701:invokeStatic(ISeq)
+clojure/core$require__57701:doInvoke(Object)
+clojure.lang.RestFn:invoke(Object, Object, Object)
+arcadia/internal/hook_help$loading__57480__auto____67472__67475:invokeStatic()
+arcadia/internal/hook_help$loading__57480__auto____67472__67475:invoke()
+__Init__$arcadia$internal$hook_help:Initialize()
+System.Reflection.MonoMethod:InternalInvoke(Object, Object[], Exception&)
+System.Reflection.MonoMethod:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:222)
+System.MonoType:InvokeMember(String, BindingFlags, Binder, Object, Object[], ParameterModifier[], CultureInfo, String[]) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/MonoType.cs:433)
+System.Type:InvokeMember(String, BindingFlags, Binder, Object, Object[]) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Type.cs:1149)
+clojure.lang.Compiler:InvokeInitType(Assembly, Type)
+clojure.lang.Compiler:InitAssembly(Assembly, String)
+clojure.lang.Compiler:LoadAssembly(FileInfo, String)
+clojure.lang.RT:load(String, Boolean)
+clojure.lang.RT:load(String)
+clojure/core$loadfn__57732__57736:invoke()
+clojure/core$load__57739:invokeStatic(ISeq)
+clojure/core$load__57739:doInvoke(Object)
+clojure.lang.RestFn:invoke(Object)
+clojure/core$load_one__57612:invokeStatic(Object, Object, Object)
+clojure/core$load_one__57612:invoke(Object, Object, Object)
+clojure/core$load_libfn__57650__57654:invoke()
+clojure/core$load_lib__57661:invokeStatic(Object, Object, ISeq)
+clojure/core$load_lib__57661:doInvoke(Object, Object, Object)
+clojure.lang.RestFn:applyTo(ISeq)
+clojure/core$apply__53036:invokeStatic(Object, Object, Object)
+clojure/core$apply__53036:invoke(Object, Object, Object)
+clojure/core$load_libs__57681:invokeStatic(ISeq)
+clojure/core$load_libs__57681:doInvoke(Object)
+clojure.lang.RestFn:applyTo(ISeq)
+clojure/core$apply__53036:invokeStatic(Object, Object, Object)
+clojure/core$apply__53036:invoke(Object, Object, Object)
+clojure/core$require__57701:invokeStatic(ISeq)
+clojure/core$require__57701:doInvoke(Object)
+clojure.lang.RestFn:invoke(Object)
+arcadia/internal/namespace$quickquire__66722:invokeStatic(Object)
+arcadia/internal/namespace$quickquire__66722:invoke(Object)
+Arcadia.Util:Invoke(Var, Object) (at C:\dev\unity\procskater\Assets\Arcadia\Helpers\Util.cs:48)
+Arcadia.Util:require(String) (at C:\dev\unity\procskater\Assets\Arcadia\Helpers\Util.cs:34)
+ArcadiaBehaviour:InitializeOwnVars() (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:136)
+ArcadiaBehaviour:FullInit() (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:226)
+ArcadiaBehaviour:Awake() (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:275)
+ 
+(Filename: /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs Line: 222)
+
+Milliseconds to object type parser eval stuff: 5.3514
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+__Init__$arcadia$literals:Initialize()
+System.Reflection.MonoMethod:InternalInvoke(Object, Object[], Exception&)
+System.Reflection.MonoMethod:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:222)
+System.MonoType:InvokeMember(String, BindingFlags, Binder, Object, Object[], ParameterModifier[], CultureInfo, String[]) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/MonoType.cs:433)
+System.Type:InvokeMember(String, BindingFlags, Binder, Object, Object[]) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Type.cs:1149)
+clojure.lang.Compiler:InvokeInitType(Assembly, Type)
+clojure.lang.Compiler:InitAssembly(Assembly, String)
+clojure.lang.Compiler:LoadAssembly(FileInfo, String)
+clojure.lang.RT:load(String, Boolean)
+clojure.lang.RT:load(String)
+clojure/core$loadfn__57732__57736:invoke()
+clojure/core$load__57739:invokeStatic(ISeq)
+clojure/core$load__57739:doInvoke(Object)
+clojure.lang.RestFn:invoke(Object)
+clojure/core$load_one__57612:invokeStatic(Object, Object, Object)
+clojure/core$load_one__57612:invoke(Object, Object, Object)
+clojure/core$load_libfn__57650__57654:invoke()
+clojure/core$load_lib__57661:invokeStatic(Object, Object, ISeq)
+clojure/core$load_lib__57661:doInvoke(Object, Object, Object)
+clojure.lang.RestFn:applyTo(ISeq)
+clojure/core$apply__53036:invokeStatic(Object, Object, Object)
+clojure/core$apply__53036:invoke(Object, Object, Object)
+clojure/core$load_libs__57681:invokeStatic(ISeq)
+clojure/core$load_libs__57681:doInvoke(Object)
+clojure.lang.RestFn:applyTo(ISeq)
+clojure/core$apply__53036:invokeStatic(Object, Object, Object)
+clojure/core$apply__53036:invoke(Object, Object, Object)
+clojure/core$require__57701:invokeStatic(ISeq)
+clojure/core$require__57701:doInvoke(Object)
+clojure.lang.RestFn:invoke(Object, Object, Object)
+arcadia/internal/hook_help$loading__57480__auto____67472__67475:invokeStatic()
+arcadia/internal/hook_help$loading__57480__auto____67472__67475:invoke()
+__Init__$arcadia$internal$hook_help:Initialize()
+System.Reflection.MonoMethod:InternalInvoke(Object, Object[], Exception&)
+System.Reflection.MonoMethod:Invoke(Object, BindingFlags, Binder, Object[], CultureInfo) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:222)
+System.MonoType:InvokeMember(String, BindingFlags, Binder, Object, Object[], ParameterModifier[], CultureInfo, String[]) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/MonoType.cs:433)
+System.Type:InvokeMember(String, BindingFlags, Binder, Object, Object[]) (at /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Type.cs:1149)
+clojure.lang.Compiler:InvokeInitType(Assembly, Type)
+clojure.lang.Compiler:InitAssembly(Assembly, String)
+clojure.lang.Compiler:LoadAssembly(FileInfo, String)
+clojure.lang.RT:load(String, Boolean)
+clojure.lang.RT:load(String)
+clojure/core$loadfn__57732__57736:invoke()
+clojure/core$load__57739:invokeStatic(ISeq)
+clojure/core$load__57739:doInvoke(Object)
+clojure.lang.RestFn:invoke(Object)
+clojure/core$load_one__57612:invokeStatic(Object, Object, Object)
+clojure/core$load_one__57612:invoke(Object, Object, Object)
+clojure/core$load_libfn__57650__57654:invoke()
+clojure/core$load_lib__57661:invokeStatic(Object, Object, ISeq)
+clojure/core$load_lib__57661:doInvoke(Object, Object, Object)
+clojure.lang.RestFn:applyTo(ISeq)
+clojure/core$apply__53036:invokeStatic(Object, Object, Object)
+clojure/core$apply__53036:invoke(Object, Object, Object)
+clojure/core$load_libs__57681:invokeStatic(ISeq)
+clojure/core$load_libs__57681:doInvoke(Object)
+clojure.lang.RestFn:applyTo(ISeq)
+clojure/core$apply__53036:invokeStatic(Object, Object, Object)
+clojure/core$apply__53036:invoke(Object, Object, Object)
+clojure/core$require__57701:invokeStatic(ISeq)
+clojure/core$require__57701:doInvoke(Object)
+clojure.lang.RestFn:invoke(Object)
+arcadia/internal/namespace$quickquire__66722:invokeStatic(Object)
+arcadia/internal/namespace$quickquire__66722:invoke(Object)
+Arcadia.Util:Invoke(Var, Object) (at C:\dev\unity\procskater\Assets\Arcadia\Helpers\Util.cs:48)
+Arcadia.Util:require(String) (at C:\dev\unity\procskater\Assets\Arcadia\Helpers\Util.cs:34)
+ArcadiaBehaviour:InitializeOwnVars() (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:136)
+ArcadiaBehaviour:FullInit() (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:226)
+ArcadiaBehaviour:Awake() (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:275)
+ 
+(Filename: /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs Line: 222)
+
+in hook-state-deserialize
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:Log(Object)
+arcadia/internal/hook_help$hook_state_deserialize__67670:invokeStatic(Object)
+arcadia/internal/hook_help$hook_state_deserialize__67670:invoke(Object)
+clojure.lang.Var:invoke(Object)
+ArcadiaBehaviour:FullInit() (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:228)
+ArcadiaBehaviour:Awake() (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:275)
+ 
+(Filename: C:/dev/unity/procskater/Assets/Arcadia/Components/ArcadiaBehaviour.cs Line: 228)
+
+Failed to require namespace for #'game.core/just-skater; threw:
+clojure.lang.Compiler+AssemblyInitializationException: Error initializing game.core.clj, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null: Exception has been thrown by the target of an invocation. ---> System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> clojure.lang.Compiler+AssemblyInitializationException: Error initializing human.core.clj, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null: Exception has been thrown by the target of an invocation. ---> System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> clojure.lang.Compiler+AssemblyInitializationException: Error initializing human.data.clj, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null: Exception has been thrown by the target of an invocation. ---> System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.TypeInitializationException: An exception was thrown by the type initializer for __Init__$human$data ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at clojure.lang.Compiler.namespaceFor (clojure.lang.Namespace inns, clojure.lang.Symbol sym) [0x00000] in <filename unknown>:0 
+  at clojure.lang.Compiler.namespaceFor (clojure.lang.Symbol sym) [0x00000] in <filename unknown>:0 
+  at clojure.lang.Compiler.NamesStaticMember (clojure.lang.Symbol sym) [0x00000] in <filename unknown>:0 
+  at clojure.lang.LispReader+EvalReader.Read (clojure.lang.PushbackTextReader r, Char eq, System.Object opts, System.Object pendingForms) [0x00000] in <filename unknown>:0 
+  at clojure.lang.LispReader+ReaderBase.invoke (System.Object arg1, System.Object arg2, System.Object opts, System.Object pendingForms) [0x00000] in <filename unknown>:0 
+  at clojure.lang.LispReader+DispatchReader.Read (clojure.lang.PushbackTextReader r, Char hash, System.Object opts, System.Object pendingForms) [0x00000] in <filename unknown>:0 
+  at clojure.lang.LispReader+ReaderBase.invoke (System.Object arg1, System.Object arg2, System.Object opts, System.Object pendingForms) [0x00000] in <filename unknown>:0 
+  at clojure.lang.LispReader.read (clojure.lang.PushbackTextReader r, Boolean eofIsError, System.Object eofValue, Nullable`1 returnOn, System.Object returnOnValue, Boolean isRecursive, System.Object opts, System.Object pendingForms) [0x00000] in <filename unknown>:0 
+  --- End of inner exception stack trace ---
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000d0] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:222 
+  --- End of inner exception stack trace ---
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000eb] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:232 
+  at System.MonoType.InvokeMember (System.String name, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object target, System.Object[] args, System.Reflection.ParameterModifier[] modifiers, System.Globalization.CultureInfo culture, System.String[] namedParameters) [0x00329] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/MonoType.cs:433 
+  at System.Type.InvokeMember (System.String name, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object target, System.Object[] args) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Type.cs:1149 
+  at clojure.lang.Compiler.InvokeInitType (System.Reflection.Assembly assy, System.Type initType) [0x00000] in <filename unknown>:0 
+  --- End of inner exception stack trace ---
+  at clojure.lang.Compiler.InvokeInitType (System.Reflection.Assembly assy, System.Type initType) [0x00000] in <filename unknown>:0 
+  at clojure.lang.Compiler.InitAssembly (System.Reflection.Assembly assy, System.String relativePath) [0x00000] in <filename unknown>:0 
+  at clojure.lang.Compiler.LoadAssembly (System.IO.FileInfo assyInfo, System.String relativePath) [0x00000] in <filename unknown>:0 
+  at clojure.lang.RT.load (System.String relativePath, Boolean failIfNotFound) [0x00000] in <filename unknown>:0 
+  at clojure.lang.RT.load (System.String relativePath) [0x00000] in <filename unknown>:0 
+  at clojure/core$loadfn__57732__57736.invoke () [0x00000] in <filename unknown>:0 
+  at clojure/core$load__57739.invokeStatic (ISeq ) [0x00000] in <filename unknown>:0 
+  at clojure/core$load__57739.doInvoke (System.Object ) [0x00000] in <filename unknown>:0 
+  at clojure.lang.RestFn.invoke (System.Object arg1) [0x00000] in <filename unknown>:0 
+  at clojure/core$load_one__57612.invokeStatic (System.Object , System.Object , System.Object ) [0x00000] in <filename unknown>:0 
+  at clojure/core$load_one__57612.invoke (System.Object , System.Object , System.Object ) [0x00000] in <filename unknown>:0 
+  at clojure/core$load_libfn__57650__57654.invoke () [0x00000] in <filename unknown>:0 
+  --- End of inner exception stack trace ---
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000eb] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:232 
+  at System.MonoType.InvokeMember (System.String name, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object target, System.Object[] args, System.Reflection.ParameterModifier[] modifiers, System.Globalization.CultureInfo culture, System.String[] namedParameters) [0x00329] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/MonoType.cs:433 
+  at System.Type.InvokeMember (System.String name, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object target, System.Object[] args) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Type.cs:1149 
+  at clojure.lang.Compiler.InvokeInitType (System.Reflection.Assembly assy, System.Type initType) [0x00000] in <filename unknown>:0 
+  --- End of inner exception stack trace ---
+  at clojure.lang.Compiler.InvokeInitType (System.Reflection.Assembly assy, System.Type initType) [0x00000] in <filename unknown>:0 
+  at clojure.lang.Compiler.InitAssembly (System.Reflection.Assembly assy, System.String relativePath) [0x00000] in <filename unknown>:0 
+  at clojure.lang.Compiler.LoadAssembly (System.IO.FileInfo assyInfo, System.String relativePath) [0x00000] in <filename unknown>:0 
+  at clojure.lang.RT.load (System.String relativePath, Boolean failIfNotFound) [0x00000] in <filename unknown>:0 
+  at clojure.lang.RT.load (System.String relativePath) [0x00000] in <filename unknown>:0 
+  at clojure/core$loadfn__57732__57736.invoke () [0x00000] in <filename unknown>:0 
+  at clojure/core$load__57739.invokeStatic (ISeq ) [0x00000] in <filename unknown>:0 
+  at clojure/core$load__57739.doInvoke (System.Object ) [0x00000] in <filename unknown>:0 
+  at clojure.lang.RestFn.invoke (System.Object arg1) [0x00000] in <filename unknown>:0 
+  at clojure/core$load_one__57612.invokeStatic (System.Object , System.Object , System.Object ) [0x00000] in <filename unknown>:0 
+  at clojure/core$load_one__57612.invoke (System.Object , System.Object , System.Object ) [0x00000] in <filename unknown>:0 
+  at clojure/core$load_libfn__57650__57654.invoke () [0x00000] in <filename unknown>:0 
+  --- End of inner exception stack trace ---
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x000eb] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System.Reflection/MonoMethod.cs:232 
+  at System.MonoType.InvokeMember (System.String name, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object target, System.Object[] args, System.Reflection.ParameterModifier[] modifiers, System.Globalization.CultureInfo culture, System.String[] namedParameters) [0x00329] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/MonoType.cs:433 
+  at System.Type.InvokeMember (System.String name, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object target, System.Object[] args) [0x00000] in /Users/builduser/buildslave/mono/build/mcs/class/corlib/System/Type.cs:1149 
+  at clojure.lang.Compiler.InvokeInitType (System.Reflection.Assembly assy, System.Type initType) [0x00000] in <filename unknown>:0 
+  --- End of inner exception stack trace ---
+  at clojure.lang.Compiler.InvokeInitType (System.Reflection.Assembly assy, System.Type initType) [0x00000] in <filename unknown>:0 
+  at clojure.lang.Compiler.InitAssembly (System.Reflection.Assembly assy, System.String relativePath) [0x00000] in <filename unknown>:0 
+  at clojure.lang.Compiler.LoadAssembly (System.IO.FileInfo assyInfo, System.String relativePath) [0x00000] in <filename unknown>:0 
+  at clojure.lang.RT.load (System.String relativePath, Boolean failIfNotFound) [0x00000] in <filename unknown>:0 
+  at clojure.lang.RT.load (System.String relativePath) [0x00000] in <filename unknown>:0 
+  at clojure/core$loadfn__57732__57736.invoke () [0x00000] in <filename unknown>:0 
+  at clojure/core$load__57739.invokeStatic (ISeq ) [0x00000] in <filename unknown>:0 
+  at clojure/core$load__57739.doInvoke (System.Object ) [0x00000] in <filename unknown>:0 
+  at clojure.lang.RestFn.invoke (System.Object arg1) [0x00000] in <filename unknown>:0 
+  at clojure/core$load_one__57612.invokeStatic (System.Object , System.Object , System.Object ) [0x00000] in <filename unknown>:0 
+  at clojure/core$load_one__57612.invoke (System.Object , System.Object , System.Object ) [0x00000] in <filename unknown>:0 
+  at clojure/core$load_libfn__57650__57654.invoke () [0x00000] in <filename unknown>:0 
+
+
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object)
+UnityEngine.Debug:LogError(Object)
+arcadia/internal/hook_help$require_var_namespace__67617:invokeStatic(Object)
+arcadia/internal/hook_help$require_var_namespace__67617:invoke(Object)
+arcadia/internal/hook_help$require_var_namespaces__67635:invokeStatic(Object)
+arcadia/internal/hook_help$require_var_namespaces__67635:invoke(Object)
+clojure.lang.Var:invoke(Object)
+ArcadiaBehaviour:FullInit() (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:232)
+ArcadiaBehaviour:Awake() (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:275)
+ 
+(Filename: C:/dev/unity/procskater/Assets/Arcadia/Components/ArcadiaBehaviour.cs Line: 232)
+
+Context: key: :default; fn: #'game.core/just-skater; GameObject: hook; GameObject id: 7204
+UnityEngine.DebugLogHandler:Internal_Log(LogType, String, Object)
+UnityEngine.DebugLogHandler:LogFormat(LogType, Object, String, Object[])
+UnityEngine.Logger:Log(LogType, Object, Object)
+UnityEngine.Debug:LogError(Object, Object)
+ArcadiaBehaviour:PrintContext(Int32) (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:298)
+ArcadiaBehaviour:RunFunctions() (at C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:325)
+StartHook:Start() (at C:\dev\unity\procskater\Assets\Arcadia\Components\StartHook.cs:9)
+ 
+(Filename: C:/dev/unity/procskater/Assets/Arcadia/Components/ArcadiaBehaviour.cs Line: 298)
+
+ArityException: Wrong number of args (2) passed to: Var+Unbound
+  at clojure.lang.AFn.invoke (System.Object arg1, System.Object arg2) [0x00000] in <filename unknown>:0 
+  at ArcadiaBehaviour.RunFunctions () [0x0004f] in C:\dev\unity\procskater\Assets\Arcadia\Components\ArcadiaBehaviour.cs:319 
+ 
+(Filename: C:/dev/unity/procskater/Assets/Arcadia/Components/ArcadiaBehaviour.cs Line: 319)
+
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 1be0 -> priority: 1 
+  Thread -> id: 2e14 -> priority: 1 
